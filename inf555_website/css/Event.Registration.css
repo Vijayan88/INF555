@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+<style>
+ .bg-1{
+  background-color: #696969;
+ } 
+
+ .container-fluid {
+    padding-bottom: 20px;
+}
+
+h2{
+  padding-top: 5px;
+  color:#ffe033;
+}
+
+.bg-2{
+  background-color: #cccccc;
+}
+
+.container{
+  padding-top: 80px;
+  padding-left: 30px;
+  padding-bottom:100px;
+  padding-right: 30px;
+}
+
+.text1{
+  font-family: 'Segoe UI', sans-sarif;
+  font-size: 16pt;
+  padding-top: none;
+}
+
+.required-field:after{
+  color:red;
+  content:"*";
+}
+
+.input1{
+  width: 60%;
+}
+
+.input2{
+  width: 30%;
+}
+
+.date,.time{
+height:45px;
+}
+
+p{
+  font-family: 'Segoe UI', sans-sarif;
+  font-size: 10pt;
+}
+
+.tickets{
+  padding-left: 250px;
+}
+
+.tkt{
+  background-color: #f2f2f2;
+  width:70%;
+  height:150px;
+}
+
+.text2{
+  color:#8c8c8c;
+  font-size: 9pt;
+}
+
+.submit{
+  padding-left: 425px;
+}
+</style>
+

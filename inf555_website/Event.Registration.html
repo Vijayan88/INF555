@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Theme Simply Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+ .bg-1{
+  background-color: #696969;
+ } 
+
+ .container-fluid {
+    padding-bottom: 20px;
+}
+
+h2{
+  padding-top: 5px;
+  color:#ffe033;
+}
+
+.bg-2{
+  background-color: #cccccc;
+}
+
+.container{
+  padding-top: 80px;
+  padding-left: 30px;
+  padding-bottom:100px;
+  padding-right: 30px;
+}
+
+.text1{
+  font-family: 'Segoe UI', sans-sarif;
+  font-size: 16pt;
+  padding-top: none;
+}
+
+.required-field:after{
+  color:red;
+  content:"*";
+}
+
+.input1{
+  width: 60%;
+}
+
+.input2{
+  width: 30%;
+}
+
+.date,.time{
+height:45px;
+}
+
+p{
+  font-family: 'Segoe UI', sans-sarif;
+  font-size: 10pt;
+}
+
+.tickets{
+  padding-left: 250px;
+}
+
+.tkt{
+  background-color: #f2f2f2;
+  width:70%;
+  height:150px;
+}
+
+.text2{
+  color:#8c8c8c;
+  font-size: 9pt;
+}
+
+.submit{
+  padding-left: 425px;
+}
+</style>
+
+<body>
+<div class="container-fluid bg-1">
+<h2><b>Create An Event</b></h2>
+</div>
+
+<div class="container bg-2">
+<text class ="text1"><b> 1. Event Details</b></text><hr>
+
+<div class="form-group">
+  <label for="etitle" class="control-label required-field">EVENT TITLE</label>
+  <input type="text" class="form-control input1" id="etitle" placeholder="Give it a short distinct name">
+</div>
+
+<div class="form-group">
+  <label for="loc">LOCATION</label>
+  <input type="text" class="form-control input1" id="loc" placeholder="Specify where it's held">
+</div>
+
+<div class="row">
+  <div class ="col-sm-2"><a href="Online event">Online event</a></div>
+  <div class ="col-sm-2"><a href="Enter address">Enter address</a></div>
+</div><br>
+
+<div class="row">
+    <div class ="col-sm-4"> <label for="sdate">STARTS</label></div>
+    <div class ="col-sm-4"><label for="edate">ENDS</label></div><br>
+</div>
+
+<div class="row">
+    <div class="col-sm-4"><input class ="date" type="date" class="form-control" id="sdate">
+    <input class ="time" type="time" class="form-control" id="stime"></div>
+
+    <div class = "col-sm-4"><input class="date" type="date" class="form-control" id="edate">
+    <input class="time" type="time" class="form-control" id="etime"></div>
+</div><br>
+
+<div class="row">
+     <div class ="col-sm-2"><a href="mevents">Schedule multiple events</a></div>
+     <div class ="col-sm-4"><a href="dsettings">Timezone & date settings(PDT) </a></div>
+</div><br>
+
+<div class = "form-group">
+    <label for="image">EVENT IMAGE <span class="glyphicon glyphicon-camera"></span></label>
+    <div class="fileupload fileupload-new" data-provides="fileupload">
+    <div class="fileupload-preview thumbnail" style="width: 400px; height: 250px;"></div></div>
+    <div class="col-sm-2"><input type = "file"/></div>
+    <div class="col-sm-2"><a href="#">Remove</a></div><br>
+    <p>We recommend using at least a 2160x1080px (2:1 ratio) image that's no<br>
+    larger than 10MB.<a href="#"> Learn more.</a></p>
+</div>
+
+<div class = "form-group">
+<label for="edescription">EVENT DESCRIPTION</label><br> 
+<textarea class="form-control input1" rows="12" id="edescription"></textarea><br>
+
+<label for="oname">ORGANIZER NAME</label><br>
+<input class ="input1" type="text" class="form-control" id="oname"><br>
+
+<label for="odesc">ORGANIZER DESCRIPTION</label><br>
+<textarea class="form-control input1" rows="6" id="odesc"></textarea>
+
+<div class="checkbox">
+  <label><input type="checkbox" value="">Include links to Facebook and Twitter</label>
+</div>
+</div><br>
+
+<div class ="row">
+<text class ="text1"><b> 2. Create Tickets</b></text><hr>
+</div>
+
+<div class ="form-group tickets">
+<label>What type of ticket would you like to start with?</label><br> 
+<form class="form-inline" role="form">
+<div class="btn-block"><br>
+<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-plus-sign"></span>FREE TICKET</button>
+<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-plus-sign"></span>PAID TICKET</button>
+<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-plus-sign"></span>DONATION</button>
+</div>
+</form>
+</div>
+
+<div class = "tkt">
+<form class="form-inline" role="form">
+    <div class="form-group">
+      <label class="control-label required-field col-sm-4" for="tname">Ticket name</label>
+      <label class="control-label required-field col-sm-4" for="tavail">Quantity available</label>
+      <label class="col-sm-4" for="tprice">Price</label><br>
+      <input type="text" class="form-control" id="tname" placeholder="Early Bird, RSVP..">
+      <input type="text" class="form-control" id="tname">
+      <input type="text" class="form-control" id="tprice" placeholder="$">
+      <span class="glyphicon glyphicon-remove-circle"></span>
+      </div>
+</form>
+</div><br><br>
+
+<div class ="row">
+<text class ="text1"><b> 3. Additional Settings</b></text><hr>
+</div>
+
+<div class ="form-group">
+<label for="lprivacy">LISTING PRIVACY</label>
+<div class="radio">
+ <label> <input type="radio" value="pupage">Public page:</label><text class="text2"> list this event on Events L.A and search engines</text>
+</div>
+<div class="radio">
+  <label><input type="radio" value="prpage">Private page:</label><text class="text2"> do not list this event publicly</text>
+</div>  
+
+<div class="form-group">
+  <label for="etype">EVENT TYPE</label>
+      <select class="form-control input2" id="etype">
+        <option>Select the type of event</option>
+        <option>Conference</option>
+        <option>Convention</option>
+        <option>Tournament</option>
+      </select><br>
+
+  <div class="form-group">
+  <label class="control-label required-field" for="etopic">EVENT TOPIC</label>
+      <select class="form-control input2" id="etopic">
+        <option>Select a topic</option>
+        <option>Charity & Causes</option>
+        <option>Music</option>
+        <option>Homea & Lifestyle</option>
+      </select>
+  </div>
+  
+  <div class="form-group">
+  <label for="rtickets  ">REMAINING TICKETS</label>
+    <div class="checkbox">
+  <label><input type="checkbox" value="">Show the number of tickets remaining on the registration page  </label>
+    </div>
+  </div>
+</div><br><br>
+
+<div class="row submit">
+    <button type="button" class="btn btn-lg">SAVE</button>
+    <button type="button" class="btn btn-success btn-lg">MAKE EVENT LIVE</button>
+</div>
+
+</div>
+</body>
+</html>

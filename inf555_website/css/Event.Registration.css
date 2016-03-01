@@ -71,5 +71,18 @@ p{
 .submit{
   padding-left: 425px;
 }
+.commonheader {
+	background: #bd0079;
+	height: 213px;
+    background-image:url(../img/events.jpg);
+	padding:0px;
+    text-align: center;
+   
+	font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;color:white;
+	
+}
 </style>
 

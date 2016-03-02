@@ -252,6 +252,11 @@ color:white;
 	
 }
 
-
-	
+.labelprimary {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    color: #282C35;
+    text-transform: uppercase;
 }
+	

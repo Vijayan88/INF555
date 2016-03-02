@@ -13,6 +13,60 @@
     <title>Agency - Start Bootstrap Theme</title>
 <script
 src="http://maps.googleapis.com/maps/api/js">
+$(document).ready(function () {
+
+    var navListItems = $('div.setup-panel div a'),
+            allWells = $('.setup-content'),
+            allNextBtn = $('.nextBtn'),
+            allPrevBtn = $('.prevBtn');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+                $item = $(this);
+
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-primary').addClass('btn-default');
+            $item.addClass('btn-primary');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
+    });
+
+    allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+            if (!curInputs[i].validity.valid){
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
+            }
+        }
+
+        if (isValid)
+            nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    allPrevBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a");
+
+        $(".form-group").removeClass("has-error");
+        prevStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+});
+
 </script>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,6 +76,7 @@ src="http://maps.googleapis.com/maps/api/js">
     <link href="css/agency.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
      <link href="css/blog-post.css" rel="stylesheet">
+      <link href="css/wizard.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     
@@ -188,6 +243,11 @@ src="http://maps.googleapis.com/maps/api/js">
 
             <div class="col-md-4">
                 <img class="img-responsive img-thumbnail" src="img/birme/oscar.jpg" alt=""><br><br> <br> <br> <br>
+                <div class="panel_280">
+                <div class="panel_head2">
+                <h4> When and Where </h4>
+                </div>
+                </div>
                 <div id="googleMap" style="width:100%;height:300px;"></div>
 
    <script>
@@ -235,19 +295,186 @@ Los Angeles, 90015
 
                     
                 </p>
-                
+               
+    
+<div class="panel panel-default col-md-12" >
+            <div class="panel-heading" >
+                <div class="panel-title text-left">Tickets Information</div>
+            </div>     
+
+            <div class="panel-body" >
+
+                <form name="form" id="form" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                   
+                   
+                                                               <table width="100%" border="0" class="table">
+  <tbody>
+    <tr>
+      <th scope="col" style="width:80%">Ticket Type</th>
+      <th scope="col" style="width:10%">Price</th>
+      <th scope="col" style="width:10%">Quantity</th>
+    </tr>
+    <tr>
+      <th scope="col">General Admission</th>
+      <th scope="col">0$</th>
+      <th scope="col"><select class="ticket_table_select" name="quant_42458602_None" id="quant_42458602_None" onchange="updateCheckout();">
+            <option value="0">0</option>
+
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+
+    </select></th>
+    </tr>
+  </tbody>
+</table>
+                     <br>
+
+                    <div class="form-group">
+                        <!-- Button -->
+                        <div class="col-sm-12 controls">
+                            <button type="button" href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-log-in"></i> Buy Tickets</button>  
+                           
+  
+                            <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="width:500px">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">CREDIT CARD DETAIlS</h4>
+        </div>
+        <div class="modal-body">
+          <div class="panel panel-default credit-card-box">
+                <div class="panel-heading display-table" >
+                    <div class="row display-tr" style="padding-left:0;padding-right:0">
+                        <h3 class="panel-title display-td" >Payment Details</h3>
+                        <div class="display-td" >                            
+                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                        </div>
+                    </div>                    
+                </div>
+                <div class="credit-card-panel-body">
+                    <form role="form" id="payment-form">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="cardNumber">CARD NUMBER</label>
+                                    <div class="input-group">
+                                        <input 
+                                        
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardNumber"
+                                            placeholder="Valid Card Number"
+                                            autocomplete="cc-number"
+                                            
+                                            required autofocus 
+                                        />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-7 col-md-7">
+                                <div class="form-group">
+                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                    <input 
+                                        type="tel" 
+                                        class="form-control" 
+                                        name="cardExpiry"
+                                        placeholder="MM / YY"
+                                        autocomplete="cc-exp"
+                                        required 
+                                        style="width:95%"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="form-group">
+                                    <label for="cardCVC">CV CODE</label>
+                                    <input 
+                                        type="tel" 
+                                        class="form-control"
+                                        name="cardCVC"
+                                        placeholder="CVC"
+                                        autocomplete="cc-csc"
+                                        required
+                                        style="width:95%"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="couponCode">COUPON CODE</label>
+                                    <input type="text" class="form-control" style="width:95%" name="couponCode" />
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-9 col-sm-5" style="width:32.666667%">
+                                <button class="btn btn-info btn-lg btn-block" type="submit" style="height:">Cancel</button>
+                            </div>
+                            <div class="col-xs-10 col-sm-5 col-sm-offset-4" style="width:32.666667%">
+                                <button class="btn btn-success btn-lg btn-block" type="submit">Pay</button>
+                            </div>
+                        </div>
+                        <div class="row" style="display:none;">
+                            <div class="col-xs-12">
+                                <p class="payment-errors"></p>
+                            </div>
+                        </div>
+                        <br>
+                    </form>
+                </div>
+            </div>            
+            <!-- CREDIT CARD FORM ENDS HERE -->
+            
+           
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>                      
+                        </div>
+                        
+  <!-- Modal -->
+  
+                    </div>
+
+                </form>     
+
+            </div>                     
+        </div>  
+
+     <br>
+                <h3 class="labelprimary">Share with friends</h3>
                 <a href="https://www.facebook.com/bootsnipp" style="color:rgba(26,110,221,1.00)"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
 	            <a href="https://twitter.com/bootsnipp" style="color:rgba(19,166,199,1.00)"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
 	            <a href="https://plus.google.com/+Bootsnipp-page" style="color:red"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
 	            <a href="mailto:bootsnipp@gmail.com" style="color:rgba(160,154,141,1.00)"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
                 <br><br>
     </div>
-    
-    <div class="btn-group">
-          <a href="#">  <button type="button" class="btn btn-warning dropdown-toggle" id="btn_services" style="height:40px;width:200px;float:right;text-align:center">  Buy Tickets -></span></button> </a> 
-</div>
 
-      </div>
+
+  </div>
+
+
+     
         <br><br><br>
         <!-- /.row -->
  <!-- Comments Form -->

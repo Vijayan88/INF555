@@ -253,11 +253,17 @@ $(document).ready(function () {
    <script>
 function initialize() {
   var mapProp = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
+    center:new google.maps.LatLng(34.0447868,-118.2674869),
     zoom:5,
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
+  var myLatLng = {lat: 34.0447868, lng: -118.2674869};
   var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Grammy Museum 800 W. Olympic Blvd. Los Angeles, 90015'
+  });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Events L.A.</title>
+<script
+src="http://maps.googleapis.com/maps/api/js">
+$(document).ready(function () {
+
+    var navListItems = $('div.setup-panel div a'),
+            allWells = $('.setup-content'),
+            allNextBtn = $('.nextBtn'),
+            allPrevBtn = $('.prevBtn');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+                $item = $(this);
+
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-primary').addClass('btn-default');
+            $item.addClass('btn-primary');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
+    });
+
+    allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+            if (!curInputs[i].validity.valid){
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
+            }
+        }
+
+        if (isValid)
+            nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    allPrevBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a");
+
+        $(".form-group").removeClass("has-error");
+        prevStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+});
+
+</script>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/portfolio-item.css" rel="stylesheet">
+    <link href="css/agency.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+     <link href="css/blog-post.css" rel="stylesheet">
+      <link href="css/wizard.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body>
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/index.html#page-top" style="color: #fed136;
+    font-family: Kaushan Script,Helvetica Neue,Helvetica,Arial,cursive;">Events L.A.</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a href="#services" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
+   onMouseOut="this.style.color='white'">Explore</a>
+                    </li>
+                    <li>
+                        <a  href="#portfolio" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
+   onMouseOut="this.style.color='white'">Popular Events</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#partners" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
+   onMouseOut="this.style.color='white'">Partners</a>
+                    </li>
+                    <li> <a href="#about" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'" onMouseOut="this.style.color='white'">About</a> </li>
+                    <li>
+                        <a  href="#contact" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
+   onMouseOut="this.style.color='white'">Contact</a>
+                    </li>
+                    <li>
+                          <ul class="nav navbar-nav navbar-right">
+       
+     
+        <li class="dropdown">
+          <a href="#" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
+   onMouseOut="this.style.color='white'"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">English <span class="caret"></span></a>
+          <ul class="dropdown-menu" style="min-width:116px;min-height:100px">
+            <li style="padding:0px 0px"><a href="#" style="color:black;">español</a></li>
+            <li style="padding:0px 0px"><a href="#" style="color:black;">français</a></li>
+           <li style="padding:0px 0px"><a href="#" style="color:black;">中文</a></li>
+          </ul>
+        </li>
+        
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
+   onMouseOut="this.style.color='white'"  data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+			<ul id="login-dp" class="dropdown-menu">
+				<li>
+					 <div class="row">
+							<div class="col-md-12">
+								Login via
+								<div class="social-buttons">
+									<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+								</div>
+                                or
+								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
+											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+										</div>
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputPassword2">Password</label>
+											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                    <div class="help-block" style="font-size:10px;color:rgba(208,54,57,1.00);"><a href="#" style="font-size:10px;color:black;">Forget the password ?</a></div>
+										</div>
+										<div class="form-group">
+											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+										</div>
+										<div class="checkbox">
+											 <label>
+											 <input type="checkbox"> keep me logged-in
+											 </label>
+										</div>
+								 </form>
+							</div>
+							<div class="bottom text-center">
+								New here ? <a href="#" style="color:rgba(0,0,0,1.00)"><b>Join Us</b></a>
+							</div>
+					 </div>
+				</li>
+			</ul>
+        </li>
+      </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+<div class="commonheader" style="background-image:url(img/events1.jpg);">
+   <div style="text-align:center;margin-top:10px;">
+    
+     <h1 class="text-center" ><br><br></h1>
+     <h1>EVENT DETAILS </h1>
+   </div></div>
+ <br><br>
+   
+<!-- Page Content -->
+    <div class="container">
+
+        <!-- Portfolio Item Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+              <h1 class="page-header">Oscars <font color="#777777">Grammy Museum</font></h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Item Row -->
+<div class="row">
+
+            <div class="col-md-4">
+                <img class="img-responsive img-thumbnail" src="img/birme/oscar.jpg" alt=""><br><br> <br> <br> <br>
+                <div class="panel_280">
+                <div class="panel_head2">
+                <h4> When and Where </h4>
+                </div>
+                </div>
+                <div id="googleMap" style="width:100%;height:300px;"></div>
+                <i class="ico-car"></i>
+
+   <script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(34.0447868,-118.2674869),
+    zoom:5,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var myLatLng = {lat: 34.0447868, lng: -118.2674869};
+  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Grammy Museum 800 W. Olympic Blvd. Los Angeles, 90015'
+  });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
+       <a href="#"> <p style="font:bold; color:black ">Get Directions</p></a>
+       <a href="https://maps.google.com/?saddr=Current+Location&daddr=34.05492949999999,-118.2674869&driving"><img src="img/birme/driving.png" width="20" height="20" class="img-circle"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://maps.google.com/?saddr=Current+Location&daddr=34.05492949999999,-118.2674869&mode=transit"><img src="img/birme/train.png" width="18" height="18"></a>&nbsp;&nbsp;<a href="https://maps.google.com/?saddr=Current+Location&daddr=34.05492949999999,-118.2674869&dirflg=w"><img src="img/birme/walking.png" width="18" height="18" ></a>
+            </div>
+
+            <div class="col-md-8">
+              <h3>Overview</h3>
+              <p>The Academy Awards, or "Oscars", is an annual American awards ceremony hosted by the Academy of Motion Picture Arts and Sciences (A.M.P.A.S.) to recognize excellence in cinematic achievements in the United States film industry as assessed by the Academy's voting membership</p>
+              <h4 class="text-capitalize">Venue</h4>
+              <p>
+                Grammy Museum 
+800 W. Olympic Blvd.
+Los Angeles, 90015
+
+                    
+              </p>
+                <h4 class="text-capitalize">Region</h4>
+              <p>
+                Westside
+
+                    
+                </p>
+                <h4 class="text-capitalize">Admission</h4>
+              <p>
+                $60 - $100
+
+                    
+                </p>
+                <h4 class="text-capitalize">Website</h4>
+              <p>
+                <a href="#"> https://www.oscar.com </a>
+
+                    
+                </p>
+               
+    
+<div class="panel panel-default col-md-12" >
+            <div class="panel-heading" >
+                <div class="panel-title text-left">Tickets Information</div>
+            </div>     
+
+            <div class="panel-body" >
+
+                <form name="form" id="form" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                   
+                   
+                                                               <table width="100%" border="0" class="table">
+  <tbody>
+    <tr>
+      <th scope="col" style="width:80%">Ticket Type</th>
+      <th scope="col" style="width:10%">Price</th>
+      <th scope="col" style="width:10%">Quantity</th>
+    </tr>
+    <tr>
+      <th scope="col">General Admission</th>
+      <th scope="col">60$</th>
+      <th scope="col"><select class="ticket_table_select" name="quant_42458602_None" id="quant_42458602_None" onchange="updateCheckout();">
+            <option value="0">0</option>
+
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+
+    </select></th>
+    </tr>
+    <tr>
+      <th scope="col">Early Bid</th>
+      <th scope="col">80$</th>
+      <th scope="col"><select class="ticket_table_select" name="quant_42458602_None" id="quant_42458602_None" onchange="updateCheckout();">
+            <option value="0">0</option>
+
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+
+    </select></th>
+    </tr>
+  </tbody>
+</table>
+                     <br>
+
+                    <div class="form-group">
+                        <!-- Button -->
+                        <div class="col-sm-12 controls">
+                            <button type="button" href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-log-in"></i> Buy Tickets</button>  
+                           
+  
+                            <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="width:500px">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">CREDIT CARD DETAIlS</h4>
+        </div>
+        <div class="modal-body">
+          <div class="panel panel-default credit-card-box">
+                <div class="panel-heading display-table" >
+                    <div class="row display-tr" style="padding-left:0;padding-right:0">
+                        <h3 class="panel-title display-td" >Payment Details</h3>
+                        <div class="display-td" >                            
+                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                        </div>
+                    </div>                    
+                </div>
+                <div class="credit-card-panel-body">
+                    <form role="form" id="payment-form">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="cardNumber">CARD NUMBER</label>
+                                    <div class="input-group">
+                                        <input 
+                                        
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardNumber"
+                                            placeholder="Valid Card Number"
+                                            autocomplete="cc-number"
+                                            
+                                            required autofocus 
+                                        />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-7 col-md-7">
+                                <div class="form-group">
+                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                    <input 
+                                        type="tel" 
+                                        class="form-control" 
+                                        name="cardExpiry"
+                                        placeholder="MM / YY"
+                                        autocomplete="cc-exp"
+                                        required 
+                                        style="width:95%"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="form-group">
+                                    <label for="cardCVC">CV CODE</label>
+                                    <input 
+                                        type="tel" 
+                                        class="form-control"
+                                        name="cardCVC"
+                                        placeholder="CVC"
+                                        autocomplete="cc-csc"
+                                        required
+                                        style="width:95%"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="couponCode">COUPON CODE</label>
+                                    <input type="text" class="form-control" style="width:95%" name="couponCode" />
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-9 col-sm-5" style="width:32.666667%">
+                                <button class="btn btn-info btn-lg btn-block" type="submit" style="height:">Cancel</button>
+                            </div>
+                            <div class="col-xs-10 col-sm-5 col-sm-offset-4" style="width:32.666667%">
+                                <button class="btn btn-success btn-lg btn-block" type="submit">Pay</button>
+                            </div>
+                        </div>
+                        <div class="row" style="display:none;">
+                            <div class="col-xs-12">
+                                <p class="payment-errors"></p>
+                            </div>
+                        </div>
+                        <br>
+                    </form>
+                </div>
+            </div>            
+            <!-- CREDIT CARD FORM ENDS HERE -->
+            
+           
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>                      
+                        </div>
+                        
+  <!-- Modal -->
+  
+                    </div>
+
+                </form>     
+
+            </div>                     
+        </div>  
+
+     <br>
+                <h3 class="labelprimary">Share with friends</h3>
+                <a href="https://www.facebook.com/bootsnipp" style="color:rgba(26,110,221,1.00)"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+	            <a href="https://twitter.com/bootsnipp" style="color:rgba(19,166,199,1.00)"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+	            <a href="https://plus.google.com/+Bootsnipp-page" style="color:red"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+	            <a href="mailto:bootsnipp@gmail.com" style="color:rgba(160,154,141,1.00)"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+                <br><br>
+    </div>
+
+
+  </div>
+
+
+     
+        <br><br><br>
+        <!-- /.row -->
+ <!-- Comments Form -->
+                <div class="well">
+                    <h4>Leave a Comment:</h4>
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+                <hr>
+
+                <!-- Posted Comments -->
+
+                <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                    <img src="img/logos/tweety.jpg" alt="" width="45" height="64" class="media-object img-circle">
+                    </a>
+                    <div class="media-body">
+                      <h4 class="media-heading">Tweety <small>FebrUary 25, 2016 at 9:30 PM</small> </h4>
+ Fabulous Venue, worth watching </div>
+                </div>
+
+                <!-- Comment -->
+                <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                    <img src="img/logos/jerry.png" alt="" width="64" height="64" class="media-object">
+                    </a>
+                    <div class="media-body">
+                      <h4 class="media-heading">Jerry <small>febrUary 25, 2016 at 9:30 PM</small> </h4>
+Looking forward to go to the event </div>
+                </div>
+                 <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img src="img/logos/micky.png" alt="" width="64" height="64" class="media-object">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Micky
+                            <small>February 25, 2016 at 9:30 PM</small>
+                        </h4>
+                        Will not miss this time !! 
+                    </div>
+                </div>
+
+            
+
+        <!-- Related Projects Row -->
+        <br><br><br>
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h2 class="page-header" style="">Recommended Events for you</h3>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="img/birme/lakers2015_2.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="img/birme/event_tix_0_2259788.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="img/birme/event_ela_68199.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="img/birme/rose-parade-city-of-los-angeles-float.jpg" alt="">
+                </a>
+            </div>
+<br><br><br>
+<div align="center" > <a href="index.html" > View More Events --></a>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+</div>
+    <!-- Footer -->
+         <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Your Website 2014</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

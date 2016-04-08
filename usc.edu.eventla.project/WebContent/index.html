@@ -21,6 +21,8 @@
     <!-- Custom CSS -->
     <link href="css/agency.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+<link href="css/login.css" rel="stylesheet">
+        
 
     <!-- Custom Fonts -->
     
@@ -148,6 +150,12 @@
 				</li>
 			</ul>
         </li>
+        
+       
+        <li> 
+        <a href="#" data-toggle="modal" data-target="#login-modal">Create Event</a>
+        </li>
+       
       </ul>
                     </li>
                 </ul>
@@ -156,6 +164,23 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Login to Your Account</h1><br>
+				  <form method="post" action="login">
+					<input type="text" name="emailid" placeholder="Username">
+					<input type="password" name="passwd" placeholder="Password">
+					<input type="text" name="popup" hidden="true" value="true">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+				  </form>
+					
+				  <div class="login-help">
+					<a href="#">Register</a> - <a href="#">Forgot Password</a>
+				  </div>
+				</div>
+			</div>
+		  </div>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">

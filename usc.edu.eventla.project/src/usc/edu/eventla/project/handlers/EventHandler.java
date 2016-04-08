@@ -27,34 +27,55 @@ public class EventHandler extends HttpServlet {
 			throws ServletException, IOException {
 		String emailid = request.getParameter("emailid");
 		String passwd = request.getParameter("passwd");
+		String popup = request.getParameter("popup");
+		String name = null;
+		boolean valid = false;
 		// to let users from cssl to test freely
 		Mongo mongoClient = new Mongo("localhost", 27017);
-		String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+		// String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
 		DB database = mongoClient.getDB("eventsla");
 		DBCollection collection = database.getCollection("Login");
 
 		BasicDBObject allQuery = new BasicDBObject();
 		allQuery.put("username", emailid);
 		DBCursor cursor = collection.find(allQuery);
-		DBObject res = cursor.next();
-		String name=(String) res.get("name");
+		if (cursor != null) {
+			DBObject res = cursor.next();
+			name = (String) res.get("name");
+			String passwdChk = (String) res.get("passwd");
+			if (passwd.equals(passwd)) {
+				valid = true;
+			}
+		}
 		mongoClient.close();
 
 		response.setContentType("text/html");
-
+		// { "_id" : ObjectId("5701b191b0b4377bfc7276ad"), "username" :
+		// "vijayanb@usc.edu", "name" : "Vijayan", "passwd" : "password" }
 		// Actual logic goes here.
 		PrintWriter out = response.getWriter();
 
-		InputStream in = getServletContext().getResourceAsStream("/ireg.html");
+		if (valid) {
+			InputStream in;
+			if(popup != null && popup != ""){
+				in= getServletContext().getResourceAsStream("/Event.html");
+				
+			} else {
+			 in= getServletContext().getResourceAsStream("/ireg.html");
+			}
 
-		BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
-		StringBuilder sb = new StringBuilder();
-		String line = null;
+			BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+			StringBuilder sb = new StringBuilder();
+			String line = null;
 
-		while ((line = reader.readLine()) != null) {
-			sb.append(line + "\n");
+			while ((line = reader.readLine()) != null) {
+				sb.append(line + "\n");
+			}
+			out.println(sb.toString().replace("$USER", name));
+			return;
 		}
-		out.println(sb.toString().replace("$USER", name));
+		
+		
 
 	}
 
@@ -66,7 +87,7 @@ public class EventHandler extends HttpServlet {
 
 		BasicDBObject allQuery = new BasicDBObject();
 		allQuery.put("username", "ayushi@usc.edu");
-		String name="";
+		String name = "";
 		DBCursor cursor = collection.find(allQuery);
 		while (cursor.hasNext()) {
 			DBObject res = cursor.next();

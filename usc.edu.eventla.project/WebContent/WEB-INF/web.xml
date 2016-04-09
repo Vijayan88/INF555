@@ -9,12 +9,12 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>search</servlet-name>
-    <servlet-class>usc.edu.eventla.project.handlers.SearchHandler</servlet-class>
+    <servlet-name>contact</servlet-name>
+    <servlet-class>usc.edu.eventla.project.handlers.ContactHandler</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>search</servlet-name>
-    <url-pattern>/search</url-pattern>
+    <servlet-name>contact</servlet-name>
+    <url-pattern>/contact</url-pattern>
   </servlet-mapping>
   
 </web-app>

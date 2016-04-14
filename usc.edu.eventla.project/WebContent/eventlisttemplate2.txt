@@ -1,0 +1,13 @@
+ <div class="row">
+            <div class="col-md-4">
+                <a href="#">
+                    <img class="img-responsive" src=$event_image alt="">
+                </a>
+            </div>
+            <div class="col-md-8">
+              <h3>$event_title </h3>
+              <h4>$address </h4>
+              <p>$event_description</p>
+              <a class="btn btn-primary" href="eventdesc.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a></div>
+        </div>
+        <!-- /.row -->

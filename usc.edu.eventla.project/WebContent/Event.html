@@ -186,10 +186,10 @@
 <form role="form">
   <label for="loc">LOCATION</label><br>
   <label class="checkbox-inline">
-    <input type="checkbox" name="online_event" value="">Online event
+    <input type="checkbox" name="event_category" value="online">Online event
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id = "location" name="on_field" value="yes" onclick="enable_fields();">Add location
+      <input type="checkbox" id = "location" name="event_category" value="location" onclick="enable_fields();">Add location
     </label>
     <br>
 <!--     <input type="text" id = "venue" class = "form-control input3" disabled placeholder="Enter the venue's name"> -->
@@ -222,7 +222,7 @@
     </select>
     <!-- <input type="text" id = "city" class = "form-control input3"  disabled placeholder="City">  -->
     <input type="text" name="pin_code" id= "pincode" class = "form-control input3" disabled  placeholder="Zip/Postal" onkeypress='return isNumberKey(event)'> 
-    <input type="text" id = "state" class = "form-control input3" disabled value="California, United States"> 
+    <input type="text" name="state" id = "state" class = "form-control input3" disabled value="California, United States"> 
 
 </form>
 <br>
@@ -393,11 +393,11 @@
     <label for="image">EVENT IMAGE <span class="glyphicon glyphicon-camera"></span></label><br>
     
     
-    <form name = "Image" name="event_image" id="image" action = "#">
+    <form  name="image" id="image" action = "#">
     <img id="thumbnil" style="width:400px; height:250px;background-color: white"  src="" alt=""/><br>
 <form class="form-inline" role="form">
  <div class="form-group">
-    <input type="file" accept="image/*"  onchange="showMyImage(this)" />
+    <input name="event_image" type="file" accept="image/*"  onchange="showMyImage(this)" />
     <a onclick="clearForm(this.form);"  href="">Remove</a>
     </div>
     </form>
@@ -450,7 +450,7 @@
 <br>
     <div class="form-group">
       <label class=" tkt_type control-label required-field"> Ticket Type</label><br>
-      <select class="tkt_type form-control input 3" name="ticket_type" id="tkt_type1">
+      <select class="tkt_type form-control input 3" name="ticket_type1" id="tkt_type1">
       <option value=""></option>
       <option value="Free">Free Ticket</option>
       <option value="Paid">Paid Ticket</option>
@@ -459,20 +459,20 @@
       </div>
       <div class = "form-group">
       <label class="control-label required-field" for="tname">Ticket name</label><br>
-      <input type="text" class="form-control" name="ticket_name" id="tname1" placeholder="Early Bird, RSVP..">
+      <input type="text" class="form-control" name="ticket_name1" id="tname1" placeholder="Early Bird, RSVP..">
       </div>
       <div class = "form-group">
       <label class="control-label required-field " for="tavail">Quantity available</label><br>
-      <input type="text" class="form-control" name="quantity_present" id="tqty1" onkeypress='return isNumberKey(event)'>
+      <input type="text" class="form-control" name="quantity_present1" id="tqty1" onkeypress='return isNumberKey(event)'>
       </div>
       <div class ="form-group">
       <label class="control-label" for="tprice">Price</label><br>
-      <input type="text" class="form-control" name="ticket_price" id="tprice1"  placeholder="$">
+      <input type="text" class="form-control" name="ticket_price1" id="tprice1"  placeholder="$">
       </div>
       <br>
 
        <div class="form-group">
-      <select class="tkt_type form-control input 3" id="tkt_type2"> 
+      <select class="tkt_type form-control input 3" name="ticket_type2" id="tkt_type2"> 
       <option value=""></option>
       <option value="Free">Free Ticket</option>
       <option value="Paid">Paid Ticket</option>
@@ -480,19 +480,19 @@
       </select>
       </div>
       <div class = "form-group">
-      <input type="text" class="form-control" id="tname2"  placeholder="Early Bird, RSVP..">
+      <input type="text" class="form-control" name="ticket_name2" id="tname2"  placeholder="Early Bird, RSVP..">
       </div>
       <div class = "form-group">
-      <input type="text" class="form-control" id="tqty2" onkeypress='return isNumberKey(event)' >
+      <input type="text" class="form-control" name="quantity_present2"id="tqty2" onkeypress='return isNumberKey(event)' >
       </div>
       <div class ="form-group">
-      <input type="text" class="form-control" id="tprice2" placeholder="$">
+      <input type="text" class="form-control" name="ticket_price2" id="tprice2" placeholder="$">
       </div>
 
       <br>
 
        <div class="form-group">
-      <select class="tkt_type form-control input 3" id="tkt_type3">
+      <select class="tkt_type form-control input 3" name="ticket_type3" id="tkt_type3">
       <option value=""></option>
       <option value="Free">Free Ticket</option>
       <option value="Paid">Paid Ticket</option>
@@ -500,13 +500,13 @@
       </select>
       </div>
       <div class = "form-group">
-      <input type="text" class="form-control" id="tname3" placeholder="Early Bird, RSVP..">
+      <input type="text" class="form-control" name="name="ticket_name3""id="tname3" placeholder="Early Bird, RSVP..">
       </div>
       <div class = "form-group">
-      <input type="text" class="form-control" id="tqty3" onkeypress='return isNumberKey(event)'>
+      <input type="text" class="form-control" name="quantity_present3" id="tqty3" onkeypress='return isNumberKey(event)'>
       </div>
       <div class ="form-group">
-      <input type="text" class="form-control" id="tprice3" placeholder="$">
+      <input type="text" class="form-control" name="ticket_price3" id="tprice3" placeholder="$">
       </div><br>
 
       <div class ="form-group">

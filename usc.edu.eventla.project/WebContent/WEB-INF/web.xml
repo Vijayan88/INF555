@@ -8,6 +8,16 @@
     <servlet-name>login</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>eventlist</servlet-name>
+    <servlet-class>usc.edu.eventla.project.handlers.EventListHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>eventlist</servlet-name>
+    <url-pattern>/eventlist</url-pattern>
+  </servlet-mapping>
+  
   <servlet>
     <servlet-name>contact</servlet-name>
     <servlet-class>usc.edu.eventla.project.handlers.ContactHandler</servlet-class>

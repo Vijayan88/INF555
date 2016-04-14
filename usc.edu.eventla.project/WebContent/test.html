@@ -171,7 +171,7 @@
 
 <!--div class="container-fluid bg-1"-->
 
-<form method="post" action="createevent" name="eventdesc">
+<form method="post" action="eventdescription" name="eventdescription">
 <div class="container bg-2">
 <text class ="text1"><b> 1. Event Details</b></text><hr>
 
@@ -183,7 +183,7 @@
 
 <br>
 
-<form role="form">
+
   <label for="loc">LOCATION</label><br>
   <label class="checkbox-inline">
     <input type="checkbox" name="online_event" value="">Online event
@@ -224,10 +224,11 @@
     <input type="text" name="pin_code" id= "pincode" class = "form-control input3" disabled  placeholder="Zip/Postal" onkeypress='return isNumberKey(event)'> 
     <input type="text" id = "state" class = "form-control input3" disabled value="California, United States"> 
 
-</form>
+
 <br>
 
-<form class="form-inline" role="form">
+</div>
+<form name="eventdate" class="form-inline" role="form" method="post" action="eventdate">
   <div class="form-group">
     <label for "sd">STARTS</label><br>
     <input type="date" class="form-control" name="start_date" id="sdate">
@@ -395,7 +396,7 @@
     
     <form name = "Image" name="event_image" id="image" action = "#">
     <img id="thumbnil" style="width:400px; height:250px;background-color: white"  src="" alt=""/><br>
-<form class="form-inline" role="form">
+<form class="form-inline" role="form" method="post" action="eventimage" name="eventimage">
  <div class="form-group">
     <input type="file" accept="image/*"  onchange="showMyImage(this)" />
     <a onclick="clearForm(this.form);"  href="">Remove</a>
@@ -446,7 +447,7 @@
 </div> -->
 
 <div class = "tkt">
-<form class="form-inline" role="form">
+<form class="form-inline" role="form" method="post" action="eventticket" name="eventticket">
 <br>
     <div class="form-group">
       <label class=" tkt_type control-label required-field"> Ticket Type</label><br>
@@ -521,14 +522,12 @@
 
 <div class ="form-group">
 <label for="lprivacy">LISTING PRIVACY</label>
-<form role="form">
 <div class="radio">
  <label> <input type="radio" name = "radio" value="pupage">Public page:</label><text class="text2"> list this event on Events L.A and search engines</text>
 </div>
 <div class="radio">
   <label><input type="radio" name="radio" value="prpage">Private page:</label><text class="text2"> do not list this event publicly</text>
 </div>  
-</form>
 
 <div class="form-group">
   <label for="etype">EVENT TYPE</label>
@@ -610,13 +609,25 @@
     <div id="dialogboxfoot"></div>
   </div>
 </div>
-<button class="btn-lg btn-success" onclick="Alert.render('Event details sent for approval');document.getElementById('eventdesc').submit();">SEND FOR APPROVAL</button>
+<button class="btn-lg btn-success" onclick="submitEvent()">SEND FOR APPROVAL</button>
 </div>
 
+</div>
 </form>
-
 <!--/div-->
 <script>
+function submitEvent() {
+	Alert.render('Event details sent for approval');
+	document.getElementById('venue').value="";
+	document.getElementById('eventdescription').submit();
+	var id = document.getElementById(etitle).value;
+	document.getElementById('eventdate').append('<input type="hidden" name="eventname " value="'+id+'"/>');
+	document.getElementById('eventdate').submit();
+	document.getElementById('eventimage').append('<input type="hidden" name="eventname " value="'+id+'"/>');
+	document.getElementById('eventimage').submit();
+	document.getElementById('eventticket').append('<input type="hidden" name="eventname " value="'+id+'"/>');
+	document.getElementById('eventticket').submit();
+}
 function eventtitle( field, countfield, maxlimit ) {
  if ( field.value.length > maxlimit ) {
   field.value = field.value.substring( 0, maxlimit );

@@ -1,3 +1,67 @@
+
+Conversation opened. 1 unread message.
+
+Skip to content
+Using University of Southern California Mail with screen readers
+Vijayan
+Search
+
+
+
+Mail
+COMPOSE
+Labels
+Inbox (2,404)
+Starred
+Sent Mail
+Drafts (50)
+[Imap]/Drafts
+Deleted Messages
+Internship
+Unwanted
+More 
+Chat
+Vijayan Balasubramanian
+Oops! You are not invisible because you're logged into Google Talk from another client, device, or location that doesn't support invisibility.
+
+Search people...
+Available	Sujen Shah
+Idle	kasinath
+Idle	Rajagopal Bojanapalli
+Idle	Yuva Shankar
+Idle	Yuvarani Shankar
+Offline	Ayushi Agarwal
+Offline	Lailu Philip
+	ayushi agarwal
+	Kelsey Loughran
+	Morteza Dehghani
+ 
+  More 
+1 of 5,332  
+ 
+Print all In new window
+CSS style sheet 
+Inbox
+x 
+
+Lailu Philip
+Attachments12:33 PM (1 minute ago)
+
+to me 
+Attachments area
+	
+Click here to Reply or Forward
+Using 2.46 GB
+Program Policies
+Powered by Google
+Last account activity: 29 minutes ago
+Details
+Lailu Philip
+lkphilip@usc.edu
+
+Show details
+
+
 #login-dp{
     min-width: 250px;
     padding: 14px 14px 0;
@@ -259,4 +323,59 @@ color:white;
     color: #282C35;
     text-transform: uppercase;
 }
-	
+
+.required-field:after{
+  color:red;
+  content:"*";
+}
+
+.input1{
+  width: 60%;
+}
+
+.input2{
+  width: 30%;
+}
+
+.input3{
+  width: 30%;
+}
+
+.date,.time{
+height:45px;
+}
+
+.text1{
+  color:black;
+  font-size: 20pt;
+}
+p{
+  font-family: 'Segoe UI', sans-sarif;
+  font-size: 10pt;
+}
+
+.tkt_type{
+  margin-left: 20px;
+}
+
+.tickets{
+  padding-left: 250px;
+}
+
+.tkt{
+  background-color: #f2f2f2;
+  width:65%;
+  height:160px;
+}
+
+.text2{
+  color:#8c8c8c;
+  font-size: 9pt;
+}
+
+.submit{
+  padding-left: 425px;
+}
+custom.css
+Open with
+Displaying custom.css.

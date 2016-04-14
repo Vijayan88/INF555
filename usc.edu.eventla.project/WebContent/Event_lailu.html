@@ -3,35 +3,43 @@
 
 <head>
 
-    
- <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Create an Event</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+<title>Create an Event</title>
 
-    <!-- Custom CSS -->
-    <link href="css/1-col-portfolio.css" rel="stylesheet">
-    <link href="css/agency.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
-    
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+<!-- Custom CSS -->
+<link href="css/1-col-portfolio.css" rel="stylesheet">
+<link href="css/agency.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+
+
+<!-- Custom Fonts -->
+
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Kaushan+Script'
+	rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic'
+	rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700'
+	rel='stylesheet' type='text/css'>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -40,182 +48,202 @@
 </head>
 
 <style>
-#dialogoverlay{
-  display: none;
-  opacity: .8;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  background: #FFF;
-  width: 100%;
-  z-index: 10;
+#dialogoverlay {
+	display: none;
+	opacity: .8;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #FFF;
+	width: 100%;
+	z-index: 10;
 }
-#dialogbox{
-  display: none;
-  position: fixed;
-  background: #000;
-  border-radius:7px; 
-  width:550px;
-  z-index: 10;
+
+#dialogbox {
+	display: none;
+	position: fixed;
+	background: #000;
+	border-radius: 7px;
+	width: 550px;
+	z-index: 10;
 }
-#dialogbox > div{ background:#FFF; margin:8px; }
-#dialogbox > div > #dialogboxhead{ background: #666; font-size:19px; padding:10px; color:#CCC; }
-#dialogbox > div > #dialogboxbody{ background:#333; padding:20px; color:#FFF; }
-#dialogbox > div > #dialogboxfoot{ background: #666; padding:10px; text-align:right; }
+
+#dialogbox>div {
+	background: #FFF;
+	margin: 8px;
+}
+
+#dialogbox>div>#dialogboxhead {
+	background: #666;
+	font-size: 19px;
+	padding: 10px;
+	color: #CCC;
+}
+
+#dialogbox>div>#dialogboxbody {
+	background: #333;
+	padding: 20px;
+	color: #FFF;
+}
+
+#dialogbox>div>#dialogboxfoot {
+	background: #666;
+	padding: 10px;
+	text-align: right;
+}
 </style>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="index.html#page-top" style="color: #fed136;
-    font-family: Kaushan Script,Helvetica Neue,Helvetica,Arial,cursive;">Events L.A.</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a href="index.html#services" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
-   onMouseOut="this.style.color='white'">Explore</a>
-                    </li>
-                    <li>
-                        <a  href="index.html#portfolio" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
-   onMouseOut="this.style.color='white'">Popular Events</a>
-                    </li>
-                    
-                    <li>
-                        <a href="index.html#partners" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
-   onMouseOut="this.style.color='white'">Partners</a>
-                    </li>
-                     <li>
-                        <a href="index.html#about" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
-   onMouseOut="this.style.color='white'">About</a>
-                    </li>
-                    <li>
-                        <a  href="index.html#contact" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
-   onMouseOut="this.style.color='white'">Contact</a>
-                    </li>
-                    <li>
-                          <ul class="nav navbar-nav navbar-right">
-       
-     
-        <li class="dropdown">
-          <a href="#" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
-   onMouseOut="this.style.color='white'"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">English <span class="caret"></span></a>
-          <ul class="dropdown-menu" style="min-width:116px;min-height:100px">
-            <li style="padding:0px 0px"><a href="#" style="color:black;">español</a></li>
-            <li style="padding:0px 0px"><a href="#" style="color:black;">français</a></li>
-           <li style="padding:0px 0px"><a href="#" style="color:black;">中文</a></li>
-          </ul>
-        </li>
-        
-        </ul></li>
-        
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
-    text-transform: uppercase;data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome $USER<span class="caret"></span></a>
-          <ul class="dropdown-menu" style="min-width:116px;min-height:100px">
-            <li style="padding:0px 0px"><a href="#" style="color:black;">View History</a></li>
-            <li style="padding:0px 0px"><a href="#" style="color:black;">Log Out</a></li>
-           
-          </ul>
-        </li>
-                       
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    
-   
-   <div class="commonheader">
-   <div style="text-align:center;margin-top:10px;">
-    
-     <h1 class="text-center" ><br><br></h1>
-     <h1>Submit Event </h1>
-   </div></div>
- <br><br>
-       
- 
-    
+	<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand page-scroll" href="#page-top"
+					style="color: #fed136; font-family: Kaushan Script, Helvetica Neue, Helvetica, Arial, cursive;">Events
+					L.A.</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="hidden"><a href="#page-top"></a></li>
+					<li><a href="#services"
+						style="font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; color: white"
+						onMouseOver="this.style.color='#fed136'"
+						onMouseOut="this.style.color='white'">Explore</a></li>
+					<li><a href="#portfolio"
+						style="font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; color: white"
+						onMouseOver="this.style.color='#fed136'"
+						onMouseOut="this.style.color='white'">Popular Events</a></li>
 
-<!--div class="container-fluid bg-1"-->
+					<li><a href="#partners"
+						style="font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; color: white"
+						onMouseOver="this.style.color='#fed136'"
+						onMouseOut="this.style.color='white'">Partners</a></li>
+					<li><a href="#about"
+						style="font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; color: white"
+						onMouseOver="this.style.color='#fed136'"
+						onMouseOut="this.style.color='white'">About</a></li>
+					<li><a href="#contact"
+						style="font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; color: white"
+						onMouseOver="this.style.color='#fed136'"
+						onMouseOut="this.style.color='white'">Contact</a></li>
+					<li>
+						<ul class="nav navbar-nav navbar-right">
 
 
-<div class="container bg-2">
-<text class ="text1"><b> 1. Event Details</b></text><hr>
+							<li class="dropdown"><a href="#"
+								style="font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; color: white"
+								onMouseOver="this.style.color='#fed136'"
+								onMouseOut="this.style.color='white'" class="dropdown-toggle"
+								data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false">English <span class="caret"></span></a>
+								<ul class="dropdown-menu"
+									style="min-width: 116px; min-height: 100px">
+									<li style="padding: 0px 0px"><a href="#"
+										style="color: black;">español</a></li>
+									<li style="padding: 0px 0px"><a href="#"
+										style="color: black;">français</a></li>
+									<li style="padding: 0px 0px"><a href="#"
+										style="color: black;">中文</a></li>
+								</ul></li>
 
-<form>
-  <label for="etitle" class="control-label required-field">EVENT TITLE</label>
-  <input type = "text" class= "form-control input1" onblur="eventtitle(this,this.form.counter,75);" onkeyup="eventtitle(this,this.form.counter,75);"  name="message" rows="1" cols="15" placeholder="Give it a short distinct name">
-<input class= "form-control input3" onblur="eventtitle(this.form.recipients,this,75);" disabled  onfocus="this.blur();" tabindex="999" maxlength="1" size="25" placeholder="75 characters remaining" name="counter">
-</input>
-</form>
-<br>
+							<li><a href="#user"
+								style="font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; color: white"
+								onMouseOver="this.style.color='#fed136'"
+								onMouseOut="this.style.color='white'">Welcome User</a></li>
 
-<form role="form">
-  <label for="loc">LOCATION</label><br>
-  <label class="checkbox-inline">
-    <input type="checkbox" value="">Online event
-    </label>
-    <label class="checkbox-inline">
-      <input type="checkbox" id = "location" value="yes" onclick="enable_fields();">Add location
-    </label>
-    <br>
-    <input type="text" id = "venue" class = "form-control input3" disabled placeholder="Enter the venue's name">
-    <input type="text" id= "addr" class = "form-control input3" disabled placeholder="Address"> 
-    <input type="text" id = "addr2" class = "form-control input3" disabled placeholder="Address2"> 
-    <input type="text" id = "city" class = "form-control input3"  disabled placeholder="City"> 
-    <input type="text" id= "pincode" class = "form-control input3" disabled  placeholder="Zip/Postal" onkeypress='return isNumberKey(event)'> 
-    <input type="text" id = "state" class = "form-control input3" disabled value="California, United States"> 
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
 
-</form>
-<br>
 
-<form class="form-inline" role="form">
-  <div class="form-group">
-    <label for "sd">STARTS</label><br>
+	<div class="commonheader">
+		<div style="text-align: center; margin-top: 10px;">
+
+			<h1 class="text-center">
+				<br>
+				<br>
+			</h1>
+			<h1>Submit Event</h1>
+		</div>
+	</div>
+	<br>
+	<br>
+
+
+
+
+	<!--div class="container-fluid bg-1"-->
+
+
+	<div class="container bg-2">
+		<text class="text1">
+		<b> 1. Event Details</b></text>
+		<hr>
+
+		<form>
+			<label for="etitle" class="control-label required-field">EVENT
+				TITLE</label> <input type="text" class="form-control input1"
+				onblur="eventtitle(this,this.form.counter,75);"
+				onkeyup="eventtitle(this,this.form.counter,75);" name="message"
+				rows="1" cols="15" placeholder="Give it a short distinct name">
+			<input class="form-control input3"
+				onblur="eventtitle(this.form.recipients,this,75);" disabled
+				onfocus="this.blur();" tabindex="999" maxlength="1" size="25"
+				placeholder="75 characters remaining" name="counter"> </input>
+		</form>
+		<br>
+
+		<form role="form">
+			<label for="loc">LOCATION</label><br> <label
+				class="checkbox-inline"> <input type="checkbox" value="">Online
+				event
+			</label> <label class="checkbox-inline"> <input type="checkbox"
+				id="location" value="yes" onclick="enable_fields();">Add
+				location
+			</label> <br> <input type="text" id="venue" class="form-control input3"
+				disabled placeholder="Enter the venue's name"> <input
+				type="text" id="addr" class="form-control input3" disabled
+				placeholder="Address"> <input type="text" id="addr2"
+				class="form-control input3" disabled placeholder="Address2">
+			<input type="text" id="city" class="form-control input3" disabled
+				placeholder="City"> <input type="text" id="pincode"
+				class="form-control input3" disabled placeholder="Zip/Postal"
+				onkeypress='return isNumberKey(event)'> <input type="text"
+				id="state" class="form-control input3" disabled
+				value="California, United States">
+
+		</form>
+		<br>
+
+		<form class="form-inline" role="form">
+			<div class="form-group">
+				<labelfor "sd">STARTS</label><br>
     <input type="date" class="form-control" id="sdate">
     <input type="time" class="form-control" id="stime">
 </div>
 
-  <div class="form-group">
-    <label for "ed">ENDS</label><br>
+			<div class="form-group">
+				<labelfor "ed">ENDS</label><br>
     <input type="date" class="form-control" id="edate">
     <input type="time" class="form-control" id="etime">
 </div>
 
-<div class="form-group">
-    <label for "tz">TIME ZONE</label><br>
+			<div class="form-group">
+				<labelfor "tz">TIME ZONE</label><br>
     <select class="form-control input 3" id="time_zone">
     <option value="Hawaii">(GMT-10:00) Hawaii</option>
     <option value="Alaska">(GMT-09:00) Alaska</option>
@@ -361,48 +389,53 @@
   </select>
 
 </div>
-</form>
+		</form>
 
-<br>
-    <label for="image">EVENT IMAGE <span class="glyphicon glyphicon-camera"></span></label><br>
-    
-    
-    <form name = "Image" id="image" action = "#">
-    <img id="thumbnil" style="width:400px; height:250px;background-color: white"  src="" alt=""/><br>
-<form class="form-inline" role="form">
- <div class="form-group">
-    <input type="file" accept="image/*"  onchange="showMyImage(this)" />
-    <a onclick="clearForm(this.form);" href="">Remove</a>
-    </div>
-    </form>
-    </form>
+		<br> <label for="image">EVENT IMAGE <span
+			class="glyphicon glyphicon-camera"></span></label><br>
 
 
-<div class = "form-group">
-<label for="edescription">EVENT DESCRIPTION</label><br> 
-<textarea class="form-control input1" rows="12" id="edescription"></textarea><br>
-
-<label for="oname">ORGANIZER NAME</label><br>
-<input class ="form-control input1" type="text"  id="oname"><br><br>
-
-<label for="odesc">ORGANIZER DESCRIPTION</label><br>
-<textarea class="form-control input1" rows="6" id="odesc"></textarea>
-
-<div class="checkbox">
-  <label><input type="checkbox" id ="social" value="yes" onclick="enable_social();">Include links to Facebook and Twitter</label><br><br>
-  <label for="fb" >facebook.com/</label><br>
-  <input class ="form-control input1" type="text" id="fb" disabled><br>
-  <label for="twitter" >twitter.com/</label><br>
-  <input class ="form-control input1" type="text" id="twitter" disabled><br>
-</div>
-</div>
+			<img id="thumbnil"
+				style="width: 400px; height: 250px; background-color: white" src=""
+				alt="" /><br>
+				<div class="form-group">
+		<form name="Image" id="image" action="upload" enctype="multipart/form-data" method="post">
+					<input type="file" accept="image/*" name="file"
+						onchange="showMyImage(this)" /> <a
+						onclick="clearForm(this.form);" href="">Remove</a>
+				<input type="submit" value="Upload" name="upload1" id="upload1" hidden="true"/>
+				</div>
+			
+		</form>
 
 
-<div class ="row">
-<text class ="text1"><b> 2. Create Tickets</b></text><hr>
-</div>
+		<div class="form-group">
+			<label for="edescription">EVENT DESCRIPTION</label><br>
+			<textarea class="form-control input1" rows="12" id="edescription"></textarea>
+			<br> <label for="oname">ORGANIZER NAME</label><br> <input
+				class="form-control input1" type="text" id="oname"><br>
+			<br> <label for="odesc">ORGANIZER DESCRIPTION</label><br>
+			<textarea class="form-control input1" rows="6" id="odesc"></textarea>
 
-<!-- <div class ="form-group tickets">
+			<div class="checkbox">
+				<label><input type="checkbox" id="social" value="yes"
+					onclick="enable_social();">Include links to Facebook and
+					Twitter</label><br>
+				<br> <label for="fb">facebook.com/</label><br> <input
+					class="form-control input1" type="text" id="fb" disabled><br>
+				<label for="twitter">twitter.com/</label><br> <input
+					class="form-control input1" type="text" id="twitter" disabled><br>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<text class="text1">
+			<b> 2. Create Tickets</b></text>
+			<hr>
+		</div>
+
+		<!-- <div class ="form-group tickets">
 <label>What type of ticket would you like to start with?</label><br> 
 <form class="form-inline" role="form">
 <div class="btn-block"><br>
@@ -413,176 +446,196 @@
 </form>
 </div> -->
 
-<div class = "tkt">
-<form class="form-inline" role="form">
-<br>
-    <div class="form-group">
-      <label class=" tkt_type control-label required-field"> Ticket Type</label><br>
-      <select class="tkt_type form-control input 3" id="tkt_type">
-      <option value=""></option>
-      <option value="Free">Free Ticket</option>
-      <option value="Paid">Paid Ticket</option>
-      <option value="Donation">Donation</option>
-      </select>
-      </div>
-      <div class = "form-group">
-      <label class="control-label required-field" for="tname">Ticket name</label><br>
-      <input type="text" class="form-control" id="tname"  placeholder="Early Bird, RSVP..">
-      </div>
-      <div class = "form-group">
-      <label class="control-label required-field " for="tavail">Quantity available</label><br>
-      <input type="text" class="form-control" id="tqty" onkeypress='return isNumberKey(event)'>
-      </div>
-      <div class ="form-group">
-      <label class="control-label" for="tprice">Price</label><br>
-      <input type="text" class="form-control" id="tprice" placeholder="$">
-      </div>
-      <div class ="form-group">
-      <span class="glyphicon glyphicon-remove-circle"></span>
-      </div>
-      <br>
+		<div class="tkt">
+			<form class="form-inline" role="form">
+				<br>
+				<div class="form-group">
+					<label class=" tkt_type control-label required-field">
+						Ticket Type</label><br> <select class="tkt_type form-control input 3"
+						id="tkt_type">
+						<option value=""></option>
+						<option value="Free">Free Ticket</option>
+						<option value="Paid">Paid Ticket</option>
+						<option value="Donation">Donation</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label class="control-label required-field" for="tname">Ticket
+						name</label><br> <input type="text" class="form-control" id="tname"
+						placeholder="Early Bird, RSVP..">
+				</div>
+				<div class="form-group">
+					<label class="control-label required-field " for="tavail">Quantity
+						available</label><br> <input type="text" class="form-control"
+						id="tqty" onkeypress='return isNumberKey(event)'>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="tprice">Price</label><br> <input
+						type="text" class="form-control" id="tprice" placeholder="$">
+				</div>
+				<div class="form-group">
+					<span class="glyphicon glyphicon-remove-circle"></span>
+				</div>
+				<br>
 
-       <div class="form-group">
-      <select class="tkt_type form-control input 3" id="tkt_type">
-      <option value=""></option>
-      <option value="Free">Free Ticket</option>
-      <option value="Paid">Paid Ticket</option>
-      <option value="Donation">Donation</option>
-      </select>
-      </div>
-      <div class = "form-group">
-      <input type="text" class="form-control" id="tname"  placeholder="Early Bird, RSVP..">
-      </div>
-      <div class = "form-group">
-      <input type="text" class="form-control" id="tqty" onkeypress='return isNumberKey(event)' >
-      </div>
-      <div class ="form-group">
-      <input type="text" class="form-control" id="tprice" placeholder="$">
-      </div>
-      <div class ="form-group">
-      <span class="glyphicon glyphicon-remove-circle"></span>
-      </div>
-      <br>
+				<div class="form-group">
+					<select class="tkt_type form-control input 3" id="tkt_type">
+						<option value=""></option>
+						<option value="Free">Free Ticket</option>
+						<option value="Paid">Paid Ticket</option>
+						<option value="Donation">Donation</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="tname"
+						placeholder="Early Bird, RSVP..">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="tqty"
+						onkeypress='return isNumberKey(event)'>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="tprice" placeholder="$">
+				</div>
+				<div class="form-group">
+					<span class="glyphicon glyphicon-remove-circle"></span>
+				</div>
+				<br>
 
-       <div class="form-group">
-      <select class="tkt_type form-control input 3" id="tkt_type">
-      <option value=""></option>
-      <option value="Free">Free Ticket</option>
-      <option value="Paid">Paid Ticket</option>
-      <option value="Donation">Donation</option>
-      </select>
-      </div>
-      <div class = "form-group">
-      <input type="text" class="form-control" id="tname"  placeholder="Early Bird, RSVP..">
-      </div>
-      <div class = "form-group">
-      <input type="text" class="form-control" id="tqty" onkeypress='return isNumberKey(event)'>
-      </div>
-      <div class ="form-group">
-      <input type="text" class="form-control" id="tprice" placeholder="$">
-      </div>
-      <div class ="form-group">
-      <span class="glyphicon glyphicon-remove-circle"></span>
-      </div>
-
-
-</form>
-</div><br><br>
-
-<div class ="row">
-<text class ="text1"><b> 3. Additional Settings</b></text><hr>
-</div>
-
-<div class ="form-group">
-<label for="lprivacy">LISTING PRIVACY</label>
-<form role="form">
-<div class="radio">
- <label> <input type="radio" name = "radio" value="pupage">Public page:</label><text class="text2"> list this event on Events L.A and search engines</text>
-</div>
-<div class="radio">
-  <label><input type="radio" name="radio" value="prpage">Private page:</label><text class="text2"> do not list this event publicly</text>
-</div>  
-</form>
-
-<div class="form-group">
-  <label for="etype">EVENT TYPE</label>
-      <select class="form-control input2" id="etype">
-        <option>Select the type of event</option>
-        <option value = 'AS'>Appearance or Signing</option>
-        <option value = 'AT'>Attraction</option>
-        <option value = 'CT'>Camp,Trip, or Retreat</option>
-        <option value = 'CW'>Class, Training, or Workshop</option>
-        <option value = 'CP'>Concert or Performance</option>
-        <option value = 'CONF'>Conference</option>
-        <option value = 'CONV'>Convention</option>
-        <option value = 'DG'>Dinner or Gala</option>
-        <option value = 'FF'>Festival or Fair</option>
-        <option value = 'GC'>Game or Competition</option>
-        <option value = 'MN'>Meeting or Networking Event</option>
-        <option value = 'OT'>Other</option>
-        <option value = 'AS'>Appearance or Signing</option>
-        <option value = 'PS'>Party or Social Gathering</option>
-        <option value = 'RE'>Race or Endurance Event</option>
-        <option value = 'RA'>Rally</option>
-        <option value = 'SC'>Screening</option>
-        <option value = 'ST'>Seminar or Talk</option>
-        <option value = 'TOUR'>Tour</option>
-        <option value = 'TOURN'>Tournament</option>
-        <option value = 'TS'>Trade Show,Consumer Show or Expo</option>
-      </select><br>
-
-  <div class="form-group">
-  <label class="control-label required-field" for="etopic">EVENT TOPIC</label>
-      <select class="form-control input2" id="etopic">
-        <option>Select a topic</option>
-        <option value = 'AB'>Auto, Boat & Air</option>
-        <option value = 'BP'>Business & Professional</option>
-        <option value ="CC">Charity & Causes</option>
-        <option value ="CA">Community & Culture</option>
-        <option value ="FE">Family & Education</option>
-        <option value ="FB">Fashion & Beauty</option>
-        <option value ="FM">Film, Media & Entertainment</option>
-        <option value ="FD">Food & Drink</option>
-        <option value ="GP">Government & Politics</option>
-        <option value ="HW">Health & Wellness</option>
-        <option value ="HS">Hobbies & Special Interest</option>
-        <option value ="HL">Home & Lifestyle</option>
-        <option value ="M">Music</option>
-        <option value = 'OT'>Other</option>
-        <option value = 'VA'>Performing & Visual Arts</option>
-        <option value = 'RS'>Religion & Spirituality</option>
-        <option value = 'ST'>Science & Technology</option>
-        <option value = 'SH'>Seasonal & Holiday</option>
-        <option value = 'SF'>Sports & Fitness</option>
-        <option value = 'TO'>Travl & Outdoor</option>
-
-      </select>
-  </div>
-  
-</div>
-
-<h1> Nice job! You're almost done.</h1>
-<br><br>
-<div class="row submit">
-    <button type="button" class="btn btn-lg">SAVE</button>
-<!-- <button type="button" class="btn btn-success btn-lg" onclick="send_approval()">SEND FOR APPROVAL</button> -->
+				<div class="form-group">
+					<select class="tkt_type form-control input 3" id="tkt_type">
+						<option value=""></option>
+						<option value="Free">Free Ticket</option>
+						<option value="Paid">Paid Ticket</option>
+						<option value="Donation">Donation</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="tname"
+						placeholder="Early Bird, RSVP..">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="tqty"
+						onkeypress='return isNumberKey(event)'>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="tprice" placeholder="$">
+				</div>
+				<div class="form-group">
+					<span class="glyphicon glyphicon-remove-circle"></span>
+				</div>
 
 
-<div id="dialogoverlay"></div>
-<div id="dialogbox">
-  <div>
-    <div id="dialogboxhead"></div>
-    <div id="dialogboxbody"></div>
-    <div id="dialogboxfoot"></div>
-  </div>
-</div>
-<button class="btn-lg btn-success" onclick="Alert.render('Event details sent for approval')">SEND FOR APPROVAL</button>
-</div>
+			</form>
+		</div>
+		<br>
+		<br>
 
-</div>
+		<div class="row">
+			<text class="text1">
+			<b> 3. Additional Settings</b></text>
+			<hr>
+		</div>
 
-<!--/div-->
-<script>
+		<div class="form-group">
+			<label for="lprivacy">LISTING PRIVACY</label>
+			<form role="form">
+				<div class="radio">
+					<label> <input type="radio" name="radio" value="pupage">Public
+						page:
+					</label>
+					<text class="text2"> list this event on Events L.A and
+					search engines</text>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="radio" value="prpage">Private
+						page:</label>
+					<text class="text2"> do not list this event publicly</text>
+				</div>
+			</form>
+
+			<div class="form-group">
+				<label for="etype">EVENT TYPE</label> <select
+					class="form-control input2" id="etype">
+					<option>Select the type of event</option>
+					<option value='AS'>Appearance or Signing</option>
+					<option value='AT'>Attraction</option>
+					<option value='CT'>Camp,Trip, or Retreat</option>
+					<option value='CW'>Class, Training, or Workshop</option>
+					<option value='CP'>Concert or Performance</option>
+					<option value='CONF'>Conference</option>
+					<option value='CONV'>Convention</option>
+					<option value='DG'>Dinner or Gala</option>
+					<option value='FF'>Festival or Fair</option>
+					<option value='GC'>Game or Competition</option>
+					<option value='MN'>Meeting or Networking Event</option>
+					<option value='OT'>Other</option>
+					<option value='AS'>Appearance or Signing</option>
+					<option value='PS'>Party or Social Gathering</option>
+					<option value='RE'>Race or Endurance Event</option>
+					<option value='RA'>Rally</option>
+					<option value='SC'>Screening</option>
+					<option value='ST'>Seminar or Talk</option>
+					<option value='TOUR'>Tour</option>
+					<option value='TOURN'>Tournament</option>
+					<option value='TS'>Trade Show,Consumer Show or Expo</option>
+				</select><br>
+
+				<div class="form-group">
+					<label class="control-label required-field" for="etopic">EVENT
+						TOPIC</label> <select class="form-control input2" id="etopic">
+						<option>Select a topic</option>
+						<option value='AB'>Auto, Boat & Air</option>
+						<option value='BP'>Business & Professional</option>
+						<option value="CC">Charity & Causes</option>
+						<option value="CA">Community & Culture</option>
+						<option value="FE">Family & Education</option>
+						<option value="FB">Fashion & Beauty</option>
+						<option value="FM">Film, Media & Entertainment</option>
+						<option value="FD">Food & Drink</option>
+						<option value="GP">Government & Politics</option>
+						<option value="HW">Health & Wellness</option>
+						<option value="HS">Hobbies & Special Interest</option>
+						<option value="HL">Home & Lifestyle</option>
+						<option value="M">Music</option>
+						<option value='OT'>Other</option>
+						<option value='VA'>Performing & Visual Arts</option>
+						<option value='RS'>Religion & Spirituality</option>
+						<option value='ST'>Science & Technology</option>
+						<option value='SH'>Seasonal & Holiday</option>
+						<option value='SF'>Sports & Fitness</option>
+						<option value='TO'>Travl & Outdoor</option>
+
+					</select>
+				</div>
+
+			</div>
+
+			<h1>Nice job! You're almost done.</h1>
+			<br>
+			<br>
+			<div class="row submit">
+				<button type="button" class="btn btn-lg">SAVE</button>
+				<!-- <button type="button" class="btn btn-success btn-lg" onclick="send_approval()">SEND FOR APPROVAL</button> -->
+
+
+				<div id="dialogoverlay"></div>
+				<div id="dialogbox">
+					<div>
+						<div id="dialogboxhead"></div>
+						<div id="dialogboxbody"></div>
+						<div id="dialogboxfoot"></div>
+					</div>
+				</div>
+				<button class="btn-lg btn-success"
+					onclick="Alert.render('Event details sent for approval')">SEND
+					FOR APPROVAL</button>
+			</div>
+
+		</div>
+
+		<!--/div-->
+		<script>
 function eventtitle( field, countfield, maxlimit ) {
  if ( field.value.length > maxlimit ) {
   field.value = field.value.substring( 0, maxlimit );
@@ -595,7 +648,7 @@ function eventtitle( field, countfield, maxlimit ) {
 }
 </script>
 
-<script>
+		<script>
 function enable_fields(){
   if (document.getElementById('location').checked==true)
   {
@@ -624,7 +677,7 @@ function enable_fields(){
 }
 </script>
 
-<script>
+		<script>
  function showMyImage(fileInput) {
         var files = fileInput.files;
         for (var i = 0; i < files.length; i++) {           
@@ -646,7 +699,7 @@ function enable_fields(){
     }
 </script>
 
-<script>
+		<script>
 function clearForm(oForm) {
     
   var elements = oForm.elements; 
@@ -654,7 +707,7 @@ function clearForm(oForm) {
   oForm.reset();
 </script>
 
-<script>
+		<script>
   function isNumberKey(evt){
     var charCode = (evt.which) ? evt.which : evt.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57))
@@ -663,7 +716,7 @@ function clearForm(oForm) {
 }
 </script>
 
-<script>
+		<script>
 function enable_social(){
   if (document.getElementById('social').checked==true)
   {
@@ -681,7 +734,7 @@ function enable_social(){
 }
 </script>
 
-<script>
+		<script>
 function CustomAlert(){
     this.render = function(dialog){
         var winW = window.innerWidth;
@@ -704,7 +757,4 @@ function CustomAlert(){
 }
 var Alert = new CustomAlert();
 </script>
-
-
 </body>
-</html>

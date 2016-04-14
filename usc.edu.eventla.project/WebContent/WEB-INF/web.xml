@@ -16,5 +16,19 @@
     <servlet-name>contact</servlet-name>
     <url-pattern>/contact</url-pattern>
   </servlet-mapping>
-  
+    <servlet>
+    <servlet-name>upload</servlet-name>
+    <servlet-class>usc.edu.eventla.project.handlers.EventCreationHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>upload</servlet-name>
+    <url-pattern>/upload</url-pattern>
+  </servlet-mapping>
+  <context-param> 
+    <description>Location to store uploaded file</description> 
+    <param-name>file-upload</param-name> 
+    <param-value>
+         ..\data\
+     </param-value> 
+</context-param>
 </web-app>

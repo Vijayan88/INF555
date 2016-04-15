@@ -9,13 +9,19 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import org.bson.Document;
+
 import com.mongodb.DB;
 import com.mongodb.Mongo;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import com.mongodb.gridfs.GridFS;
 import com.mongodb.gridfs.GridFSInputFile;
 
@@ -57,8 +63,8 @@ public class EventCreationHandler extends HttpServlet {
 		String quantity_present3 = request.getParameter("quantity_present3");
 		String ticket_price3 = request.getParameter("ticket_price3");
 		String event_type= request.getParameter("event_type");
-		PrintWriter out1 = response.getWriter();
-		out1.println(title);
+	
+		/*out1.println(title);
 		out1.println(event_type);
 		out1.println(event_category);
 		
@@ -91,23 +97,63 @@ public class EventCreationHandler extends HttpServlet {
 		out1.println(ticket_name3 );
 		out1.println(quantity_present3); 
 		out1.println(ticket_price3 );
+		*/
+		String user ="";
+		Cookie cookie = null;
+		Cookie[] cookies = null;
+		cookies = request.getCookies();
+		String loginContents = "";
+		if (cookies != null) {
+			for (int i = 0; i < cookies.length; i++) {
+				cookie = cookies[i];
+				if (cookie.getName().equals("username")) {
+				 user = cookie.getValue();
+					break;
+				}
+			}
+		}
+		PrintWriter out1 = response.getWriter();
 		
-		
-	/*	MongoClient mongoClient = new MongoClient();
+	    MongoClient mongoClient = new MongoClient();
 
 		MongoDatabase database = mongoClient.getDatabase("eventsla");
 		MongoCollection<Document> collection = database.getCollection("CreateEvent");
 
-		Document doc = new Document("event_title", title).append("address", new Document("venue" ,venue)
+		Document doc = new Document("event_title", title)
+				.append("username", user)
+				.append("event_type", event_type)
+				.append("event_category",event_category).
+				append("address", new Document("venue" ,venue)
                 .append("address1", address1)
                 .append("address2", address2)
                 .append("city_name", city_name)
+                .append("state", "CA")
                 .append("pin_code", pin_code)
                 .append("start_date",start_date)
                 .append("start_time",start_time))
-				.append("event_description", description);
+                .append("event_description", description).append("city_name",city_name)
+				.append("end_date",end_date)
+				.append("end_time", end_time)
+				.append("event_website",event_website)
+				.append("organiser_name",organizer_name)
+			    .append("facebook_link",facebook)
+				.append("twitter_link", twitter_link)
+				.append("ticket_1", new Document("ticket_type1",ticket_type1)
+				.append("quantity_present1",quantity_present1)
+				.append("ticket_price1",ticket_price1)
+				.append("ticket_name1",ticket_name1)) 
+				.append("ticket_2",new Document("ticket_type2",ticket_type2)
+						.append("quantity_present2",quantity_present2)
+						.append("ticket_price2",ticket_price2)
+						.append("ticket_name2",ticket_name2)) 
+				.append("ticket_3",new Document( "ticket_type3",ticket_type3)
+						.append("quantity_present3",quantity_present3)
+						.append("ticket_price3",ticket_price3)
+						.append("ticket_name3",ticket_name3))
+				.append("image_name" ,  title+"_"+start_date);
 		collection.insertOne(doc); 
-	//	response.sendRedirect("eventdesc.html"); */
+	//	response.sendRedirect("eventdesc.html");
+
 		
  // image key : image_name value :  title+"_"+start_date
 		// 
@@ -161,7 +207,7 @@ public class EventCreationHandler extends HttpServlet {
 	//	GridFSDBFile imageForOutput = gfsPhoto.findOne(newFileName);
 
 		// save it into a new image file
-	//	imageForOutput.writeTo("/Users/vijayan/Desktop/test.jpg"); 
+	//	imageForOutput.writeTo("/Users/vijayan/Desktop/test.jpg"); */
 	}
 	
 

@@ -17,7 +17,6 @@ import javax.servlet.http.Part;
 import com.mongodb.DB;
 import com.mongodb.Mongo;
 import com.mongodb.gridfs.GridFS;
-import com.mongodb.gridfs.GridFSDBFile;
 import com.mongodb.gridfs.GridFSInputFile;
 
 public class EventCreationHandler extends HttpServlet {
@@ -110,7 +109,8 @@ public class EventCreationHandler extends HttpServlet {
 		collection.insertOne(doc); 
 	//	response.sendRedirect("eventdesc.html"); */
 		
-
+ // image key : image_name value :  title+"_"+start_date
+		// 
 		final Part filePart = request.getPart("file");
 
 	    OutputStream out = null;

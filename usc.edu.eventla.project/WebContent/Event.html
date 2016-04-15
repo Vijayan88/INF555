@@ -191,7 +191,7 @@
 
 	<!--div class="container-fluid bg-1"-->
 
-	<form method="post" action="createevent" name="eventdesc">
+	<form method="post" action="createevent" name="eventdesc" enctype="multipart/form-data">
 		<div class="container bg-2">
 			<text class="text1">
 			<b> 1. Event Details</b></text>
@@ -434,7 +434,7 @@
     <img id="thumbnil" style="width:400px; height:250px;background-color: white"  src="" alt=""/><br>
 <!-- <form class="form-inline" role="form"> -->
  <div class="form-group">
-    <input name="event_image" type="file" accept="image/*"  onchange="showMyImage(this)" />
+    <input name="file" type="file" accept="image/*"  onchange="showMyImage(this)" />
     <a onclick="clearForm(this.form);"  href="">Remove</a>
     </div>
 

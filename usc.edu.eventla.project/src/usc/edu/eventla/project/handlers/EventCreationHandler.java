@@ -14,14 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import org.bson.Document;
-
 import com.mongodb.DB;
-import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 import com.mongodb.gridfs.GridFS;
 import com.mongodb.gridfs.GridFSDBFile;
 import com.mongodb.gridfs.GridFSInputFile;
@@ -64,40 +58,40 @@ public class EventCreationHandler extends HttpServlet {
 		String quantity_present3 = request.getParameter("quantity_present3");
 		String ticket_price3 = request.getParameter("ticket_price3");
 		String event_type= request.getParameter("event_type");
-		PrintWriter out = response.getWriter();
-		out.println(title);
-		out.println(event_type);
-		out.println(event_category);
+		PrintWriter out1 = response.getWriter();
+		out1.println(title);
+		out1.println(event_type);
+		out1.println(event_category);
 		
-		out.println(venue) ;
-		out.println(address1); 
-		out.println(address2) ;
-		out.println(city_name) ;
-		out.println(pin_code) ;
+		out1.println(venue) ;
+		out1.println(address1); 
+		out1.println(address2) ;
+		out1.println(city_name) ;
+		out1.println(pin_code) ;
 		
-		out.println(start_date);
-		out.println(start_time) ;
-		out.println(end_date) ;
-		out.println(end_time) ;
+		out1.println(start_date);
+		out1.println(start_time) ;
+		out1.println(end_date) ;
+		out1.println(end_time) ;
 		//String event_image = request.getParameter("event_image");
-		out.println(description); 
-		out.println(event_website); 
-		out.println(organizer_name);
-		out.println(organiser_description);
-		out.println(facebook) ;
-		out.println( twitter_link);
-		out.println( ticket_type1);
-		out.println(ticket_name1) ;
-		out.println(quantity_present1);
-		out.println(ticket_price1) ;
-		out.println(ticket_type2) ;
-		out.println(ticket_name2); 
-		out.println(quantity_present2); 
-		out.println(ticket_price2); 
-		out.println(ticket_type3); 
-		out.println(ticket_name3 );
-		out.println(quantity_present3); 
-		out.println(ticket_price3 );
+		out1.println(description); 
+		out1.println(event_website); 
+		out1.println(organizer_name);
+		out1.println(organiser_description);
+		out1.println(facebook) ;
+		out1.println( twitter_link);
+		out1.println( ticket_type1);
+		out1.println(ticket_name1) ;
+		out1.println(quantity_present1);
+		out1.println(ticket_price1) ;
+		out1.println(ticket_type2) ;
+		out1.println(ticket_name2); 
+		out1.println(quantity_present2); 
+		out1.println(ticket_price2); 
+		out1.println(ticket_type3); 
+		out1.println(ticket_name3 );
+		out1.println(quantity_present3); 
+		out1.println(ticket_price3 );
 		
 		
 	/*	MongoClient mongoClient = new MongoClient();
@@ -109,32 +103,15 @@ public class EventCreationHandler extends HttpServlet {
                 .append("address1", address1)
                 .append("address2", address2)
                 .append("city_name", city_name)
-                .append("state", state)
                 .append("pin_code", pin_code)
                 .append("start_date",start_date)
                 .append("start_time",start_time))
 				.append("event_description", description);
-		collection.insertOne(doc); */
-	//	response.sendRedirect("eventdesc.html");
+		collection.insertOne(doc); 
+	//	response.sendRedirect("eventdesc.html"); */
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		/*final Part filePart = request.getPart("file");
-	    final String fileName = getFileName(filePart);
+
+		final Part filePart = request.getPart("file");
 
 	    OutputStream out = null;
 	    InputStream filecontent = null;
@@ -150,7 +127,6 @@ public class EventCreationHandler extends HttpServlet {
 	        while ((read = filecontent.read(bytes)) != -1) {
 	            out.write(bytes, 0, read);
 	        }
-	        writer.println("New file " + fileName + " created at " + "/tmp");
 	    } catch (FileNotFoundException fne) {
 	        writer.println("You either did not specify a file to upload or are "
 	                + "trying to upload a file to a protected or nonexistent "
@@ -168,11 +144,8 @@ public class EventCreationHandler extends HttpServlet {
 	    Mongo mongo = new Mongo("localhost", 27017);
 		DB db = mongo.getDB("eventsla");
 	//	DBCollection collection = db.getCollection("EventDetails");
-
-		String newFileName = "mkyong-java-image";
-
+		String newFileName = title+"_"+start_date;
 		File imageFile = new File("newfile.jpg");
-
 		// create a "photo" namespace
 		GridFS gfsPhoto = new GridFS(db, "photo");
 
@@ -185,13 +158,11 @@ public class EventCreationHandler extends HttpServlet {
 		// save the image file into mongoDB
 		gfsFile.save();
 		
-		GridFSDBFile imageForOutput = gfsPhoto.findOne(newFileName);
+	//	GridFSDBFile imageForOutput = gfsPhoto.findOne(newFileName);
 
 		// save it into a new image file
-		imageForOutput.writeTo("/Users/vijayan/Desktop/test.jpg");
+	//	imageForOutput.writeTo("/Users/vijayan/Desktop/test.jpg"); 
 	}
-	private String getFileName(final Part part) {
-	  return "/tmp";
-*/
-}
+	
+
 }

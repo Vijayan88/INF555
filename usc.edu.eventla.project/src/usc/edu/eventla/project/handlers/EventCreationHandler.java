@@ -39,7 +39,7 @@ public class EventCreationHandler extends HttpServlet {
 		String address2 = request.getParameter("address2");
 		String city_name = request.getParameter("city_name");
 		String pin_code = request.getParameter("pin_code");
-		String state = request.getParameter("state");
+		
 		String start_date = request.getParameter("start_date");
 		String start_time = request.getParameter("start_time");
 		String end_date = request.getParameter("end_date");
@@ -74,7 +74,7 @@ public class EventCreationHandler extends HttpServlet {
 		out.println(address2) ;
 		out.println(city_name) ;
 		out.println(pin_code) ;
-		out.println(state);
+		
 		out.println(start_date);
 		out.println(start_time) ;
 		out.println(end_date) ;

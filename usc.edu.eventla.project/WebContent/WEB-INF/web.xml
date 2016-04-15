@@ -34,6 +34,14 @@
     <servlet-name>CreateEvent</servlet-name>
     <url-pattern>/createevent</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <servlet-name>eventimage</servlet-name>
+    <servlet-class>usc.edu.eventla.project.handlers.ImageCreationHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>eventimage</servlet-name>
+    <url-pattern>/eventimage</url-pattern>
+  </servlet-mapping>
   <context-param> 
     <description>Location to store uploaded file</description> 
     <param-name>file-upload</param-name> 

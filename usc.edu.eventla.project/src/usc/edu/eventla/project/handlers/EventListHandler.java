@@ -19,7 +19,7 @@ public class EventListHandler extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		InputStream in;
-		in = getServletContext().getResourceAsStream("/eventlisttemplate1.txt");
+		in = getServletContext().getResourceAsStream("eventlisttemplate1.txt");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 		StringBuilder sb = new StringBuilder();
 		String line = null;
@@ -32,13 +32,15 @@ public class EventListHandler extends HttpServlet {
 	
 	// mongodb
 	for(int i = 0; i < 4 ; i ++){
-		in = getServletContext().getResourceAsStream("/eventlisttemplate2.txt");
+		in = getServletContext().getResourceAsStream("eventlisttemplate2.txt");
         reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 		sb = new StringBuilder();
 		while ((line = reader.readLine()) != null) {
 			sb.append(line + "\n");
 		}
-		out.println(sb.toString());
+		out.println(sb.toString() );
+		if(i != 3)
+			out.println("<hr>");
 	}
 	in = getServletContext().getResourceAsStream("/eventlisttemplate3.txt");
     reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));

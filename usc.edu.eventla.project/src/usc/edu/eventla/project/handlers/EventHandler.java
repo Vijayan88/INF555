@@ -37,6 +37,9 @@ public class EventHandler extends HttpServlet {
 		// String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
 		DB database = mongoClient.getDB("eventsla");
 		DBCollection collection = database.getCollection("Login");
+		//DBCollection collection = database.getCollection("Event_Reg");
+		//int events_cnt=collection.getCount();
+		long users_cnt = collection.getCount();
 
 		BasicDBObject allQuery = new BasicDBObject();
 		allQuery.put("username", emailid);
@@ -63,10 +66,14 @@ public class EventHandler extends HttpServlet {
 		if (valid) {
 			InputStream in;
 			
-			// identify as admin
-			in= getServletContext().getResourceAsStream("/Dashboard.html");
+			if("admin@usc.edu".equals(emailid)){
+				
+				in= getServletContext().getResourceAsStream("Dashboard.html");
+
+			}
 			
-			if(popup != null && popup != ""){
+			
+			else if(popup != null && popup != ""){
 				in= getServletContext().getResourceAsStream("/Event.html");
 				
 			} else {
@@ -81,12 +88,12 @@ public class EventHandler extends HttpServlet {
 				sb.append(line + "\n");
 			}
 			String logContents = loginDetails("loginuser.txt");
-			out.println(sb.toString().replace("$LOGIN_DETAILS", logContents).replace("$USER", name));
+			String usr_cnt=Long.toString(users_cnt);
+			out.println(sb.toString().replace("$LOGIN_DETAILS", logContents).replace("$USER", name).replace("$NO_USERS",usr_cnt));
+			//out.println(sb.toString().replace("$NO_EVENTS",events_cnt);
+			
 			return;
 		}
-		
-		
-
 	}
 	
 	public String loginDetails(String fileName) throws IOException{
@@ -106,7 +113,7 @@ public class EventHandler extends HttpServlet {
 		String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
 		DB database = mongoClient.getDB("eventsla");
 		DBCollection collection = database.getCollection("Login");
-
+		
 		BasicDBObject allQuery = new BasicDBObject();
 		allQuery.put("username", "ayushi@usc.edu");
 		String name = "";
@@ -119,7 +126,7 @@ public class EventHandler extends HttpServlet {
 		}
 		System.out.println(name);
 		mongoClient.close();
-
+	    
 	}
-
+    
 }

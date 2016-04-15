@@ -64,8 +64,9 @@ public class EventCreationHandler extends HttpServlet {
 		String quantity_present3 = request.getParameter("quantity_present3");
 		String ticket_price3 = request.getParameter("ticket_price3");
 		String event_type= request.getParameter("event_type");
-		
-		MongoClient mongoClient = new MongoClient();
+		PrintWriter out = response.getWriter();
+		out.println(title);
+	/*	MongoClient mongoClient = new MongoClient();
 
 		MongoDatabase database = mongoClient.getDatabase("eventsla");
 		MongoCollection<Document> collection = database.getCollection("CreateEvent");
@@ -79,7 +80,7 @@ public class EventCreationHandler extends HttpServlet {
                 .append("start_date",start_date)
                 .append("start_time",start_time))
 				.append("event_description", description);
-		collection.insertOne(doc);
+		collection.insertOne(doc); */
 		response.sendRedirect("eventdesc.html");
 		
 		
@@ -98,7 +99,7 @@ public class EventCreationHandler extends HttpServlet {
 		
 		
 		
-		final Part filePart = request.getPart("file");
+		/*final Part filePart = request.getPart("file");
 	    final String fileName = getFileName(filePart);
 
 	    OutputStream out = null;
@@ -157,6 +158,6 @@ public class EventCreationHandler extends HttpServlet {
 	}
 	private String getFileName(final Part part) {
 	  return "/tmp";
-
+*/
 }
 }

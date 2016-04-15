@@ -28,9 +28,11 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
     <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
     <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -175,25 +177,32 @@
 <div class="container bg-2">
 <text class ="text1"><b> 1. Event Details</b></text><hr>
 
-
+<form role="form">
   <label for="etitle" class="control-label required-field">EVENT TITLE</label>
-  <input type = "text" id="etitle" class= "form-control input1" onblur="eventtitle(this,this.form.counter,75);" onkeyup="eventtitle(this,this.form.counter,75);"  name="event_title" rows="1" cols="15" placeholder="Give it a short distinct name" required>
+  <input type = "text" id="etitle" class= "form-control input1" onblur="eventtitle(this,this.form.counter,75);" onkeyup="eventtitle(this,this.form.counter,75);"  name="message" rows="1" cols="15" placeholder="Give it a short distinct name" required>
 <input class= "form-control input3" onblur="eventtitle(this.form.recipients,this,75);" disabled  onfocus="this.blur();" tabindex="999" maxlength="1" size="25" placeholder="75 characters remaining" name="counter">
-</input>
+</input><br>
+  <label for="etype">EVENT TYPE</label>
+<select class="form-control input2" id="etype">
+        <option>Select the type of event</option>
+        <option value = 'CLM'>Concerts & Live Music</option>
+        <option value = 'MT'>Museums & Theatre</option>
+        <option value = 'SE'>Sports & Entertainment</option>
+</select>
 
 <br>
 
-<form role="form">
+
   <label for="loc">LOCATION</label><br>
   <label class="checkbox-inline">
-    <input type="checkbox" name="event_category" value="online">Online event
+    <input type="checkbox" value="online">Online event
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id = "location" name="event_category" value="location" onclick="enable_fields();">Add location
+      <input type="checkbox" id = "location" value="location" onclick="enable_fields();">Add location
     </label>
     <br>
 <!--     <input type="text" id = "venue" class = "form-control input3" disabled placeholder="Enter the venue's name"> -->
-    <select class="form-control input2" id="venue" name="venue" disabled>
+    <select class="form-control input2" id="venue" name ="venue" disabled placeholder="Select the venue">
         <option>Select the venue</option>
         <option value = 'CSUN'>CSUN-Cal State NorthRidge</option>
         <option value = 'GT'>Greek Theatre</option>
@@ -222,25 +231,31 @@
     </select>
     <!-- <input type="text" id = "city" class = "form-control input3"  disabled placeholder="City">  -->
     <input type="text" name="pin_code" id= "pincode" class = "form-control input3" disabled  placeholder="Zip/Postal" onkeypress='return isNumberKey(event)'> 
-    <input type="text" name="state" id = "state" class = "form-control input3" disabled value="California, United States"> 
+    <input type="text" name="state" id = "state" class = "form-control input3" disabled value="California, United States"> <br>
+     <!-- <input id="gmaps" type="checkbox" value="" onclick="add_maps()">Include Google maps Link<br> -->
 
-</form>
+
 <br>
 
-<form class="form-inline" role="form">
-  <div class="form-group">
+<!-- <form class="form-inline" role="form"> -->
+  <!-- <div class="form-group"> -->
     <label for "sd">STARTS</label><br>
-    <input type="date" class="form-control" name="start_date" id="sdate">
-    <input type="time" class="form-control" name="start_time" id="stime">
+    <div class = "input3">
+    <input type="date" name="start_date" class="form-control" id="sdate">
+    <input type="time"  name="start_time" class="form-control" id="stime">
 </div>
+    <br>
+<!-- </div> -->
 
-  <div class="form-group">
+  <!-- <div class="form-group"> -->
     <label for "ed">ENDS</label><br>
-    <input type="date" class="form-control" name="end_date" id="edate">
-    <input type="time" class="form-control" name="end_time" id="etime">
-</div>
+    <div class = "input3">
+    <input type="date" name="end_date" class="form-control" id="edate">
+    <input type="time" name="end_time" class="form-control" id="etime">
+    </div>
+<br>
 
-<div class="form-group">
+<div class = "input3">
     <label for "tz">TIME ZONE</label><br>
     <select class="form-control input 3" name="time_zone" id="time_zone">
     <option value="Hawaii">(GMT-10:00) Hawaii</option>
@@ -387,22 +402,20 @@
   </select>
 
 </div>
-</form>
 
 <br>
     <label for="image">EVENT IMAGE <span class="glyphicon glyphicon-camera"></span></label><br>
     
-    
-    <form  name="image" id="image" action = "#">
+    <!-- <form name = "Image" id="image" action = "#"> -->
     <img id="thumbnil" style="width:400px; height:250px;background-color: white"  src="" alt=""/><br>
-<form class="form-inline" role="form">
+<!-- <form class="form-inline" role="form"> -->
  <div class="form-group">
     <input name="event_image" type="file" accept="image/*"  onchange="showMyImage(this)" />
     <a onclick="clearForm(this.form);"  href="">Remove</a>
     </div>
-    </form>
-    </form>
 
+    <!-- </form> -->
+<!-- </form> -->
 
 <div class = "form-group">
 <label for="edescription">EVENT DESCRIPTION</label><br> 
@@ -412,16 +425,16 @@
 <input class ="form-control input1" type="text" name="event_website" id="eweb"><br><br>
 
 <label for="oname">ORGANIZER NAME</label><br>
-<input class ="form-control input1" type="text"  name="organiser_name" id="oname"><br><br>
+<input class ="form-control input1" type="text" name="organiser_name"name="organiser_description"  id="oname"><br><br>
 
 <label for="odesc">ORGANIZER DESCRIPTION</label><br>
-<textarea class="form-control input1" rows="6" name="organiser_descriptipn" id="odesc"></textarea>
+<textarea class="form-control input1" rows="6" id="odesc"></textarea>
 
 <div class="checkbox">
   <label><input type="checkbox" id ="social" value="yes" onclick="enable_social();">Include links to Facebook and Twitter</label><br><br>
   <a href="https://www.facebook.com/bootsnipp" style="color:rgba(26,110,221,1.00)"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
   <label for="fb" >facebook.com/</label><br>
-  <input class ="form-control input1" type="text" name="facebook_link" id="fb" disabled><br>
+  <input name="facebook_link" class ="form-control input1" type="text" id="fb" disabled><br>
   
   <a href="https://twitter.com/bootsnipp" style="color:rgba(19,166,199,1.00)"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
   <label for="twitter" >twitter.com/</label><br>
@@ -430,27 +443,114 @@
 </div>
 
 
+
 <div class ="row">
 <text class ="text1"><b> 2. Create Tickets</b></text><hr>
 </div>
 
-<!-- <div class ="form-group tickets">
-<label>What type of ticket would you like to start with?</label><br> 
-<form class="form-inline" role="form">
-<div class="btn-block"><br>
-<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-plus-sign"></span>FREE TICKET</button>
-<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-plus-sign"></span>PAID TICKET</button>
-<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-plus-sign"></span>DONATION</button>
+<div class = "tkt form-inline">
+<table style="width:100%">
+<tr>
+<td class="required-field" align="center">Ticket Type</td>
+<td class="required-field">Ticket Name</td>
+<td class="required-field">Ticket Quantity</td>
+<td>Price</td>
+</tr>
+
+<tr>
+<td>
+<select class="tkt_type form-control" name="ticket_type1" id="tkt_type1">
+      <option value=""></option>
+      <option value="Free">Free Ticket</option>
+      <option value="Paid">Paid Ticket</option>
+      <option value="Donation">Donation</option>
+      </select>
+      </td>
+
+<td>
+      <input type="text" class="form-control" name="ticket_name1" id="tname1" placeholder="Early Bird, RSVP..">
+</td>
+
+<td>
+<input type="text" class="form-control"  name="quantity_present1" id="tqty1" onkeypress='return isNumberKey(event)'>
+</td>
+
+<td>
+<input type="text" class="form-control" name="ticket_price1" id="tprice1"  placeholder="$">
+</td>
+</tr>
+
+<tr>
+
+<td>
+<select class="tkt_type form-control" name="ticket_type2" id="tkt_type2">
+      <option value=""></option>
+      <option value="Free">Free Ticket</option>
+      <option value="Paid">Paid Ticket</option>
+      <option value="Donation">Donation</option>
+      </select>
+      </td>
+
+<td>
+      <input type="text" class="form-control" name="ticket_name2" id="tname2" placeholder="Early Bird, RSVP..">
+</td>
+
+<td>
+<input type="text" class="form-control" name="quantity_present2" id="tqty2" onkeypress='return isNumberKey(event)'>
+</td>
+
+<td>
+<input type="text" class="form-control" name="ticket_price2" id="tprice2"  placeholder="$">
+</td>
+<tr>
+
+<tr >
+
+<td>
+<select class="tkt_type form-control" name="ticket_type3" id="tkt_type3">
+      <option value=""></option>
+      <option value="Free">Free Ticket</option>
+      <option value="Paid">Paid Ticket</option>
+      <option value="Donation">Donation</option>
+      </select>
+      </td>
+
+<td>
+      <input type="text" class="form-control" name="ticket_name3"  id="tname3" placeholder="Early Bird, RSVP..">
+</td>
+
+<td>
+<input type="text" class="form-control" name="quantity_present3" id="tqty3" onkeypress='return isNumberKey(event)'>
+</td>
+
+<td>
+<input type="text" class="form-control" name="ticket_price3" id="tprice3"  placeholder="$">
+</td>
+<tr>
+</table>
+      <div class ="form-group">
+      <a class="tkt_type" onclick="clearForm(this.form);" href="">Clear</a>
+      </div>
 </div>
-</form>
+
+    </form>
+<!-- <select class="tkt_type form-control input4" id="tkt_type1">
+      <option value=""></option>
+      <option value="Free">Free Ticket</option>
+      <option value="Paid">Paid Ticket</option>
+      <option value="Donation">Donation</option>
+      </select>
+</div>
 </div> -->
 
-<div class = "tkt">
+
+
+<!-- <div class = "tkt">
 <form class="form-inline" role="form">
 <br>
     <div class="form-group">
       <label class=" tkt_type control-label required-field"> Ticket Type</label><br>
-      <select class="tkt_type form-control input 3" name="ticket_type1" id="tkt_type1">
+      <select class="tkt_type form-control input 3" id="tkt_type1">
       <option value=""></option>
       <option value="Free">Free Ticket</option>
       <option value="Paid">Paid Ticket</option>
@@ -459,20 +559,20 @@
       </div>
       <div class = "form-group">
       <label class="control-label required-field" for="tname">Ticket name</label><br>
-      <input type="text" class="form-control" name="ticket_name1" id="tname1" placeholder="Early Bird, RSVP..">
+      <input type="text" class="form-control" id="tname1" placeholder="Early Bird, RSVP..">
       </div>
       <div class = "form-group">
       <label class="control-label required-field " for="tavail">Quantity available</label><br>
-      <input type="text" class="form-control" name="quantity_present1" id="tqty1" onkeypress='return isNumberKey(event)'>
+      <input type="text" class="form-control" id="tqty1" onkeypress='return isNumberKey(event)'>
       </div>
       <div class ="form-group">
       <label class="control-label" for="tprice">Price</label><br>
-      <input type="text" class="form-control" name="ticket_price1" id="tprice1"  placeholder="$">
+      <input type="text" class="form-control" id="tprice1"  placeholder="$">
       </div>
       <br>
 
        <div class="form-group">
-      <select class="tkt_type form-control input 3" name="ticket_type2" id="tkt_type2"> 
+      <select class="tkt_type form-control input 3" id="tkt_type2"> 
       <option value=""></option>
       <option value="Free">Free Ticket</option>
       <option value="Paid">Paid Ticket</option>
@@ -480,19 +580,19 @@
       </select>
       </div>
       <div class = "form-group">
-      <input type="text" class="form-control" name="ticket_name2" id="tname2"  placeholder="Early Bird, RSVP..">
+      <input type="text" class="form-control" id="tname2"  placeholder="Early Bird, RSVP..">
       </div>
       <div class = "form-group">
-      <input type="text" class="form-control" name="quantity_present2"id="tqty2" onkeypress='return isNumberKey(event)' >
+      <input type="text" class="form-control" id="tqty2" onkeypress='return isNumberKey(event)' >
       </div>
       <div class ="form-group">
-      <input type="text" class="form-control" name="ticket_price2" id="tprice2" placeholder="$">
+      <input type="text" class="form-control" id="tprice2" placeholder="$">
       </div>
 
       <br>
 
        <div class="form-group">
-      <select class="tkt_type form-control input 3" name="ticket_type3" id="tkt_type3">
+      <select class="tkt_type form-control input 3" id="tkt_type3">
       <option value=""></option>
       <option value="Free">Free Ticket</option>
       <option value="Paid">Paid Ticket</option>
@@ -500,20 +600,20 @@
       </select>
       </div>
       <div class = "form-group">
-      <input type="text" class="form-control" name="name="ticket_name3""id="tname3" placeholder="Early Bird, RSVP..">
+      <input type="text" class="form-control" id="tname3" placeholder="Early Bird, RSVP..">
       </div>
       <div class = "form-group">
-      <input type="text" class="form-control" name="quantity_present3" id="tqty3" onkeypress='return isNumberKey(event)'>
+      <input type="text" class="form-control" id="tqty3" onkeypress='return isNumberKey(event)'>
       </div>
       <div class ="form-group">
-      <input type="text" class="form-control" name="ticket_price3" id="tprice3" placeholder="$">
+      <input type="text" class="form-control" id="tprice3" placeholder="$">
       </div><br>
 
       <div class ="form-group">
       <a onclick="clearForm(this.form);" href="">Clear</a>
       </div>
 </form>
-</div><br><br>
+</div> --><br><br>
 
 <div class ="row">
 <text class ="text1"><b> 3. Additional Settings</b></text><hr>
@@ -530,8 +630,8 @@
 </div>  
 </form>
 
-<div class="form-group">
-  <label for="etype">EVENT TYPE</label>
+
+
 <!--       <select class="form-control input2" id="etype">
         <option>Select the type of event</option>
         <option value = 'AS'>Appearance or Signing</option>
@@ -557,12 +657,7 @@
         <option value = 'TS'>Trade Show,Consumer Show or Expo</option>
       </select><br> -->
 
-<select class="form-control input2" name="event_type" id="etype">
-        <option>Select the type of event</option>
-        <option value = 'CLM'>Concerts & Live Music</option>
-        <option value = 'MT'>Museums & Theatre</option>
-        <option value = 'SE'>Sports & Entertainment</option>
-</select>
+
 
 
 <!--   <div class="form-group">
@@ -593,7 +688,7 @@
       </select>
   </div> -->
   
-</div>
+
 
 <h1> Nice job! You're almost done.</h1>
 <br><br>
@@ -610,10 +705,11 @@
     <div id="dialogboxfoot"></div>
   </div>
 </div>
-<button class="btn-lg btn-success" onclick="Alert.render('Event details sent for approval');document.getElementById('eventdesc').submit();">SEND FOR APPROVAL</button>
+<button class="btn-lg btn-success" onclick="Alert.render('Event details sent for approval')">SEND FOR APPROVAL</button>
 </div>
 
-</form>
+</div>
+</div>
 
 <!--/div-->
 <script>
@@ -641,7 +737,6 @@ function enable_fields(){
     document.getElementById('time_zone').setAttribute('disabled','disabled');
   }
   else{
-    document.getElementById('venue').value="";
     document.getElementById('venue').setAttribute('disabled','disabled');
     document.getElementById('addr').value="";
     document.getElementById('addr').setAttribute('disabled','disabled');
@@ -649,7 +744,6 @@ function enable_fields(){
     document.getElementById('addr2').setAttribute('disabled','disabled');
     document.getElementById('city').value="";
     document.getElementById('city').setAttribute('disabled','disabled');
-    document.getElementById('state').value="";
     document.getElementById('state').setAttribute('disabled','disabled');
     document.getElementById('pincode').value="";
     document.getElementById('pincode').setAttribute('disabled','disabled');
@@ -712,6 +806,13 @@ function enable_social(){
 
     
   }
+}
+</script>
+<script>
+    function add_maps(){
+        if document.getElementById('gmaps').checked==true)
+{
+    }
 }
 </script>
 

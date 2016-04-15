@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -44,7 +45,7 @@ public class EventHandler extends HttpServlet {
 			DBObject res = cursor.next();
 			name = (String) res.get("name");
 			String passwdChk = (String) res.get("passwd");
-			if (passwd.equals(passwd)) {
+			if (passwd.equals(passwdChk)) {
 				valid = true;
 			}
 		}
@@ -75,12 +76,25 @@ public class EventHandler extends HttpServlet {
 			while ((line = reader.readLine()) != null) {
 				sb.append(line + "\n");
 			}
-			out.println(sb.toString().replace("$USER", name));
+			String logContents = loginDetails("loginuser.txt");
+			out.println(sb.toString().replace("$LOGIN_DETAILS", logContents).replace("$USER", name));
 			return;
 		}
 		
 		
 
+	}
+	
+	public String loginDetails(String fileName) throws IOException{
+			InputStream in;
+			in= getServletContext().getResourceAsStream(fileName);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+			StringBuilder sb = new StringBuilder();
+			String line = null;
+			while ((line = reader.readLine()) != null) {
+				sb.append(line + "\n");
+			}
+			return sb.toString();
 	}
 
 	public static void main(String[] args) {

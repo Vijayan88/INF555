@@ -66,6 +66,40 @@ public class EventCreationHandler extends HttpServlet {
 		String event_type= request.getParameter("event_type");
 		PrintWriter out = response.getWriter();
 		out.println(title);
+		out.println(event_type);
+		out.println(event_category);
+		
+		out.println(venue) ;
+		out.println(address1); 
+		out.println(address2) ;
+		out.println(city_name) ;
+		out.println(pin_code) ;
+		out.println(state);
+		out.println(start_date);
+		out.println(start_time) ;
+		out.println(end_date) ;
+		out.println(end_time) ;
+		//String event_image = request.getParameter("event_image");
+		out.println(description); 
+		out.println(event_website); 
+		out.println(organizer_name);
+		out.println(organiser_description);
+		out.println(facebook) ;
+		out.println( twitter_link);
+		out.println( ticket_type1);
+		out.println(ticket_name1) ;
+		out.println(quantity_present1);
+		out.println(ticket_price1) ;
+		out.println(ticket_type2) ;
+		out.println(ticket_name2); 
+		out.println(quantity_present2); 
+		out.println(ticket_price2); 
+		out.println(ticket_type3); 
+		out.println(ticket_name3 );
+		out.println(quantity_present3); 
+		out.println(ticket_price3 );
+		
+		
 	/*	MongoClient mongoClient = new MongoClient();
 
 		MongoDatabase database = mongoClient.getDatabase("eventsla");
@@ -81,7 +115,7 @@ public class EventCreationHandler extends HttpServlet {
                 .append("start_time",start_time))
 				.append("event_description", description);
 		collection.insertOne(doc); */
-		response.sendRedirect("eventdesc.html");
+	//	response.sendRedirect("eventdesc.html");
 		
 		
 		

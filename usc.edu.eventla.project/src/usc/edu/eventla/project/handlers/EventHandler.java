@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -47,6 +48,9 @@ public class EventHandler extends HttpServlet {
 				valid = true;
 			}
 		}
+		Cookie cookie = new Cookie("username",name);
+		cookie.setMaxAge(60*60*24); 
+		response.addCookie(cookie);
 		mongoClient.close();
 
 		response.setContentType("text/html");

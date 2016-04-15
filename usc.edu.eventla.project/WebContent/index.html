@@ -250,7 +250,6 @@
             
             <div style="font-size:20px;color:Black;font-family:Avenir LT W01 85 Heavy,Arial,Helvetica Neue,Helvetica,sans-serif;"> Find Events </div><br>
         <!--Success buttons with dropdown menu-->
-         <form  method="post" action="eventlist" name="searchform">
         <div class="btn-group" >
             <button type="button"  style="height:40px;width:200px;" data-toggle="dropdown" class="btn btn-warning dropdown-toggle" id="btn_services">Category <span class="caret"></span></button>
            <ul class="dropdown-menu" >
@@ -308,8 +307,9 @@
         </div>
          &nbsp;&nbsp;  &nbsp;&nbsp;
         <div class="btn-group">
-       
-          <a href="#"> <img src="img/logos/1456727085_search_magnifying_glass_find.png" onclick="document.forms['searchform'].submit();" alt="Search"/></a>
+        <form  method="post" action="eventlist">
+        <input type="submit" value ="Search">
+           <a href="/eventslist.html"> <img src="img/logos/1456727085_search_magnifying_glass_find.png"/></a>
         </form>
         </div>
        

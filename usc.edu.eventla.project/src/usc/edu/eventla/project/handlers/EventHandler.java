@@ -62,6 +62,10 @@ public class EventHandler extends HttpServlet {
 
 		if (valid) {
 			InputStream in;
+			
+			// identify as admin
+			in= getServletContext().getResourceAsStream("/Dashboard.html");
+			
 			if(popup != null && popup != ""){
 				in= getServletContext().getResourceAsStream("/Event.html");
 				

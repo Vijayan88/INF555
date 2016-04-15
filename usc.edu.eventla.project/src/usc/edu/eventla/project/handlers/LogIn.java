@@ -12,7 +12,7 @@ public static void main(String[] args) {
 
 	MongoDatabase database = mongoClient.getDatabase("eventsla");
 	MongoCollection<Document> collection = database.getCollection("Login");
-	Document doc = new Document("name", "ayushi").append("username", "ayushi@usc.edu").append("passwd", "1234");
+	Document doc = new Document("name", "admin").append("username", "admin@usc.edu").append("passwd", "1234");
 	collection.insertOne(doc);
 	mongoClient.close();
 }

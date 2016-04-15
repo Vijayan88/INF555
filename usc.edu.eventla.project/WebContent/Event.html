@@ -179,11 +179,11 @@
 
 <form role="form">
   <label for="etitle" class="control-label required-field">EVENT TITLE</label>
-  <input type = "text" id="etitle" class= "form-control input1" onblur="eventtitle(this,this.form.counter,75);" onkeyup="eventtitle(this,this.form.counter,75);"  name="message" rows="1" cols="15" placeholder="Give it a short distinct name" required>
+  <input type = "text" id="etitle" class= "form-control input1" onblur="eventtitle(this,this.form.counter,75);" onkeyup="eventtitle(this,this.form.counter,75);"  name="event_title" rows="1" cols="15" placeholder="Give it a short distinct name" required>
 <input class= "form-control input3" onblur="eventtitle(this.form.recipients,this,75);" disabled  onfocus="this.blur();" tabindex="999" maxlength="1" size="25" placeholder="75 characters remaining" name="counter">
 </input><br>
   <label for="etype">EVENT TYPE</label>
-<select class="form-control input2" id="etype">
+<select class="form-control input2" name="event_type" id="etype">
         <option>Select the type of event</option>
         <option value = 'CLM'>Concerts & Live Music</option>
         <option value = 'MT'>Museums & Theatre</option>
@@ -195,10 +195,10 @@
 
   <label for="loc">LOCATION</label><br>
   <label class="checkbox-inline">
-    <input type="checkbox" value="online">Online event
+    <input type="checkbox" name="event_category" value="online">Online event
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id = "location" value="location" onclick="enable_fields();">Add location
+      <input type="checkbox" id = "location" name="event_category" value="location" onclick="enable_fields();">Add location
     </label>
     <br>
 <!--     <input type="text" id = "venue" class = "form-control input3" disabled placeholder="Enter the venue's name"> -->

@@ -8,6 +8,17 @@
     <servlet-name>login</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>logout</servlet-name>
+    <servlet-class>usc.edu.eventla.project.handlers.LogoutHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  
+  
   <servlet>
     <servlet-name>index</servlet-name>
     <servlet-class>usc.edu.eventla.project.handlers.IndexHandler</servlet-class>

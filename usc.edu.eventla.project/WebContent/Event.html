@@ -207,12 +207,12 @@
 					onblur="eventtitle(this.form.recipients,this,75);" disabled
 					onfocus="this.blur();" tabindex="999" maxlength="1" size="25"
 					placeholder="75 characters remaining" name="counter"> </input><br>
-				<label for="etype">EVENT TYPE</label> <select
+				<label for="etype" class="control-label required-field" required>EVENT TYPE</label> <select
 					class="form-control input2" name="event_type" id="etype">
 					<option>Select the type of event</option>
-					<option value='CLM'>Concerts & Live Music</option>
-					<option value='MT'>Museums & Theatre</option>
-					<option value='SE'>Sports & Entertainment</option>
+					<option value='Concerts & Live Music'>Concerts & Live Music</option>
+					<option value='Museums & Theatre'>Museums & Theatre</option>
+					<option value='Sports & Entertainment'>Sports & Entertainment</option>
 				</select> <br> <label for="loc">LOCATION</label><br> <label
 					class="checkbox-inline"> <input type="checkbox"
 					name="event_category" value="online">Online event
@@ -224,15 +224,16 @@
 				<select class="form-control input2" id="venue" name="venue" disabled
 					placeholder="Select the venue">
 					<option>Select the venue</option>
-					<option value='CSUN'>CSUN-Cal State NorthRidge</option>
-					<option value='GT'>Greek Theatre</option>
-					<option value='VR'>Viper Room</option>
-					<option value='WD'>Walt Disney Concert Hall</option>
-					<option value='SC'>Staples Center</option>
-					<option value='WT'>IO West Theatre</option>
-					<option value='TW'>The Wiltern</option>
-					<option value='LA'>LA Coliseum</option>
-					<option value='TC'>The Canyon</option>
+					<option value='CSUN-Cal State NorthRidge'>CSUN-Cal State NorthRidge</option>
+					<option value='Greek Theatre'>Greek Theatre</option>
+					<option value='Hollywood Pantages Theatre'>Hollywood Pantages Theatre</option>
+					<option value='Viper Room'>Viper Room</option>
+					<option value='Walt Disney Concert Hall'>Walt Disney Concert Hall</option>
+					<option value='Staples Center'>Staples Center</option>
+					<option value='West Theatre'>IO West Theatre</option>
+					<option value='The Wiltern'>The Wiltern</option>
+					<option value='LA Coliseum'>LA Coliseum</option>
+					<option value='The Canyon'>The Canyon</option>
 				</select> <input type="text" name="address1" id="addr"
 					class="form-control input3" disabled placeholder="Address">
 				<input type="text" name="address2" id="addr2"
@@ -240,16 +241,16 @@
 				<select class="form-control input2" name="city_name" id="city"
 					disabled>
 					<option>Select the region</option>
-					<option value='LAX'>Beach Cities/LAX</option>
-					<option value ="LOS">Los Angeles</option>
-					<option value='MT'>Downtown/LA Metro</option>
-					<option value='SM'>Santa Monica</option>
-					<option value='WH'>West Hollywood</option>
-					<option value='BH'>Beverly Hills</option>
-					<option value='HW'>Hollywood</option>
-					<option value='PA'>Pasadena</option>
-					<option value='TV'>The Valley</option>
-					<option value='WE'>Westside</option>
+					<option value='Beach Cities/LAX'>Beach Cities/LAX</option>
+					<option value ="Los Angeles">Los Angeles</option>
+					<option value='Downtown/LA Metro'>Downtown/LA Metro</option>
+					<option value='Santa Monica'>Santa Monica</option>
+					<option value='West Hollywood'>West Hollywood</option>
+					<option value='Beverly Hills'>Beverly Hills</option>
+					<option value='Hollywood'>Hollywood</option>
+					<option value='Pasadena'>Pasadena</option>
+					<option value='The Valley'>The Valley</option>
+					<option value='Westside'>Westside</option>
 				</select>
 				<!-- <input type="text" id = "city" class = "form-control input3"  disabled placeholder="City">  -->
 				<input type="text" name="pin_code" id="pincode"

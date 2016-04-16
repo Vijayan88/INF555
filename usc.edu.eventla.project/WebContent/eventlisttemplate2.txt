@@ -8,8 +8,8 @@
               <h3>$event_title </h3>
               <h4>$venue   $address1   $start_time </h4>
               <p>$event_description</p>
-              <form  method="post" action="eventdesc" name="searchform">
-              <a class="btn btn-primary" onclick="document.forms['searchform'].submit();">Read More<span class="glyphicon glyphicon-chevron-right"></span></a></div>
+              
+              <a class="btn btn-primary" href="/eventdesc?id=$event_title">Read More<span class="glyphicon glyphicon-chevron-right"></span></a></div>
             
            
               </form>

@@ -26,7 +26,7 @@ import com.mongodb.gridfs.GridFSDBFile;
 public class EventDescHandler extends HttpServlet {
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		 String event_title = request.getParameter("id");

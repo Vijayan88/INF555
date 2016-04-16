@@ -53,10 +53,10 @@ public class EventListHandler extends HttpServlet {
 
 		BasicDBObject allQuery = new BasicDBObject();
 		List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
-		obj.add(new BasicDBObject("event_type", event_type));
-		obj.add(new BasicDBObject("city_name", city_name));
+		obj.add(new BasicDBObject("event_type", event_type[0]));
+		obj.add(new BasicDBObject("city_name", city_name[0]));
 		obj.add(new BasicDBObject("start_date", start_date));
-		obj.add(new BasicDBObject("address.venue", venue));
+		obj.add(new BasicDBObject("address.venue", venue[0]));
 
 		allQuery.put("$or", obj);
 

@@ -200,6 +200,6 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-              <h1 class="page-header">Events / Theatre /Downtown LA</h1>
+              <h1 class="page-header">Events / $event_type /$city_name</h1>
             </div>
         </div>

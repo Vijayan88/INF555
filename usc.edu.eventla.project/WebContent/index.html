@@ -247,18 +247,18 @@
                     <h3 class="section-subheading text-muted">Endless Entertaintment</h3>
                 </div>
             </div>
-            
+            <form  method="post" action="eventlist">
             <div style="font-size:20px;color:Black;font-family:Avenir LT W01 85 Heavy,Arial,Helvetica Neue,Helvetica,sans-serif;"> Find Events </div><br>
         <!--Success buttons with dropdown menu-->
          <form  method="post" action="eventlist" name="searchform">
         <div class="btn-group" >
             <button type="button"  style="height:40px;width:200px;" data-toggle="dropdown" class="btn btn-warning dropdown-toggle" id="btn_services">Category <span class="caret"></span></button>
            <ul class="dropdown-menu" >
-            <li><input type="checkbox"/>&nbsp;&nbsp; Select All</a></li>
+            <li><input name="event_type" value="" type="checkbox"/>&nbsp;&nbsp; Select All</a></li>
              <li class="divider"></li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Concerts & Live Music</li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Museums & Theatre</li>
-                 <li><input type="checkbox"/>&nbsp;&nbsp;Sports & Entertaintment</li>
+                <li><input type="checkbox" name="event_type" value="CLM"/>&nbsp;&nbsp;Concerts & Live Music</li>
+                <li><input type="checkbox" name="event_type" value="MT"/>&nbsp;&nbsp;Museums & Theatre</li>
+                 <li><input type="checkbox" name="event_type" value="SE""/>&nbsp;&nbsp;Sports & Entertaintment</li>
                
                 
             </ul>
@@ -267,15 +267,19 @@
         <div class="btn-group">
             <button type="button" style="height:40px;width:200px" data-toggle="dropdown" class="btn btn-warning dropdown-toggle"id="btn_services">Region <span class="caret"></span></button>
            <ul class="dropdown-menu">
-            <li><input type="checkbox"/>&nbsp;&nbsp; Select All</li>
+            <li><input type="checkbox" name="city_name" value=""/>&nbsp;&nbsp; Select All</li>
              <li class="divider"></li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Beach Cities / LAX</li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Downtown / LA Metro</li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Santa Monica</li>
+                <li><input type="checkbox" name="city_name" value="LOS"/>&nbsp;&nbsp;Beach Cities / LAX</li>
+                <li><input type="checkbox" name="city_name" value="MT"/>&nbsp;&nbsp;Downtown / LA Metro</li>
+                <li><input type="checkbox" name="city_name" value="SM"/>&nbsp;&nbsp;Santa Monica</li>
+<li><input type="checkbox" name="city_name" value="WH"/>&nbsp;&nbsp;West Hollywood</li>
+<li><input type="checkbox" name="city_name" value="BH"/>&nbsp;&nbsp;Beverly Hills</li>
+				<li><input type="checkbox" name="city_name" value="HW"/>&nbsp;&nbsp;Hollywood</li>
+				<li><input type="checkbox" name="city_name" value="PA"/>&nbsp;&nbsp;Pasadena</li>
+				<li><input type="checkbox" name="city_name" value="TV"/>&nbsp;&nbsp;The Valley</li>
+				<li><input type="checkbox" name="city_name" value="WE"/>&nbsp;&nbsp;Westside</li>
 
-				<li><input type="checkbox"/>&nbsp;&nbsp;Hollywood</li>
-
-				<li><input type="checkbox"/>&nbsp;&nbsp;Neighboring Regions</li>
+				
 
                
                 
@@ -285,18 +289,21 @@
         <div class="btn-group" >
             <button type="button" style="height:40px;width:200px" data-toggle="dropdown" class="btn btn-warning dropdown-toggle" id="btn_services">Venue <span class="caret"></span></button>
             <ul class="dropdown-menu">
-           <li><input type="checkbox"/>&nbsp;&nbsp; Select All</li>
+           <li><input type="checkbox" name="venue" value=""/>&nbsp;&nbsp; Select All</li>
              <li class="divider"></li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Staples Center</li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Shrine</li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;LA Coliseum</li>
+                <li><input type="checkbox" name="venue" value='SC'/>&nbsp;&nbsp;Staples Center</li>
+                <li><input type="checkbox" name="venue" value='CSUN'/>&nbsp;&nbsp;CSUN-Cal State NorthRidge</li>
+                <li><input type="checkbox" name="venue" value='GT'/>&nbsp;&nbsp;Greek Theatre</li>
 
-				<li><input type="checkbox"/>&nbsp;&nbsp;Hollywood Pantages Theatre</li>
+				<li><input type="checkbox" name="venue" value='VR'/>&nbsp;&nbsp;Viper Room</li>
 
-				<li><input type="checkbox"/>&nbsp;&nbsp;Walt Disney Concert</li>
+				<li><input type="checkbox" name="venue" value='WD'/>&nbsp;&nbsp;Walt Disney Concert</li>
 
-               
-                
+               <li><input type="checkbox"  name="venue" value='WT'/>&nbsp;&nbsp;IO West Theatre</li>
+               <li><input type="checkbox" name="venue" value='TW'/>&nbsp;&nbsp;The Wiltern</li>
+               <li><input type="checkbox" name="venue" value='LA'/>&nbsp;&nbsp;LA Coliseum</li>
+               <li><input type="checkbox" name="venue" value='TC'/>&nbsp;&nbsp;The Canyon</li>
+             
             </ul>
         </div>
         

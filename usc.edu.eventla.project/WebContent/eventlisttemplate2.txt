@@ -6,7 +6,7 @@
             </div>
             <div class="col-md-8">
               <h3>$event_title </h3>
-              <h4>$address </h4>
+              <h4>$venue$address1$start_time </h4>
               <p>$event_description</p>
               <a class="btn btn-primary" href="eventdesc.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a></div>
         </div>

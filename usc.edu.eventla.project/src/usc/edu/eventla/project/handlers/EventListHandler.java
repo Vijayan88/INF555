@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -12,12 +14,80 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.Mongo;
+
 public class EventListHandler extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		String event_type = request.getParameter("event_type");
+		String city_name = request.getParameter("city_name");
+		String venue = request.getParameter("venue");
+		String start_date = request.getParameter("start_date");
+		PrintWriter out = response.getWriter();
+		out.println(event_type);
+		out.println(city_name);
+		out.println(venue);
+		out.println(start_date);
+		
+	/*	String event_title = null;
+		String event_description=null;
+		String venue_place = null;
+		String address1 = null;
+		String starting_time = null;
+		String type_event=null;
+		String region=null;
+		
+		boolean valid = false;
+		// to let users from cssl to test freely
+		Mongo mongoClient = new Mongo("localhost", 27017);
+		// String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+		DB database = mongoClient.getDB("eventsla");
+		DBCollection collection = database.getCollection("CreateEvent");
+		//DBCollection collection = database.getCollection("Event_Reg");
+		//int events_cnt=collection.getCount();
+		//long users_cnt = collection.getCount();
+
+		BasicDBObject allQuery = new BasicDBObject();
+		List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
+		obj.add(new BasicDBObject("event_type", event_type));
+		obj.add(new BasicDBObject("city_name", city_name));
+		obj.add(new BasicDBObject("start_date", start_date));
+		obj.add(new BasicDBObject("address.venue", venue));
+		
+	
+		allQuery.put("$or", obj);
+		
+		DBCursor cursor = collection.find(allQuery);
+		if (cursor != null) {
+			DBObject res = cursor.next();
+			event_title = (String)res.get("event_title");
+			type_event=(String)res.get("event_type");
+			venue_place=(String) res.get("address.venue");
+			address1=(String) res.get("address.address1");
+		    starting_time=(String) res.get("address.start_time")	;
+		    region=(String) res.get("address.city_name")	;
+			//event_address=
+			//event_category = (String)res.get("event_category");
+			
+			//BasicDBList res = (BasicDBList) res.next().get("address");
+			event_description=(String) res.get("event_description");
+			
+			
+			
+			
+			
+			}
+		
+		
+		
 		PrintWriter out = response.getWriter();
 		InputStream in;
 		in = getServletContext().getResourceAsStream("eventlisttemplate1.txt");
@@ -43,7 +113,7 @@ public class EventListHandler extends HttpServlet {
 		} else {
 			loginContents = loginDetails("loginsimple.txt");
 		}
-		out.println(sb.toString().replace("$LOGIN_DETAILS", loginContents));
+		out.println(sb.toString().replace("$LOGIN_DETAILS", loginContents).replace("$event_type",type_event).replace("$city_name",region));
 
 		// mongodb
 		for (int i = 0; i < 4; i++) {
@@ -53,7 +123,9 @@ public class EventListHandler extends HttpServlet {
 			while ((line = reader.readLine()) != null) {
 				sb.append(line + "\n");
 			}
-			out.println(sb.toString());
+			
+			
+			out.println(sb.toString().replace("$event_title",event_title).replace("$venue",venue_place).replace("$address1",address1).replace("$start_time",starting_time).replace("event_description",event_description));
 			if (i != 3)
 				out.println("<hr>");
 		}
@@ -63,11 +135,11 @@ public class EventListHandler extends HttpServlet {
 		while ((line = reader.readLine()) != null) {
 			sb.append(line + "\n");
 		}
-		out.println(sb.toString());
+		out.println(sb.toString());*/
 
 	}
 
-	public String loginDetails(String fileName) throws IOException {
+	/*public String loginDetails(String fileName) throws IOException {
 		InputStream in;
 		in = getServletContext().getResourceAsStream(fileName);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
@@ -77,5 +149,5 @@ public class EventListHandler extends HttpServlet {
 			sb.append(line + "\n");
 		}
 		return sb.toString();
-	}
+	}*/
 }

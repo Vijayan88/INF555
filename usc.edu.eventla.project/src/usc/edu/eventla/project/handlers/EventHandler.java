@@ -52,10 +52,11 @@ public class EventHandler extends HttpServlet {
 				valid = true;
 			}
 		}
-		/*Cookie cookie = new Cookie("username", name);
-		cookie.setMaxAge(60 * 60 * 24);
-		response.addCookie(cookie); */
-		
+		/*
+		 * Cookie cookie = new Cookie("username", name); cookie.setMaxAge(60 *
+		 * 60 * 24); response.addCookie(cookie);
+		 */
+
 		response.setContentType("text/html");
 		// { "_id" : ObjectId("5701b191b0b4377bfc7276ad"), "username" :
 		// "vijayanb@usc.edu", "name" : "Vijayan", "passwd" : "password" }
@@ -68,7 +69,7 @@ public class EventHandler extends HttpServlet {
 			if ("admin@usc.edu".equals(emailid)) {
 
 				String usrCount = Long.toString(users_cnt);
-				listFeedbackDetails(out, usrCount,database);
+				listFeedbackDetails(out, usrCount, database);
 				return;
 			}
 
@@ -150,41 +151,39 @@ public class EventHandler extends HttpServlet {
 		while ((line = reader.readLine()) != null) {
 			sb.append(line + "\n");
 		}
-		out.println(sb.toString().replace("$NO_USERS", usrCount));
-		DBCollection collection = database.getCollection("CONTACT");
+		DBCollection collection = database.getCollection("contact");
 		DBCursor cursor = collection.find();
-		//if (cursor != null) {
-	/*	int i = 0;
-			while (i <= 2) {
-				i++;
+		out.println(sb.toString().replace("$NO_USERS", usrCount).replace("$REVIEW", String.valueOf(cursor.count())));
+		if (cursor != null) {
+
+			while (cursor.hasNext()) {
+
 				DBObject res = cursor.next();
 				name = (String) res.get("name");
 				email = (String) res.get("email");
 				phone = (String) res.get("phone");
-				date = (String) res.get("date");
-				time = (String) res.get("time");
-				message = (String) res.get("message"); 
+				date = (String) res.get("published");
+				message = (String) res.get("message");
 				in = getServletContext().getResourceAsStream("admin_dash4.txt");
 				reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 				sb = new StringBuilder();
 				while ((line = reader.readLine()) != null) {
 					sb.append(line + "\n");
 				}
-
 				out.println(sb.toString().replace("$NAME", name).replace("$EMAIL", email).replace("$DATE", date)
-						.replace("$TIME", time).replace("$MESSAGE", message));
-				out.print("<hr>");
+						.replace("$MESSAGE", message));
+				out.println("<hr>");
 
 			}
 
-		
-		in = getServletContext().getResourceAsStream("adminfooter.txt");
-		reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
-		sb = new StringBuilder();
-		while ((line = reader.readLine()) != null) {
-			sb.append(line + "\n");
+			in = getServletContext().getResourceAsStream("adminfooter.txt");
+			reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+			sb = new StringBuilder();
+			while ((line = reader.readLine()) != null) {
+				sb.append(line + "\n");
+			}
+			out.println(sb.toString());
 		}
-		out.println(sb.toString()); */
 
 	}
 

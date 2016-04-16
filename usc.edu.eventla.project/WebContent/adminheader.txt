@@ -153,7 +153,7 @@
                             <svg class="glyph stroked bag"><use xlink:href="#stroked-bag"></use></svg>
                         </div>
                         <div class="col-sm-9 col-lg-7 widget-right">
-                        <a class="large" href="admineventlist.html" onclick="review_events"> 5</a>
+                        <a class="large" href="admineventlist.html" onclick="review_events"> $REVIEW</a>
 <!--                             <div class="large">$NO_EVENTS</div> -->
                             <div class="text-muted">New events</div>
                         </div>
@@ -167,7 +167,7 @@
                             <svg class="glyph stroked empty-message"><use xlink:href="#stroked-empty-message"></use></svg>
                         </div>
                         <div class="col-sm-9 col-lg-7 widget-right">
-                            <div class="large">4</div>
+                            <div class="large">$REVIEW</div>
                             <div class="text-muted">Feedbacks</div>
                         </div>
                     </div>

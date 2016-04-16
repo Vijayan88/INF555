@@ -28,7 +28,7 @@ public class ContactHandler extends HttpServlet {
 		MongoClient mongoClient = new MongoClient();
 
 		MongoDatabase database = mongoClient.getDatabase("eventsla");
-		MongoCollection<Document> collection = database.getCollection("CONTACT");
+		MongoCollection<Document> collection = database.getCollection("contact");
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
 		Document doc = new Document("name", name).append("email", email).append("phone", phone).append("message",

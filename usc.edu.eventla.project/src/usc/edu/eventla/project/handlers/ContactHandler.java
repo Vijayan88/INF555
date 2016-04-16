@@ -1,6 +1,9 @@
 package usc.edu.eventla.project.handlers;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,9 +29,10 @@ public class ContactHandler extends HttpServlet {
 
 		MongoDatabase database = mongoClient.getDatabase("eventsla");
 		MongoCollection<Document> collection = database.getCollection("CONTACT");
-
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date();
 		Document doc = new Document("name", name).append("email", email).append("phone", phone).append("message",
-				message);
+				message).append("published", dateFormat.format(date));
 		collection.insertOne(doc);
 		response.sendRedirect("index.html");
 	}

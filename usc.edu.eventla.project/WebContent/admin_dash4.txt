@@ -1,0 +1,28 @@
+          <form class="form-inline" role ="form">
+                    <div class="form-group">
+
+                    <label>Name:</label>
+                    <text>Mike</text>    
+                    </div>
+                    <br>
+                <div class="form-group">
+
+                <label>Email:</label>
+                <text>mike@gmail.com</text> 
+                    
+                </div>
+                <div class="form-group">
+
+                <label>Date & Time:</label>
+                <text class="text-muted">14th April 2016; 15:50:00pm</text> 
+                    
+                </div>
+                <br>
+                
+                <div class="form-group">
+
+                <label>Message: </label>
+                <text>Event yet to be reviewed!! Its scheduled a week later. Kindly review ASAP</text>
+                    
+                        </div>
+                        </form>

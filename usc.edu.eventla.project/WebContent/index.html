@@ -247,7 +247,7 @@
                     <h3 class="section-subheading text-muted">Endless Entertaintment</h3>
                 </div>
             </div>
-            <form  method="post" action="eventlist">
+            <form  method="post" action="eventlist" name="searchform">
             <div style="font-size:20px;color:Black;font-family:Avenir LT W01 85 Heavy,Arial,Helvetica Neue,Helvetica,sans-serif;"> Find Events </div><br>
         <!--Success buttons with dropdown menu-->
          <form  method="post" action="eventlist" name="searchform">
@@ -311,12 +311,12 @@
        
         
         <div class="btn-group">
-            <input id="btn_services" value="2016-12-19" style="height:40px;width:200px;text-align:center" type=date step=1 min=2014-09-08 class="btn btn-warning dropdown-toggle"> 
+            <input id="btn_services" name="start_date" value="2016-12-19" style="height:40px;width:200px;text-align:center" type=date step=1 min=2014-09-08 class="btn btn-warning dropdown-toggle"> 
         </div>
          &nbsp;&nbsp;  &nbsp;&nbsp;
         <div class="btn-group">
        
-          <a href="#"> <img src="img/logos/1456727085_search_magnifying_glass_find.png" onclick="document.forms['searchform'].submit();" alt="Search"/></a>
+           <img src="img/logos/1456727085_search_magnifying_glass_find.png" onclick="document.forms['searchform'].submit();" alt="Search"/>
         </form>
         </div>
        

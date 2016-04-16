@@ -204,10 +204,7 @@ public class EventCreationHandler extends HttpServlet {
 		// save the image file into mongoDB
 		gfsFile.save();
 		
-	//	GridFSDBFile imageForOutput = gfsPhoto.findOne(newFileName);
-
-		// save it into a new image file
-	//	imageForOutput.writeTo("/Users/vijayan/Desktop/test.jpg"); */
+	
 	}
 	
 

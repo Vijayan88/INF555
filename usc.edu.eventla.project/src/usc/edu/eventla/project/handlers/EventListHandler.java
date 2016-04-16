@@ -130,11 +130,11 @@ public class EventListHandler extends HttpServlet {
 			starting_time = (String) address.get("start_time");
 			region = (String) address.get("city_name");
 			String imageName = (String) res.get("image_name");
-			GridFS gfsPhoto = new GridFS(database, "photo");
-			GridFSDBFile imageForOutput = gfsPhoto.findOne(imageName);
+		//	GridFS gfsPhoto = new GridFS(database, "photo");
+		//	GridFSDBFile imageForOutput = gfsPhoto.findOne(imageName);
 
 			// save it into a new image file
-			imageForOutput.writeTo("C:\\Users\\ayush\\Desktop\\test.jpg"); 
+			//imageForOutput.writeTo("data/test.jpg"); 
 			// event_address=
 			// event_category = (String)res.get("event_category");
 
@@ -147,8 +147,8 @@ public class EventListHandler extends HttpServlet {
 				sb.append(line + "\n");
 			}
 			out.println(sb.toString().replace("$event_title", event_title).replace("$venue", venue_place)
-					.replace("$address1", address1).replace("$start_time", starting_time)
-					.replace("$event_description", event_description).replace("$event_image", "C:\\Users\\ayush\\Desktop\\test.jpg"));
+					.replace("$address1", address1).replace("$start_time", starting_time).replace("$event_description",event_description).replace("$event_image", "/imagedownload?id="+imageName)
+					);
 			
 		}
 			
@@ -207,12 +207,7 @@ public class EventListHandler extends HttpServlet {
 				// BasicDBList res = (BasicDBList) res.next().get("address");
 				event_description = (String) res.get("event_description");
 
-				System.out.println(event_title);
-				System.out.println(type_event);
-				System.out.println(venue_place);
-				System.out.println(address1);
-				System.out.println(starting_time);
-				System.out.println(region);
+				
 
 			}
 		}

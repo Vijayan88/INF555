@@ -29,9 +29,9 @@ public class EventListHandler extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String event_type = request.getParameter("event_type");
-		String city_name = request.getParameter("city_name");
-		String venue = request.getParameter("venue");
+		String[] event_type = request.getParameterValues("event_type");
+		String[] city_name = request.getParameterValues("city_name");
+		String[] venue = request.getParameterValues("venue");
 		String start_date = request.getParameter("start_date");
 
 		String event_title = null;
@@ -87,9 +87,32 @@ public class EventListHandler extends HttpServlet {
 		} else {
 			loginContents = loginDetails("loginsimple.txt");
 		}
-		out.println(sb.toString().replace("$LOGIN_DETAILS", loginContents).replace("$event_type", event_type)
-				.replace("$city_name", city_name));
-
+		//out.println(sb.toString().replace("$LOGIN_DETAILS", loginContents));
+		StringBuilder titleString = new StringBuilder();
+		loginContents = sb.toString().replace("$LOGIN_DETAILS", loginContents);
+		
+		if ((event_type!=null) && event_type.length > 0)
+		{
+			for(String eveType : event_type){
+				titleString.append(eveType +" - ");
+			}
+			loginContents = loginContents.replace("$event_type", titleString.toString());
+			titleString = new StringBuilder();
+			
+		}
+		
+		if ((city_name!=null) && city_name.length > 0)
+		{
+			for(String eveType : city_name){
+				titleString.append(eveType +" - ");
+			}
+			loginContents = loginContents.replace("$city_name", titleString.toString());
+			titleString = new StringBuilder();
+			
+		}
+		
+		out.println(loginContents);
+		
 		// mongodb
 		DBCursor cursor = collection.find(allQuery);
 

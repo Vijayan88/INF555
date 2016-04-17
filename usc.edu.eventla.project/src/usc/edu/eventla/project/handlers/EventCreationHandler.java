@@ -101,6 +101,7 @@ public class EventCreationHandler extends HttpServlet {
 		out1.println(quantity_present3); 
 		out1.println(ticket_price3 );
 		*/
+		String imageName = title.replace(" ", "").toLowerCase()+"_"+start_date;
 		String user ="";
 		Cookie cookie = null;
 		Cookie[] cookies = null;
@@ -154,7 +155,7 @@ public class EventCreationHandler extends HttpServlet {
 						.append("quantity_present3",quantity_present3)
 						.append("ticket_price3",ticket_price3)
 						.append("ticket_name3",ticket_name3))
-				.append("image_name" ,  title.replace(" ", "").toLowerCase()+"_"+start_date);
+				.append("image_name" , imageName);
 		collection.insertOne(doc); 
 	//	response.sendRedirect("eventdesc.html");
 
@@ -194,7 +195,6 @@ public class EventCreationHandler extends HttpServlet {
 	    Mongo mongo = new Mongo("localhost", 27017);
 		DB db = mongo.getDB("eventsla");
 	//	DBCollection collection = db.getCollection("EventDetails");
-		String newFileName = title+"_"+start_date;
 		File imageFile = new File("newfile.jpg");
 		// create a "photo" namespace
 		GridFS gfsPhoto = new GridFS(db, "photo");
@@ -203,7 +203,7 @@ public class EventCreationHandler extends HttpServlet {
 		GridFSInputFile gfsFile = gfsPhoto.createFile(imageFile);
 
 		// set a new filename for identify purpose
-		gfsFile.setFilename(newFileName);
+		gfsFile.setFilename(imageName);
 
 		// save the image file into mongoDB
 		gfsFile.save();

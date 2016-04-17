@@ -27,7 +27,7 @@ public class ImageCreationHandler extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		
+	/*	
 		String eventname= request.getParameter("eventname");
 		
 		
@@ -60,14 +60,14 @@ public class ImageCreationHandler extends HttpServlet {
         }
 	    
 	
-	    
+	    */
 
 		
 	    Mongo mongo = new Mongo("localhost", 27017);
 		DB db = mongo.getDB("eventsla");
 		DBCollection collection = db.getCollection("EventDetails");
 
-		String newFileName = "mkyong-java-image";
+		String newFileName = "grandfinale_2016-04-17";
 
 		File imageFile = new File("newfile.jpg");
 
@@ -89,7 +89,7 @@ public class ImageCreationHandler extends HttpServlet {
 		imageForOutput.writeTo("/Users/vijayan/Desktop/test.jpg"); 
 		//PrintWriter out = response.getWriter();
 
-		writer.println(eventname);
+		//writer.println(eventname);
 	}
 	private String getFileName(final Part part) {
 	  return "/tmp";

@@ -233,7 +233,7 @@ $(document).ready(function () {
         <!-- Portfolio Item Heading -->
         <div class="row">
             <div class="col-lg-12">
-              <h1 class="page-header">Oscars <font color="#777777">Grammy Museum</font></h1>
+              <h1 class="page-header">$event_title <font color="#777777"></font></h1>
             </div>
         </div>
         <!-- /.row -->
@@ -276,30 +276,30 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
             <div class="col-md-8">
               <h3>Overview</h3>
-              <p>The Academy Awards, or "Oscars", is an annual American awards ceremony hosted by the Academy of Motion Picture Arts and Sciences (A.M.P.A.S.) to recognize excellence in cinematic achievements in the United States film industry as assessed by the Academy's voting membership</p>
+              <p>$event_description</p>
               <h4 class="text-capitalize">Venue</h4>
               <p>
-                Grammy Museum 
-800 W. Olympic Blvd.
-Los Angeles, 90015
+             $venue $address1 $address2 
+             $cityname  $pin_code 
+             $start_date $start_time
 
                     
               </p>
                 <h4 class="text-capitalize">Region</h4>
               <p>
-                Westside
+               $city_name
 
                     
                 </p>
                 <h4 class="text-capitalize">Admission</h4>
               <p>
-                $60 - $100
+                $ticket_price1 - $ticket_price3
 
                     
                 </p>
                 <h4 class="text-capitalize">Website</h4>
               <p>
-                <a href="#"> https://www.oscar.com </a>
+                <a href="#"> $event_website </a>
 
                     
                 </p>
@@ -323,8 +323,8 @@ Los Angeles, 90015
       <th scope="col" style="width:10%">Quantity</th>
     </tr>
     <tr>
-      <th scope="col">General Admission</th>
-      <th scope="col">60$</th>
+      <th scope="col">$ticket_name1</th>
+      <th scope="col">$ticket_price1</th>
       <th scope="col"><select class="ticket_table_select" name="quant_42458602_None" id="quant_42458602_None" onchange="updateCheckout();">
             <option value="0">0</option>
 
@@ -342,8 +342,8 @@ Los Angeles, 90015
     </select></th>
     </tr>
     <tr>
-      <th scope="col">Early Bid</th>
-      <th scope="col">80$</th>
+      <th scope="col">$ticket_name2</th>
+      <th scope="col">$ticket_price2</th>
       <th scope="col"><select class="ticket_table_select" name="quant_42458602_None" id="quant_42458602_None" onchange="updateCheckout();">
             <option value="0">0</option>
 

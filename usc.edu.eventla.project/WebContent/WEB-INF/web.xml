@@ -19,6 +19,8 @@
   </servlet-mapping>
   
   
+  
+  
   <servlet>
     <servlet-name>index</servlet-name>
     <servlet-class>usc.edu.eventla.project.handlers.IndexHandler</servlet-class>
@@ -35,6 +37,15 @@
   <servlet-mapping>
     <servlet-name>eventlist</servlet-name>
     <url-pattern>/eventlist</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>eventdesc</servlet-name>
+    <servlet-class>usc.edu.eventla.project.handlers.EventDescHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>eventdesc</servlet-name>
+    <url-pattern>/eventdesc</url-pattern>
   </servlet-mapping>
   
   <servlet>

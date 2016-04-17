@@ -102,6 +102,17 @@
   </servlet-mapping>
   
   
+   <servlet>
+    <servlet-name>eventcreate</servlet-name>
+    <servlet-class>usc.edu.eventla.project.handlers.NewEventHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>eventcreate</servlet-name>
+    <url-pattern>/eventcreate</url-pattern>
+  </servlet-mapping>
+  
+  
+  
   <context-param> 
     <description>Location to store uploaded file</description> 
     <param-name>file-upload</param-name> 

@@ -29,10 +29,9 @@ public class EventHistoryHandler extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String[] event_type = request.getParameterValues("event_type");
-		String[] city_name = request.getParameterValues("city_name");
-		String[] venue = request.getParameterValues("venue");
-		String start_date = request.getParameter("start_date");
+		String[] event_type = null;
+		String[] city_name = null;
+		
 
 		String event_title = null;
 		String event_description = null;
@@ -41,6 +40,7 @@ public class EventHistoryHandler extends HttpServlet {
 		String starting_time = null;
 		String type_event = null;
 		String region = null;
+		String user_login=null;
 
 		// to let users from cssl to test freely
 		Mongo mongoClient = new Mongo("localhost", 27017);
@@ -48,18 +48,14 @@ public class EventHistoryHandler extends HttpServlet {
 		DB database = mongoClient.getDB("eventsla");
 		DBCollection collection = database.getCollection("CreateEvent");
 		
-        BasicDBObject inQuery = new BasicDBObject();
-        List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
-        obj.add(new BasicDBObject("username", new BasicDBObject("$in", eventTypes)));
-        obj.add(new BasicDBObject("city_name",new BasicDBObject("$in", cityNames)));
-        obj.add(new BasicDBObject("address.venue",new BasicDBObject("$in", venueNames)));
-		obj.add(new BasicDBObject("start_date", start_date));
-        inQuery.put("$or",obj );
-        
+   
+		
+	
+	
       
 		PrintWriter out = response.getWriter();
 		InputStream in;
-		in = getServletContext().getResourceAsStream("eventlisttemplate1.txt");
+		in = getServletContext().getResourceAsStream("eventhisttemplate.txt");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 		StringBuilder sb = new StringBuilder();
 		String line = null;
@@ -77,6 +73,7 @@ public class EventHistoryHandler extends HttpServlet {
 				if (cookie.getName().equals("username")) {
 					loginContents = loginDetails("loginuser.txt");
 					loginContents = loginContents.replace("$USER", cookie.getValue());
+					user_login=cookie.getValue();
 				}
 			}
 		} else {
@@ -86,37 +83,19 @@ public class EventHistoryHandler extends HttpServlet {
 		StringBuilder titleString = new StringBuilder();
 		loginContents = sb.toString().replace("$LOGIN_DETAILS", loginContents);
 		
-		if ((event_type!=null) && event_type.length > 0)
-		{
-			for(String eveType : event_type){
-				titleString.append(eveType +" - ");
-			}
-			StringBuilder bld = new StringBuilder(titleString.reverse().toString().replaceFirst("-", ""));
-			loginContents = loginContents.replace("$event_type", bld.reverse().toString());
-			titleString = new StringBuilder();
-			
-		}
-		
-		if ((city_name!=null) && city_name.length > 0)
-		{
-			for(String eveType : city_name){
-				titleString.append(eveType +" - ");
-			}
-			StringBuilder bld = new StringBuilder(titleString.reverse().toString().replaceFirst("-", ""));
-			
-			loginContents = loginContents.replace("$city_name", bld.reverse().toString());
-			titleString = new StringBuilder();
-			
-		}
 		
 		out.println(loginContents);
-		
+	     
 		// mongodb
-		DBCursor cursor = collection.find(inQuery);
+		
+		BasicDBObject allQuery = new BasicDBObject();
+		 allQuery.put("username",user_login );
+		
+		
+		DBCursor cursor = collection.find(allQuery);
+		
 
-		if (cursor == null || cursor.count() == 0) {
-			cursor = collection.find();
-		}
+		
 		while (cursor.hasNext()) {
 
 			DBObject res = cursor.next();
@@ -140,7 +119,7 @@ public class EventHistoryHandler extends HttpServlet {
 
 			// BasicDBList res = (BasicDBList) res.next().get("address");
 			event_description = (String) res.get("event_description");
-			in = getServletContext().getResourceAsStream("eventlisttemplate2.txt");
+			in = getServletContext().getResourceAsStream("eventhisttemplate2.txt");
 			reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 			sb = new StringBuilder();
 			while ((line = reader.readLine()) != null) {
@@ -155,7 +134,7 @@ public class EventHistoryHandler extends HttpServlet {
 
 			
 			
-		in = getServletContext().getResourceAsStream("/eventlisttemplate3.txt");
+		in = getServletContext().getResourceAsStream("/eventhisttemplate3.txt");
 		reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 		sb = new StringBuilder();
 		while ((line = reader.readLine()) != null) {

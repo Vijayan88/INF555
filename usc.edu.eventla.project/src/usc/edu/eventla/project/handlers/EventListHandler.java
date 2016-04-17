@@ -69,6 +69,7 @@ public class EventListHandler extends HttpServlet {
         obj.add(new BasicDBObject("city_name",new BasicDBObject("$in", cityNames)));
         obj.add(new BasicDBObject("address.venue",new BasicDBObject("$in", venueNames)));
 		obj.add(new BasicDBObject("start_date", start_date));
+		obj.add(new BasicDBObject("status", "Approved"));
         inQuery.put("$or",obj );
         
       

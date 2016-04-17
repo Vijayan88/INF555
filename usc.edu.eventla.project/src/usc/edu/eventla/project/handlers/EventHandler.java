@@ -52,10 +52,10 @@ public class EventHandler extends HttpServlet {
 				valid = true;
 			}
 		}
-		/*
-		 * Cookie cookie = new Cookie("username", name); cookie.setMaxAge(60 *
-		 * 60 * 24); response.addCookie(cookie);
-		 */
+
+		Cookie cookie = new Cookie("username", name);
+		cookie.setMaxAge(60 * 60 * 24);
+		response.addCookie(cookie);
 
 		response.setContentType("text/html");
 		// { "_id" : ObjectId("5701b191b0b4377bfc7276ad"), "username" :

@@ -106,7 +106,8 @@ public class EventListHandler extends HttpServlet {
 			for(String eveType : event_type){
 				titleString.append(eveType +" - ");
 			}
-			loginContents = loginContents.replace("$event_type", titleString.toString());
+			StringBuilder bld = new StringBuilder(titleString.reverse().toString().replaceFirst("-", ""));
+			loginContents = loginContents.replace("$event_type", bld.reverse().toString());
 			titleString = new StringBuilder();
 			
 		}
@@ -116,7 +117,9 @@ public class EventListHandler extends HttpServlet {
 			for(String eveType : city_name){
 				titleString.append(eveType +" - ");
 			}
-			loginContents = loginContents.replace("$city_name", titleString.toString());
+			StringBuilder bld = new StringBuilder(titleString.reverse().toString().replaceFirst("-", ""));
+			
+			loginContents = loginContents.replace("$city_name", bld.reverse().toString());
 			titleString = new StringBuilder();
 			
 		}

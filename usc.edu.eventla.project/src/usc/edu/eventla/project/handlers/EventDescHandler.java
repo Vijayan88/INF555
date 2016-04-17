@@ -43,6 +43,7 @@ public class EventDescHandler extends HttpServlet {
 			String event_website=null;
 			String ticket_price1 = null;
 			String ticket_price2 = null;
+			String ticket_price3= null;
 			String ticket_name1 = null;
 			String ticket_name2=null;
 			String facebook_link=null;
@@ -91,17 +92,9 @@ public class EventDescHandler extends HttpServlet {
 			loginContents = loginDetails("loginsimple.txt");
 		}
 		
-		StringBuilder titleString = new StringBuilder();
-		loginContents = sb.toString().replace("$LOGIN_DETAILS", loginContents);
 		
-		if (event_title!=null) 
-		{
-			
-				titleString.append(event_title );
-			}
-			loginContents = loginContents.replace("$event_title", titleString.toString());
-			titleString = new StringBuilder();
-			
+		
+		loginContents = sb.toString().replace("$LOGIN_DETAILS", loginContents);
 		
 		
 		
@@ -134,7 +127,8 @@ public class EventDescHandler extends HttpServlet {
 			ticket_price1 = (String)ticket_1.get("ticket_price1");
 			BasicDBObject ticket_2  = (BasicDBObject) res.get("ticket_2");
 			ticket_name2 = (String) ticket_2.get("ticket_name2");
-			ticket_price2 = (String)ticket_1.get("ticket_price2");
+			ticket_price2 = (String)ticket_2.get("ticket_price2");
+			
 			
 		
 			
@@ -145,13 +139,18 @@ public class EventDescHandler extends HttpServlet {
 			while ((line = reader.readLine()) != null) {
 				sb.append(line + "\n");
 			}
-			out.println(sb.toString().replace("$event_description", event_description).
+			out.println(sb.toString().replace("$event_title", title_event).replace("$event_description", event_description).
 					                         replace("$venue",venue).replace("$address1", address1).replace("$address2",address2)
 					                         .replace("$cityname",cityname).replace(" $pin_code",pin_code)
 					                         .replace("$start_date" , start_date).replace("$start_time",start_time)
-					                         .replace("$cityname", cityname).replace("$ticket_price1", ticket_price1)
+					                         .replace("$city_name", cityname).replace("$ticket_price1", ticket_price1)
+					                        . replace("$ticket_price2",ticket_price2)
+					                        .replace("$event_website", event_website)
 					                         .replace("$ticket_name1", ticket_name1)
 					                         .replace("$ticket_name2", ticket_name2)
+					                         .replace("$ticket_price2", ticket_price2)
+					                         .replace("$fb_link", facebook_link)
+					                         .replace("$twiiter_link", twitter_link)
 					                         
 					                         );
 		

@@ -65,7 +65,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                 </p>
                 <h4 class="text-capitalize">Admission</h4>
               <p>
-                $ticket_price1 - $ticket_price3
+                $$ticket_price1 - $$ticket_price2
 
                     
                 </p>
@@ -262,10 +262,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
      <br>
                 <h3 class="labelprimary">Share with friends</h3>
-                <a href="https://www.facebook.com/bootsnipp" style="color:rgba(26,110,221,1.00)"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-	            <a href="https://twitter.com/bootsnipp" style="color:rgba(19,166,199,1.00)"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-	            <a href="https://plus.google.com/+Bootsnipp-page" style="color:red"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-	            <a href="mailto:bootsnipp@gmail.com" style="color:rgba(160,154,141,1.00)"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+                <a href="https://$fb_link" style="color:rgba(26,110,221,1.00)"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+	            <a href="https://$twiiter_link" style="color:rgba(19,166,199,1.00)"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+	            
                 <br><br>
     </div>
 

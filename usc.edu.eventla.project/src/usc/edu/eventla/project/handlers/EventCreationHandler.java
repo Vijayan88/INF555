@@ -152,7 +152,7 @@ public class EventCreationHandler extends HttpServlet {
 						.append("quantity_present3",quantity_present3)
 						.append("ticket_price3",ticket_price3)
 						.append("ticket_name3",ticket_name3))
-				.append("image_name" ,  title+"_"+start_date);
+				.append("image_name" ,  title.replace(" ", "").toLowerCase()+"_"+start_date);
 		collection.insertOne(doc); 
 	//	response.sendRedirect("eventdesc.html");
 

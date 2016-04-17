@@ -135,10 +135,12 @@ public class EventListHandler extends HttpServlet {
 			event_title = (String) res.get("event_title");
 			type_event = (String) res.get("event_type");
 			BasicDBObject address = (BasicDBObject) res.get("address");
+			if(address != null){
 			venue_place = (String) address.get("venue");
 			address1 = (String) address.get("address1");
 			starting_time = (String) address.get("start_time");
 			region = (String) address.get("city_name");
+			}
 			String imageName = (String) res.get("image_name");
 		//	GridFS gfsPhoto = new GridFS(database, "photo");
 		//	GridFSDBFile imageForOutput = gfsPhoto.findOne(imageName);

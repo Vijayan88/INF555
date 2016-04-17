@@ -58,9 +58,6 @@ public class EventHandler extends HttpServlet {
 		response.addCookie(cookie);
 
 		response.setContentType("text/html");
-		// { "_id" : ObjectId("5701b191b0b4377bfc7276ad"), "username" :
-		// "vijayanb@usc.edu", "name" : "Vijayan", "passwd" : "password" }
-		// Actual logic goes here.
 		PrintWriter out = response.getWriter();
 
 		if (valid) {

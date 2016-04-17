@@ -205,31 +205,31 @@
 <!--     <input type="text" id = "venue" class = "form-control input3" disabled placeholder="Enter the venue's name"> -->
     <select class="form-control input2" id="venue" name ="venue" disabled placeholder="Select the venue">
         <option>Select the venue</option>
-        <option value = 'CSUN'>CSUN-Cal State NorthRidge</option>
-        <option value = 'GT'>Greek Theatre</option>
-        <option value = 'VR'>Viper Room</option>
-        <option value = 'WD'>Walt Disney Concert Hall</option>
-        <option value = 'SC'>Staples Center</option>
-        <option value = 'WT'>IO West Theatre</option>
-        <option value = 'TW'>The Wiltern</option>
-        <option value = 'LA'>LA Coliseum</option>
-        <option value = 'TC'>The Canyon</option>
+        <option value = 'CSUN-Cal State NorthRidge'>CSUN-Cal State NorthRidge</option>
+        <option value = 'Greek Theatre'>Greek Theatre</option>
+        <option value = 'Viper Room'>Viper Room</option>
+        <option value = 'Walt Disney Concert Hall'>Walt Disney Concert Hall</option>
+        <option value = 'Staples Center'>Staples Center</option>
+        <option value = 'IO West Theatre'>IO West Theatre</option>
+        <option value = 'The Wiltern'>The Wiltern</option>
+        <option value = 'LA Coliseum'>LA Coliseum</option>
+        <option value = 'The Canyon'>The Canyon</option>
     </select>
 
     <input type="text" name="address1" id= "addr" class = "form-control input3" disabled placeholder="Address"> 
     <input type="text" name="address2" id = "addr2" class = "form-control input3" disabled placeholder="Address2"> 
     <select class="form-control input2" name="city_name" id="city" onchange="google_maps('city')";>
         <option>Select the region</option>
-        <option value = 'LAX'>Beach Cities/LAX</option>
-        <option value = 'LOS'>Los Angeles</option>
-        <option value = 'MT'>Downtown/LA Metro</option>
-        <option value = 'SM'>Santa Monica</option>
-        <option value = 'WH'>West Hollywood</option>
-        <option value = 'BH'>Beverly Hills</option>
-        <option value = 'HW'>Hollywood</option>
-        <option value = 'PA'>Pasadena</option>
-        <option value = 'TV'>The Valley</option>
-        <option value = 'WE'>Westside</option>
+        <option value = 'Beach Cities/LAX'>Beach Cities/LAX</option>
+        <option value = 'Los Angeles'>Los Angeles</option>
+        <option value = 'Downtown/LA Metro'>Downtown/LA Metro</option>
+        <option value = 'Santa Monica'>Santa Monica</option>
+        <option value = 'West Hollywood'>West Hollywood</option>
+        <option value = 'Beverly Hills'>Beverly Hills</option>
+        <option value = 'Hollywood'>Hollywood</option>
+        <option value = 'Pasadena'>Pasadena</option>
+        <option value = 'The Valley'>The Valley</option>
+        <option value = 'Westside'>Westside</option>
     </select>
     <!-- <input type="text" id = "city" class = "form-control input3"  disabled placeholder="City">  -->
     <input type="text" name="pin_code" id= "pincode" class = "form-control input3" disabled  placeholder="Zip/Postal" onkeypress='return isNumberKey(event)'> 
@@ -751,7 +751,7 @@ function enable_fields(){
     document.getElementById('state').setAttribute('disabled','disabled');
     document.getElementById('pincode').value="";
     document.getElementById('pincode').setAttribute('disabled','disabled');
-    document.getElementById('maps').value="";
+    document.getElementById('').value="";
     
   }
 }

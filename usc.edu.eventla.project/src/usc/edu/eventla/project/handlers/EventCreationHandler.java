@@ -63,6 +63,7 @@ public class EventCreationHandler extends HttpServlet {
 		String quantity_present3 = request.getParameter("quantity_present3");
 		String ticket_price3 = request.getParameter("ticket_price3");
 		String event_type= request.getParameter("event_type");
+		String maps = request.getParameter("maps");
 	
 		/*out1.println(title);
 		out1.println(event_type);
@@ -129,6 +130,7 @@ public class EventCreationHandler extends HttpServlet {
                 .append("city_name", city_name)
                 .append("state", "CA")
                 .append("pin_code", pin_code)
+                .append("maps", maps)
                 .append("start_date",start_date)
                 .append("start_time",start_time))
                 .append("event_description", description).append("city_name",city_name)

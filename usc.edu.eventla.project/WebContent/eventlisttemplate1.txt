@@ -163,7 +163,6 @@
                 <li><input type="checkbox" value="Pasadena"/>&nbsp;&nbsp;Pasadena</li>
                 <li><input type="checkbox" value="The Valley"/>&nbsp;&nbsp;The Valley</li>
                 <li><input type="checkbox" value="Westside"/>&nbsp;&nbsp;Westside</li>
-
                
                 
             </ul>
@@ -184,7 +183,6 @@
                 <li><input type="checkbox" value='The Wiltern'/>&nbsp;&nbsp;The Wiltern</li>
                 <li><input type="checkbox" value='LA Coliseum'/>&nbsp;&nbsp;LA Coliseum</li>
                 <li><input type="checkbox" value ='The Canyon'/>&nbsp;&nbsp;The Canyon</li> 
-
                
                 
             </ul>

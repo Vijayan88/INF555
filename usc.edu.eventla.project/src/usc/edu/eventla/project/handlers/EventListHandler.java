@@ -50,18 +50,28 @@ public class EventListHandler extends HttpServlet {
 		// DBCollection collection = database.getCollection("Event_Reg");
 		// int events_cnt=collection.getCount();
 		// long users_cnt = collection.getCount();
-
-		BasicDBObject allQuery = new BasicDBObject();
-		List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
-		obj.add(new BasicDBObject("event_type", event_type[0]));
-		obj.add(new BasicDBObject("city_name", city_name[0]));
+        List<String> eventTypes = new ArrayList<>();
+        for(String eveType : event_type){
+        	eventTypes.add(eveType);
+        }
+        
+        List<String> cityNames = new ArrayList<>();
+        for(String city : event_type){
+        	cityNames.add(city);
+        }
+        List<String> venueNames = new ArrayList<>();
+        for(String venueName : venue){
+        	venueNames.add(venueName);
+        }
+        BasicDBObject inQuery = new BasicDBObject();
+        List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
+        obj.add(new BasicDBObject("event_type", new BasicDBObject("$in", eventTypes)));
+        obj.add(new BasicDBObject("city_name",new BasicDBObject("$in", cityNames)));
+        obj.add(new BasicDBObject("address.venue",new BasicDBObject("$in", venueNames)));
 		obj.add(new BasicDBObject("start_date", start_date));
-		obj.add(new BasicDBObject("address.venue", venue[0]));
-
-		allQuery.put("$or", obj);
-
-		
-
+        inQuery.put("$or",obj );
+        
+      
 		PrintWriter out = response.getWriter();
 		InputStream in;
 		in = getServletContext().getResourceAsStream("eventlisttemplate1.txt");
@@ -114,7 +124,7 @@ public class EventListHandler extends HttpServlet {
 		out.println(loginContents);
 		
 		// mongodb
-		DBCursor cursor = collection.find(allQuery);
+		DBCursor cursor = collection.find(inQuery);
 
 		if (cursor == null) {
 			cursor = collection.find();

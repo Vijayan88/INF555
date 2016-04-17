@@ -1,8 +1,8 @@
  <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome $USER<span class="caret"></span></a>
           <ul class="dropdown-menu" style="min-width:116px;min-height:100px">
-          <form method="post" action="history">
-            <li style="padding:0px 0px"><a href="#" style="color:black;">View History</a></li>
+          <form method="post" action="eventhist" name="history">
+            <li style="padding:0px 0px" onclick="document.forms['history'].submit();><a href="#" style="color:black;">View History</a></li>
             </form>
             <form method="post" action="logout" name="logout">
             <li style="padding:0px 0px" onclick="document.forms['logout'].submit();"><a href="#" style="color:black;">Log Out</a></li>

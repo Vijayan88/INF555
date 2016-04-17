@@ -48,6 +48,16 @@
     <url-pattern>/eventdesc</url-pattern>
   </servlet-mapping>
   
+  
+  <servlet>
+    <servlet-name>eventhist</servlet-name>
+    <servlet-class>usc.edu.eventla.project.handlers.EventHistHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>eventhist</servlet-name>
+    <url-pattern>/eventhist</url-pattern>
+  </servlet-mapping>
+  
   <servlet>
     <servlet-name>contact</servlet-name>
     <servlet-class>usc.edu.eventla.project.handlers.ContactHandler</servlet-class>

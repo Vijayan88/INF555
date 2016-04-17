@@ -1,10 +1,12 @@
 package usc.edu.eventla.project.handlers;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 
@@ -205,9 +207,35 @@ public class EventCreationHandler extends HttpServlet {
 
 		// save the image file into mongoDB
 		gfsFile.save();
+
+			InputStream in;
+		in = getServletContext().getResourceAsStream("/ireg.html");
+		BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+		StringBuilder sb = new StringBuilder();
+		String line = null;
+
+		while ((line = reader.readLine()) != null) {
+			sb.append(line + "\n");
+		}
+		String logContents = loginDetails("loginuser.txt");
+		writer.println(sb.toString().replace("$LOGIN_DETAILS", logContents).replace("$USER", user));
+		// out.println(sb.toString().replace("$NO_EVENTS",events_cnt);
+
+		return;
 		
 	
 	}
-	
+	public String loginDetails(String fileName) throws IOException {
+		InputStream in;
+		in = getServletContext().getResourceAsStream(fileName);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+		StringBuilder sb = new StringBuilder();
+		String line = null;
+		while ((line = reader.readLine()) != null) {
+			sb.append(line + "\n");
+		}
+		return sb.toString();
+	}
+
 
 }

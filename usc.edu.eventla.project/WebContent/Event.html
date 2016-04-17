@@ -732,7 +732,8 @@
 				<h1>Nice job! You're almost done.</h1>
 				<br> <br>
 				<div class="row submit">
-					<button type="button" class="btn btn-lg">SAVE</button>
+				<input type="hidden" id="status" name="statusId" value="save">
+					<button type="button" name="save" value="save" class="btn-lg btn-success" onclick="document.forms['eventdesc'].submit();"">SAVE</button>
 					<!-- <button type="button" class="btn btn-success btn-lg" onclick="send_approval()">SEND FOR APPROVAL</button> -->
 
 
@@ -744,8 +745,8 @@
 							<div id="dialogboxfoot"></div>
 						</div>
 					</div>
-					<button class="btn-lg btn-success"
-						onclick="Alert.render('Event details sent for approval')">SEND
+					<button class="btn-lg btn-success" name="approval" value="approval"
+						onclick="sendapproval()">SEND
 						FOR APPROVAL</button>
 				</div>
 
@@ -754,6 +755,10 @@
 
 		<!--/div-->
 		<script>
+		function sendapproval(){
+			Alert.render('Event details sent for approval');
+			document.getElementById('status').value="approve";
+		}
 function eventtitle( field, countfield, maxlimit ) {
  if ( field.value.length > maxlimit ) {
   field.value = field.value.substring( 0, maxlimit );

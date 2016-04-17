@@ -40,7 +40,7 @@ public class EventCreationHandler extends HttpServlet {
 		String address2 = request.getParameter("address2");
 		String city_name = request.getParameter("city_name");
 		String pin_code = request.getParameter("pin_code");
-		
+		String status = request.getParameter("statusId");
 		String start_date = request.getParameter("start_date");
 		String start_time = request.getParameter("start_time");
 		String end_date = request.getParameter("end_date");
@@ -155,7 +155,7 @@ public class EventCreationHandler extends HttpServlet {
 						.append("quantity_present3",quantity_present3)
 						.append("ticket_price3",ticket_price3)
 						.append("ticket_name3",ticket_name3))
-				.append("image_name" , imageName);
+				.append("image_name" , imageName).append("status", status);
 		collection.insertOne(doc); 
 	//	response.sendRedirect("eventdesc.html");
 

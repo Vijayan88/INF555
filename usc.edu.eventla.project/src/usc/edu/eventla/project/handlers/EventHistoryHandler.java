@@ -55,7 +55,7 @@ public class EventHistoryHandler extends HttpServlet {
       
 		PrintWriter out = response.getWriter();
 		InputStream in;
-		in = getServletContext().getResourceAsStream("eventhisttemplate.txt");
+		in = getServletContext().getResourceAsStream("eventhistorytemplate.txt");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 		StringBuilder sb = new StringBuilder();
 		String line = null;
@@ -119,7 +119,7 @@ public class EventHistoryHandler extends HttpServlet {
 
 			// BasicDBList res = (BasicDBList) res.next().get("address");
 			event_description = (String) res.get("event_description");
-			in = getServletContext().getResourceAsStream("eventhisttemplate2.txt");
+			in = getServletContext().getResourceAsStream("eventhistorytemplate2.txt");
 			reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 			sb = new StringBuilder();
 			while ((line = reader.readLine()) != null) {
@@ -134,7 +134,7 @@ public class EventHistoryHandler extends HttpServlet {
 
 			
 			
-		in = getServletContext().getResourceAsStream("/eventhisttemplate3.txt");
+		in = getServletContext().getResourceAsStream("/eventhistorytemplate3.txt");
 		reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 		sb = new StringBuilder();
 		while ((line = reader.readLine()) != null) {

@@ -113,22 +113,11 @@
           </ul>
         </li>
         
-        <li class="dropdown">
-          <a href="#" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
-   onMouseOut="this.style.color='white'"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome $USER<span class="caret"></span></a>
-          <ul class="dropdown-menu" style="min-width:116px;min-height:100px">
-            <li style="padding:0px 0px"><a href="#" style="color:black;">View History</a></li>
-            <li style="padding:0px 0px"><a href="#" style="color:black;">Log Out</a></li>
-           
-          </ul>
-        </li>
-        
+      $LOGIN_DETAILS
       </ul>
                     </li>
                 </ul>
+        
             </div>
             <!-- /.navbar-collapse -->
         </div>

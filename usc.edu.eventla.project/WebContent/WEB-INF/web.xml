@@ -51,11 +51,20 @@
   
   <servlet>
     <servlet-name>eventhist</servlet-name>
-    <servlet-class>usc.edu.eventla.project.handlers.EventHistHandler</servlet-class>
+    <servlet-class>usc.edu.eventla.project.handlers.EventHistoryHandler</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>eventhist</servlet-name>
     <url-pattern>/eventhist</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>adminlist</servlet-name>
+    <servlet-class>usc.edu.eventla.project.handlers.adminlistHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminlist</servlet-name>
+    <url-pattern>/adminlist</url-pattern>
   </servlet-mapping>
   
   <servlet>

@@ -126,7 +126,7 @@ public class EventListHandler extends HttpServlet {
 		// mongodb
 		DBCursor cursor = collection.find(inQuery);
 
-		if (cursor == null) {
+		if (cursor == null || cursor.count() == 0) {
 			cursor = collection.find();
 		}
 		while (cursor.hasNext()) {

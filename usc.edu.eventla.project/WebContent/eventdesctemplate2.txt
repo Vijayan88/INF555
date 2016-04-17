@@ -14,7 +14,7 @@
 <div class="row">
 
             <div class="col-md-4">
-                <img class="img-responsive img-thumbnail" src="img/birme/oscar.jpg" alt=""><br><br> <br> <br> <br>
+                <img class="img-responsive img-thumbnail" src="$event_image" alt=""><br><br> <br> <br> <br>
                 <div class="panel_280">
                 <div class="panel_head2">
                 <h4> When and Where </h4>

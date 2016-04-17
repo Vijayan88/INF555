@@ -128,7 +128,7 @@ public class EventDescHandler extends HttpServlet {
 			BasicDBObject ticket_2  = (BasicDBObject) res.get("ticket_2");
 			ticket_name2 = (String) ticket_2.get("ticket_name2");
 			ticket_price2 = (String)ticket_2.get("ticket_price2");
-			
+			String imageName = (String) res.get("image_name");
 			
 		
 			
@@ -151,6 +151,7 @@ public class EventDescHandler extends HttpServlet {
 					                         .replace("$ticket_price2", ticket_price2)
 					                         .replace("$fb_link", facebook_link)
 					                         .replace("$twiiter_link", twitter_link)
+					                         .replace("$event_image", "/imagedownload?id="+imageName)
 					                         
 					                         );
 		

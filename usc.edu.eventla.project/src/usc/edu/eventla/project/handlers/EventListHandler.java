@@ -127,6 +127,9 @@ public class EventListHandler extends HttpServlet {
 			titleString = new StringBuilder();
 			
 		}
+		else {
+			loginContents = loginContents.replace("$event_type", "");
+		}
 		
 		if ((city_name!=null) && city_name.length > 0)
 		{
@@ -138,6 +141,9 @@ public class EventListHandler extends HttpServlet {
 			loginContents = loginContents.replace("$city_name", bld.reverse().toString());
 			titleString = new StringBuilder();
 			
+		}
+		else {
+			loginContents = loginContents.replace("$city_name", "");
 		}
 		
 		out.println(loginContents);

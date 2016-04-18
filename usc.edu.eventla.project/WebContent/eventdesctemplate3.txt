@@ -12,9 +12,7 @@
 
            
 <br><br><br>
-<div align="center" > <a href="index.html" > View More Events --></a>
-        </div>
-        <!-- /.row -->
+
 
         <hr>
 </div>

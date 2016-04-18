@@ -8,10 +8,10 @@
             </div>
             <div class="col-md-8">
               <h3>$event_title </h3>
-              <h4>$venue   $address1   $start_time </h4>
+              <h4>$venue   $address1  $start_date $start_time </h4>
               <p>$event_description</p>
               
-              <a class="btn btn-primary" href="/eventhist?id=$user_name">Edit Event<span class="glyphicon glyphicon-chevron-right"></span></a></div>
+              <a class="btn btn-primary" href="/eventhistdesc?id=$event_title">Edit Event<span class="glyphicon glyphicon-chevron-right"></span></a></div>
             
            
               </form>

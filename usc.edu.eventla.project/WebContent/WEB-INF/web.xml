@@ -58,6 +58,20 @@
     <url-pattern>/eventhist</url-pattern>
   </servlet-mapping>
   
+  
+  <servlet>
+
+    <servlet-name>eventhistdesc</servlet-name>
+
+    <servlet-class>usc.edu.eventla.project.handlers.EditPageHandler</servlet-class>
+
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>eventhistdesc</servlet-name>
+    <url-pattern>/eventhistdesc</url-pattern>
+  </servlet-mapping>
+  
     <servlet>
     <servlet-name>adminlist</servlet-name>
     <servlet-class>usc.edu.eventla.project.handlers.adminlistHandler</servlet-class>

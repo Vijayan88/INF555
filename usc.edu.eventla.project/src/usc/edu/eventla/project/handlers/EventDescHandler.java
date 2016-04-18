@@ -149,7 +149,25 @@ public class EventDescHandler extends HttpServlet {
 
 			);
 
+			out.println(sb.toString().replace("$event_title", title_event).replace("$event_description", event_description).
+					                         replace("$venue",venue).replace("$address1", address1).replace("$address2",address2)
+					                         .replace("$cityname",cityname).replace(" $pin_code",pin_code)
+					                         .replace("$start_date" , start_date).replace("$start_time",start_time)
+					                         .replace("$city_name", cityname).replace("$ticket_price1", ticket_price1)
+					                        . replace("$ticket_price2",ticket_price2)
+					                        .replace("$start_date", start_date)
+					                        .replace("$event_website", event_website)
+					                         .replace("$ticket_name1", ticket_name1)
+					                         .replace("$ticket_name2", ticket_name2)
+					                         .replace("$ticket_price2", ticket_price2)
+					                         .replace("$fb_link", facebook_link)
+					                         .replace("$twiiter_link", twitter_link)
+					                         .replace("$event_image", "/imagedownload?id="+imageName)
+					                         
+					                         );
+		
 		}
+			
 
 		in = getServletContext().getResourceAsStream("/eventdesctemplate3.txt");
 		reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
@@ -157,6 +175,7 @@ public class EventDescHandler extends HttpServlet {
 		while ((line = reader.readLine()) != null) {
 			sb.append(line + "\n");
 		}
+		out.println(sb.toString());
 
 		StringBuilder finalContent = new StringBuilder();
 		int max = 6;
@@ -207,6 +226,7 @@ public class EventDescHandler extends HttpServlet {
 		String venue_place = null;
 		String address1 = null;
 		String starting_time = null;
+		String starting_date = null;
 		String type_event = null;
 		String region = null;
 		BasicDBObject allQuery = new BasicDBObject();
@@ -228,12 +248,15 @@ public class EventDescHandler extends HttpServlet {
 				venue_place = (String) address.get("venue");
 				address1 = (String) address.get("address1");
 				starting_time = (String) address.get("start_time");
+				starting_date=(String) address.get("start_date");
 				region = (String) address.get("city_name");
 				// event_address=
 				// event_category = (String)res.get("event_category");
 
 				// BasicDBList res = (BasicDBList) res.next().get("address");
 				event_description = (String) res.get("event_description");
+
+				
 
 			}
 		}

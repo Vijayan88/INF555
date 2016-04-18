@@ -39,6 +39,7 @@
 	rel='stylesheet' type='text/css'>
 <script src="http://js.nicedit.com/nicEdit-latest.js"
 	type="text/javascript"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -112,7 +113,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand page-scroll" href="index.html#page-top"
+				<a class="navbar-brand page-scroll" href="/home#page-top"
 					style="color: #fed136; font-family: Kaushan Script, Helvetica Neue, Helvetica, Arial, cursive;">Events
 					L.A.</a>
 			</div>
@@ -121,24 +122,24 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="hidden"><a href="#page-top"></a></li>
-					<li><a href="index.html#services"
+					<li><a href="/home#services"
 						style="font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; color: white"
 						onMouseOver="this.style.color='#fed136'"
 						onMouseOut="this.style.color='white'">Explore</a></li>
-					<li><a href="index.html#portfolio"
+					<li><a href="/home#portfolio"
 						style="font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; color: white"
 						onMouseOver="this.style.color='#fed136'"
 						onMouseOut="this.style.color='white'">Popular Events</a></li>
 
-					<li><a href="index.html#partners"
+					<li><a href="/home#partners"
 						style="font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; color: white"
 						onMouseOver="this.style.color='#fed136'"
 						onMouseOut="this.style.color='white'">Partners</a></li>
-					<li><a href="index.html#about"
+					<li><a href="/home#about"
 						style="font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; color: white"
 						onMouseOver="this.style.color='#fed136'"
 						onMouseOut="this.style.color='white'">About</a></li>
-					<li><a href="index.html#contact"
+					<li><a href="/home#contact"
 						style="font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; color: white"
 						onMouseOver="this.style.color='#fed136'"
 						onMouseOut="this.style.color='white'">Contact</a></li>
@@ -216,9 +217,9 @@
 						Entertainment</option>
 				</select> <br> <label for="loc">LOCATION</label><br> <label
 					class="checkbox-inline"> <input type="checkbox"
-					name="event_category" value="online">Online event
+					name="online" value="online">Online event
 				</label> <label class="checkbox-inline"> <input type="checkbox"
-					id="location" name="event_category" value="location"
+					id="location" name="location" value="location"
 					onclick="enable_fields();">Add location
 				</label> <br>
 				<!--     <input type="text" id = "venue" class = "form-control input3" disabled placeholder="Enter the venue's name"> -->
@@ -233,7 +234,7 @@
 					<option value='Viper Room'>Viper Room</option>
 					<option value='Walt Disney Concert Hall'>Walt Disney
 						Concert Hall</option>
-					<option value='Staples Center'>Staples Center</option>
+					<option value='STAPLES Center'>STAPLES Center</option>
 					<option value='West Theatre'>IO West Theatre</option>
 					<option value='The Wiltern'>The Wiltern</option>
 					<option value='LA Coliseum'>LA Coliseum</option>
@@ -242,7 +243,7 @@
 					class="form-control input3" disabled placeholder="Address">
 				<input type="text" name="address2" id="addr2"
 					class="form-control input3" disabled placeholder="Address2">
-				 <select class="form-control input2" name="city_name" id="city" onchange="google_maps('city');">
+			<select class="form-control input2" name="city_name" id="city" onchange="google_maps('city');" disabled>
 					<option>Select the region</option>
 					<option value='Beach Cities/LAX'>Beach Cities/LAX</option>
 					<option value="Los Angeles">Los Angeles</option>
@@ -262,8 +263,9 @@
 					name="state" id="state" class="form-control input3" disabled
 					value="California, United States"> <br>
 				<!-- <input id="gmaps" type="checkbox" value="" onclick="add_maps()">Include Google maps Link<br> -->
-				<input type="text" class="form-control input1" name="maps" id='maps'
-					value="" disabled placeholder="Google Maps Link"><br>
+<input type="text" class="form-control input1" name="maps" id='maps'
+
+                                       value="" placeholder="Google Maps Link" disabled><br>
 
 
 				<br>
@@ -656,14 +658,14 @@
 				<label for="lprivacy">LISTING PRIVACY</label>
 				<form role="form">
 					<div class="radio">
-						<label> <input type="radio" name="radio" value="pupage">Public
+						<label> <input type="radio" name="public" value="pupage">Public
 							page:
 						</label>
 						<text class="text2"> list this event on Events L.A and
 						search engines</text>
 					</div>
 					<div class="radio">
-						<label><input type="radio" name="radio" value="prpage">Private
+						<label><input type="radio" name="private" value="prpage">Private
 							page:</label>
 						<text class="text2"> do not list this event publicly</text>
 					</div>
@@ -733,7 +735,7 @@
 				<br> <br>
 				<div class="row submit">
 				<input type="hidden" id="status" name="statusId" value="save">
-					<button type="button" name="save" value="save" class="btn-lg btn-success" onclick="document.forms['eventdesc'].submit();"">SAVE</button>
+					<button type="button" name="save" value="save" class="btn-lg btn-success" onclick="document.forms['eventdesc'].submit();">SAVE</button>
 					<!-- <button type="button" class="btn btn-success btn-lg" onclick="send_approval()">SEND FOR APPROVAL</button> -->
 
 
@@ -783,6 +785,7 @@ function enable_fields(){
     document.getElementById('time_zone').setAttribute('disabled','disabled');
   }
   else{
+	  document.getElementById('venue').value="";
     document.getElementById('venue').setAttribute('disabled','disabled');
     document.getElementById('addr').value="";
     document.getElementById('addr').setAttribute('disabled','disabled');
@@ -793,6 +796,7 @@ function enable_fields(){
     document.getElementById('state').setAttribute('disabled','disabled');
     document.getElementById('pincode').value="";
     document.getElementById('pincode').setAttribute('disabled','disabled');
+    document.getElementById('maps').value="";
     
   }
 }
@@ -862,16 +866,30 @@ function enable_social(){
 }
 </script>
 		<script>
-    function google_maps(type){
-       var addr= document.getElementById('addr').value;
-       var addr2=document.getElementById('addr2').value;
-       var index = document.getElementById('city').selectedIndex;
-       var city = document.getElementById('city').options[index].text;
-    
-        var full_address = "https://www.google.com/maps/place/" + addr + '+' + addr2 + "+" + city;
-        document.getElementById('maps').removeAttribute('disabled');
-       document.getElementById('maps').value= full_address;
-    }
+		 function google_maps(type){
+		       var index1 = document.getElementById('venue').selectedIndex;
+		      var venue = document.getElementById('venue').options[index1].text;
+		      var addr= document.getElementById('addr').value;
+		      var addr= document.getElementById('addr').value;
+		      var addr2=document.getElementById('addr2').value;
+		      var index2 = document.getElementById('city').selectedIndex;
+		      var city = document.getElementById('city').options[index2].text;
+		      var state = document.getElementById('state').value;
+		   
+		      var full_address = venue+" "+addr+" "+addr2+" "+city+" "+state;
+		      var geocoder = new google.maps.Geocoder();
+		      geocoder.geocode({address: full_address}, function(results, status) {
+		       if (status == google.maps.GeocoderStatus.OK) {
+		           var myResult = results[0].geometry.location;
+		      var full_address = "https://www.google.com/maps/place/" +venue+" "+addr+" "+addr2+" "+city+" "+state;
+		      full_address= full_address.replace(/\s+/g, '+');     
+		      full_address= full_address+'/@'+myResult;
+		      document.getElementById('maps').value= full_address;
+		       }});
+		      //full_address= full_address.replace(/\s+/g, '+');
+
+
+		   }
 
 </script>
 		<script>

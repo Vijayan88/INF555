@@ -36,6 +36,7 @@ public class adminlistHandler extends HttpServlet {
 		String event_description = null;
 		String venue_place = null;
 		String address1 = null;
+		String start_date = null;
 		String starting_time = null;
 		String type_event = null;
 		String region = null;
@@ -104,6 +105,7 @@ public class adminlistHandler extends HttpServlet {
 			if(address != null){
 			venue_place = (String) address.get("venue");
 			address1 = (String) address.get("address1");
+			start_date = (String) address.get("start_date");
 			starting_time = (String) address.get("start_time");
 			region = (String) address.get("city_name");
 			}
@@ -126,7 +128,7 @@ public class adminlistHandler extends HttpServlet {
 				sb.append(line + "\n");
 			}
 			out.println(sb.toString().replace("$event_title", event_title).replace("$venue", venue_place)
-					.replace("$address1", address1).replace("$start_time", starting_time).replace("$event_description",event_description).replace("$event_image", "/imagedownload?id="+imageName)
+					.replace("$address1", address1).replace("$start_date", start_date).replace("$start_time", starting_time).replace("$event_description",event_description).replace("$event_image", "/imagedownload?id="+imageName)
 					.replace("$event_pkey",pkey));
 			out.println("<br><hr>");
 			

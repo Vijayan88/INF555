@@ -36,6 +36,7 @@ public class EventHistoryHandler extends HttpServlet {
 		String event_description = null;
 		String venue_place = null;
 		String address1 = null;
+		String starting_date = null;
 		String starting_time = null;
 		String type_event = null;
 		String region = null;
@@ -96,6 +97,7 @@ public class EventHistoryHandler extends HttpServlet {
 			if (address != null) {
 				venue_place = (String) address.get("venue");
 				address1 = (String) address.get("address1");
+				starting_date=(String)address.get("start_date");
 				starting_time = (String) address.get("start_time");
 				region = (String) address.get("city_name");
 			}

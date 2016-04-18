@@ -34,7 +34,15 @@ public class EventCreationHandler extends HttpServlet {
 			throws ServletException, IOException {
 		
 		String title = request.getParameter("event_title");
-		String event_category = request.getParameter("event_category");
+		//String event_category = request.getParameter("event_category");
+		   String online = request.getParameter("online");
+
+           String location = request.getParameter("location");
+           String time_zone = request.getParameter("time_zone");
+
+           String public_page = request.getParameter("public");
+
+           String private_page = request.getParameter("private");
 		String venue = request.getParameter("venue");
 		String address1 = request.getParameter("address1");
 		String address2 = request.getParameter("address2");
@@ -126,7 +134,9 @@ public class EventCreationHandler extends HttpServlet {
 		Document doc = new Document("event_title", title)
 				.append("username", user)
 				.append("event_type", event_type)
-				.append("event_category",event_category).
+				.append("online", online)
+
+                .append("location",location).
 				append("address", new Document("venue" ,venue)
                 .append("address1", address1)
                 .append("address2", address2)
@@ -139,6 +149,7 @@ public class EventCreationHandler extends HttpServlet {
                 .append("event_description", description).append("city_name",city_name)
 				.append("end_date",end_date)
 				.append("end_time", end_time)
+				 .append("time_zone", time_zone)
 				.append("event_website",event_website)
 				.append("organiser_name",organizer_name)
 			    .append("facebook_link",facebook)
@@ -155,7 +166,10 @@ public class EventCreationHandler extends HttpServlet {
 						.append("quantity_present3",quantity_present3)
 						.append("ticket_price3",ticket_price3)
 						.append("ticket_name3",ticket_name3))
-				.append("image_name" , imageName).append("status", status).append("p_key",imageName );
+				.append("image_name" , imageName).append("status", status).append("p_key",imageName )
+				.append("public", public_page)
+
+                .append("private",private_page);
 		collection.insertOne(doc); 
 	//	response.sendRedirect("eventdesc.html");
 

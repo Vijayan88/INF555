@@ -1,7 +1,14 @@
+ <style>
+ li a{ font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: white; }
+ </style>
+
  <li class="dropdown">
  
- 
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome $USER<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" onmouseout="this.style.color='white'" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="this.style.color='#fed136'" ><font color="white">Welcome $USER</font><span class="caret"></span></a>
           <ul class="dropdown-menu" style="min-width:116px;min-height:100px">
           <form method="post" action="eventhist" name="history">
             <li style="padding:0px 0px" onclick="document.forms['history'].submit();"><a href="#" style="color:black;">View History</a></li>
@@ -11,3 +18,4 @@
            </form>
           </ul>
         </li>
+        

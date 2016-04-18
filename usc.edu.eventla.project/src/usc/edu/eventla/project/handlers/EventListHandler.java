@@ -50,25 +50,35 @@ public class EventListHandler extends HttpServlet {
 		// DBCollection collection = database.getCollection("Event_Reg");
 		// int events_cnt=collection.getCount();
 		// long users_cnt = collection.getCount();
+		  BasicDBObject inQuery = new BasicDBObject();
+	        List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
         List<String> eventTypes = new ArrayList<>();
+        if(event_type != null){
         for(String eveType : event_type){
         	eventTypes.add(eveType);
         }
+        obj.add(new BasicDBObject("event_type", new BasicDBObject("$in", eventTypes)));
+        }
         
         List<String> cityNames = new ArrayList<>();
-        for(String city : event_type){
+        if(city_name != null){
+        for(String city : city_name){
         	cityNames.add(city);
         }
+        obj.add(new BasicDBObject("city_name",new BasicDBObject("$in", cityNames)));
+        }
+        
         List<String> venueNames = new ArrayList<>();
+        if(venue != null){
         for(String venueName : venue){
         	venueNames.add(venueName);
         }
-        BasicDBObject inQuery = new BasicDBObject();
-        List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
-      
-        obj.add(new BasicDBObject("event_type", new BasicDBObject("$in", eventTypes)));
-        obj.add(new BasicDBObject("city_name",new BasicDBObject("$in", cityNames)));
         obj.add(new BasicDBObject("address.venue",new BasicDBObject("$in", venueNames)));
+        }
+      
+      
+      
+      
 		obj.add(new BasicDBObject("start_date", start_date));
         inQuery.put("$or",obj);
 	

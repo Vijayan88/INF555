@@ -162,7 +162,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                     </div>                    
                 </div>
                 <div class="credit-card-panel-body">
-                    <form role="form" id="payment-form">
+                    <form role="form" id="payment-form" name="pay">
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group">
@@ -223,10 +223,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
                         </div>
                         <div class="row">
                             <div class="col-xs-9 col-sm-5" style="width:32.666667%">
-                                <button class="btn btn-info btn-lg btn-block" type="submit" style="height:">Cancel</button>
+                                <button class="btn btn-info btn-lg btn-block" data-dismiss="modal" hidden style="height:">Cancel</button>
                             </div>
                             <div class="col-xs-10 col-sm-5 col-sm-offset-4" style="width:32.666667%">
-                                <button class="btn btn-success btn-lg btn-block" type="submit">Pay</button>
+                                <button class="btn btn-success btn-lg btn-block"  onclick="paysubmit()">Pay</button>
                             </div>
                         </div>
                         <div class="row" style="display:none;">
@@ -239,7 +239,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
                 </div>
             </div>            
             <!-- CREDIT CARD FORM ENDS HERE -->
-            
+            <script>
+            function paysubmit(){
+           alert("Payment is Successful !. Your ticket will be sent shortly");
+        document.forms['pay'].submit();
+        
+            }
+            </script>
            
         </div>
         <div class="modal-footer">

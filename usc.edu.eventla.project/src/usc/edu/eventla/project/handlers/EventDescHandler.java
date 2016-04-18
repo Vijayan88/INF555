@@ -25,6 +25,15 @@ import com.mongodb.gridfs.GridFSDBFile;
 
 public class EventDescHandler extends HttpServlet {
 
+	
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		response.sendRedirect("/home");
+	}
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -217,6 +226,8 @@ public class EventDescHandler extends HttpServlet {
 			}
 		}
 	}
+	
+	
 
 	public String loginDetails(String fileName) throws IOException {
 		InputStream in;

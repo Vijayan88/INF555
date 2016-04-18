@@ -55,7 +55,42 @@ public class LoginHandler extends HttpServlet {
 		while ((line = reader.readLine()) != null) {
 			sb.append(line + "\n");
 		}
-		out.println(sb.toString().replace("$LOGIN_DETAILS", loginContents));
+		StringBuilder finalContent = new StringBuilder();
+		int max = 6;
+		DB databaseEvents = mongoClient.getDB("eventsla");
+		DBCollection collectionEvents = database.getCollection("CreateEvent");
+
+		DBCursor cursorEve = collectionEvents.find();
+		int count = 0;
+		while (cursorEve.hasNext()) {
+			if (count == 6)
+				break;
+			count++;
+			DBObject res = cursorEve.next();
+			in = getServletContext().getResourceAsStream("popularevent.txt");
+			reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+			StringBuilder sb1 = new StringBuilder();
+			line = null;
+			while ((line = reader.readLine()) != null) {
+				sb1.append(line + "\n");
+			}
+			String event_title = (String) res.get("event_title");
+			BasicDBObject address = (BasicDBObject) res.get("address");
+			String venue_place = "";
+			if (address != null) {
+				venue_place = (String) address.get("venue");
+			}
+			String imageName = "";
+			imageName = (String) res.get("image_name");
+            
+			
+			System.out.println(sb1.toString());
+			finalContent.append(sb1.toString().replace("$event_title", event_title).
+					 replace("$event_location", venue_place)
+					.replace("$event_image", "/imagedownload?id=" + imageName));
+		}
+		
+		out.println(sb.toString().replace("$LOGIN_DETAILS", loginContents).replace("$POPULAREVENTS", finalContent.toString()));
 		// out.println(sb.toString().replace("$NO_EVENTS",events_cnt);
 
 		return;

@@ -150,7 +150,16 @@ public class EventHandler extends HttpServlet {
 		}
 		DBCollection collection = database.getCollection("contact");
 		DBCursor cursor = collection.find();
-		out.println(sb.toString().replace("$NO_USERS", usrCount).replace("$REVIEW", String.valueOf(cursor.count())));
+		
+		
+		DBCollection collection1 = database.getCollection("CreateEvent");
+		BasicDBObject allQuery = new BasicDBObject();
+		allQuery.put("status","approve" );
+		
+		
+		
+		
+		out.println(sb.toString().replace("$NO_EVENTS",String.valueOf(collection1.find(allQuery).count())).replace("$NO_USERS", usrCount).replace("$REVIEW", String.valueOf(cursor.count())));
 		if (cursor != null) {
 
 			while (cursor.hasNext()) {

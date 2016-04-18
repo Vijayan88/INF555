@@ -2,16 +2,7 @@
 <html lang="en">
 
 <head>
-<style>
-.links {
 
-  margin-left: 400px;
-}
-
-.action{
-    color: black;
-}
-</style>
     
  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,15 +10,73 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin Review-List Events</title>
+    <title>Admin-Full Event Information</title>
+<script
+src="http://maps.googleapis.com/maps/api/js">
+$(document).ready(function () {
 
+    var navListItems = $('div.setup-panel div a'),
+            allWells = $('.setup-content'),
+            allNextBtn = $('.nextBtn'),
+            allPrevBtn = $('.prevBtn');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+                $item = $(this);
+
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-primary').addClass('btn-default');
+            $item.addClass('btn-primary');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
+    });
+
+    allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+            if (!curInputs[i].validity.valid){
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
+            }
+        }
+
+        if (isValid)
+            nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    allPrevBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a");
+
+        $(".form-group").removeClass("has-error");
+        prevStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+});
+
+</script>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/1-col-portfolio.css" rel="stylesheet">
+    <link href="css/portfolio-item.css" rel="stylesheet">
     <link href="css/agency.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+     <link href="css/blog-post.css" rel="stylesheet">
+      <link href="css/wizard.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     
@@ -47,65 +96,86 @@
 
 </head>
 
-<body>
+<style>
+#dialogoverlay{
+  display: none;
+  opacity: .8;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: #FFF;
+  width: 100%;
+  z-index: 10;
+}
+#dialogbox{
+  display: none;
+  position: fixed;
+  background: #000;
+  border-radius:7px; 
+  width:550px;
+  z-index: 10;
+}
+#dialogbox > div{ background:#FFF; margin:8px; }
+#dialogbox > div > #dialogboxhead{ background: #666; font-size:19px; padding:10px; color:#CCC; }
+#dialogbox > div > #dialogboxbody{ background:#333; padding:15px; color:#FFF; }
+#dialogbox > div > #dialogboxfoot{ background: #666; padding:10px; text-align:right; }
+</style>
 
-    <!-- Navigation -->
+<body>
+<!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
+           <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="index.html#page-top" style="color: #fed136;
+                <a class="navbar-brand page-scroll" href="/index.html#page-top" style="color: #fed136;
     font-family: Kaushan Script,Helvetica Neue,Helvetica,Arial,cursive;">Events L.A.</a>
-            </div>
+            </div> 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
+<!--             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-<!--                     <li>
+                    <li>
                         <a href="index.html#services" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
    onMouseOut="this.style.color='white'">Explore</a>
-                    </li> -->
-<!--                     <li>
+                    </li>
+                    <li>
                         <a  href="index.html#portfolio" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
    onMouseOut="this.style.color='white'">Popular Events</a>
-                    </li> -->
+                    </li>
                     
-<!--                     <li>
+                    <li>
                         <a href="index.html#partners" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
    onMouseOut="this.style.color='white'">Partners</a>
                     </li>
-                     <li> -->
-<!--                         <a href="index.html#about" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+                    <li> <a href="index.html#about" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 400;
-    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
-   onMouseOut="this.style.color='white'">About</a>
-                    </li> -->
-<!--                     <li>
+    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'" onMouseOut="this.style.color='white'">About</a> </li>
+                    <li>
                         <a  href="index.html#contact" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
    onMouseOut="this.style.color='white'">Contact</a>
-                    </li> -->
-  <!--                   <li>
+                    </li>
+                    <li>
                           <ul class="nav navbar-nav navbar-right">
        
      
@@ -168,9 +238,11 @@
         </li>
       </ul>
                     </li>
-                </ul> -->
-                
-                
+                </ul>
+            </div> -->
+            
+            
+                            
                    <li>
                         <a href="#user" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
@@ -184,92 +256,17 @@
                     </li>
                 </ul>
                 
-                
-            </div>
+            
+            
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-   
-   <div class="commonheader">
+
+<div class="commonheader" style="background-image:url(img/events1.jpg);">
    <div style="text-align:center;margin-top:10px;">
     
      <h1 class="text-center" ><br><br></h1>
-     <h1>REGISTERED EVENTS PENDING APPROVAL </h1>
+     <h1>REVIEW EVENT DETAILS </h1>
    </div></div>
-       
-    <!-- Page Content -->
-    <div class="container">
-    <!-- <div style="font-size:20px;color:Black;font-family:Avenir LT W01 85 Heavy,Arial,Helvetica Neue,Helvetica,sans-serif;"> Find Events </div><br> -->
-  <!--Success buttons with dropdown menu-->
-<!--         <div class="btn-group" >
-            <button type="button"  style="height:40px;width:200px;" data-toggle="dropdown" class="btn btn-warning dropdown-toggle" id="btn_services">Category <span class="caret"></span></button>
-           <ul class="dropdown-menu" >
-            <li><input type="checkbox"/>&nbsp;&nbsp; Select All</a></li>
-             <li class="divider"></li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Concerts & Live Music</li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Museums & Theatre</li>
-                 <li><input type="checkbox"/>&nbsp;&nbsp;Sports & Entertaintment</li>
-               
-                
-            </ul>
-        </div> -->
-        <!--Warning buttons with dropdown menu-->
-<!--         <div class="btn-group">
-            <button type="button" style="height:40px;width:200px" data-toggle="dropdown" class="btn btn-warning dropdown-toggle"id="btn_services">Region <span class="caret"></span></button>
-           <ul class="dropdown-menu">
-            <li><input type="checkbox"/>&nbsp;&nbsp; Select All</li>
-             <li class="divider"></li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Beach Cities / LAX</li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Downtown / LA Metro</li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Santa Monica</li>
-
-				<li><input type="checkbox"/>&nbsp;&nbsp;Hollywood</li>
-
-				<li><input type="checkbox"/>&nbsp;&nbsp;Neighboring Regions</li>
-
-               
-                
-            </ul>
-        </div>
-        Danger buttons with dropdown menu
-        <div class="btn-group" >
-            <button type="button" style="height:40px;width:200px" data-toggle="dropdown" class="btn btn-warning dropdown-toggle" id="btn_services">Venue <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-           <li><input type="checkbox"/>&nbsp;&nbsp; Select All</li>
-             <li class="divider"></li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Staples Center</li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;Shrine</li>
-                <li><input type="checkbox"/>&nbsp;&nbsp;LA Coliseum</li>
-
-				<li><input type="checkbox"/>&nbsp;&nbsp;Hollywood Pantages Theatre</li>
-
-				<li><input type="checkbox"/>&nbsp;&nbsp;Walt Disney Concert</li>
-
-               
-                
-            </ul>
-        </div> -->
-        
-     
-       
-        
- <!--        <div class="btn-group">
-            <input id="btn_services" value="2016-12-19" style="height:40px;width:200px;text-align:center" type=date step=1 min=2014-09-08 class="btn btn-warning dropdown-toggle"> 
-        </div>
-         &nbsp;&nbsp;&nbsp;&nbsp;
-        <div class="btn-group">
-           <a href="listevents.html"> <img src="img/logos/1456727085_search_magnifying_glass_find.png"/></a>
-        </div>
-       
-            <br><br> -->
-        
-        <!-- Page Heading -->
-<!--         <div class="row">
-            <div class="col-lg-12">
-              <h1 class="page-header">Events / Theatre /Downtown LA</h1>
-            </div>
-        </div> -->
-        <!-- /.row -->
-        <br><br>
-       
+ <br><br>

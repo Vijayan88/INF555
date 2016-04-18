@@ -108,6 +108,7 @@ public class adminlistHandler extends HttpServlet {
 			region = (String) address.get("city_name");
 			}
 			String imageName = (String) res.get("image_name");
+			String pkey = (String) res.get("p_key");
 		//	GridFS gfsPhoto = new GridFS(database, "photo");
 		//	GridFSDBFile imageForOutput = gfsPhoto.findOne(imageName);
 
@@ -126,7 +127,8 @@ public class adminlistHandler extends HttpServlet {
 			}
 			out.println(sb.toString().replace("$event_title", event_title).replace("$venue", venue_place)
 					.replace("$address1", address1).replace("$start_time", starting_time).replace("$event_description",event_description).replace("$event_image", "/imagedownload?id="+imageName)
-					);
+					.replace("$event_pkey",pkey));
+			out.println("<br><hr>");
 			
 		}
 			

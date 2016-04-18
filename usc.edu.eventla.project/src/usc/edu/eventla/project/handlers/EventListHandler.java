@@ -65,13 +65,18 @@ public class EventListHandler extends HttpServlet {
         }
         BasicDBObject inQuery = new BasicDBObject();
         List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
+      
         obj.add(new BasicDBObject("event_type", new BasicDBObject("$in", eventTypes)));
         obj.add(new BasicDBObject("city_name",new BasicDBObject("$in", cityNames)));
         obj.add(new BasicDBObject("address.venue",new BasicDBObject("$in", venueNames)));
 		obj.add(new BasicDBObject("start_date", start_date));
-		obj.add(new BasicDBObject("status", "Approved"));
-        inQuery.put("$or",obj );
-        
+        inQuery.put("$or",obj);
+	
+        BasicDBObject query = new BasicDBObject();
+		List<BasicDBObject> obj1 = new ArrayList<BasicDBObject>();
+		obj1.add(new BasicDBObject("status", "Approved"));
+		obj1.add(inQuery);
+		query.put("$and",obj1 );
       
 		PrintWriter out = response.getWriter();
 		InputStream in;
@@ -128,7 +133,7 @@ public class EventListHandler extends HttpServlet {
 		out.println(loginContents);
 		
 		// mongodb
-		DBCursor cursor = collection.find(inQuery);
+		DBCursor cursor = collection.find(query);
 
 		if (cursor == null || cursor.count() == 0) {
 			cursor = collection.find();
@@ -166,6 +171,8 @@ public class EventListHandler extends HttpServlet {
 					.replace("$address1", address1).replace("$start_time", starting_time).replace("$event_description",event_description).replace("$event_image", "/imagedownload?id="+imageName)
 					);
 			
+			out.println("<br><hr>");
+			
 		}
 			
 
@@ -199,14 +206,19 @@ public class EventListHandler extends HttpServlet {
 		String region = null;
 		BasicDBObject allQuery = new BasicDBObject();
 		List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
-		obj.add(new BasicDBObject("event_type", "MT"));
-		obj.add(new BasicDBObject("city_name", "TV"));
+		obj.add(new BasicDBObject("event_type", "Sports & Entertainment"));
+		obj.add(new BasicDBObject("city_name", "Los Angeles"));
 		obj.add(new BasicDBObject("start_date", "2016-04-15"));
 		obj.add(new BasicDBObject("address.venue", "SC"));
-
+        
 		allQuery.put("$or", obj);
+		BasicDBObject query = new BasicDBObject();
+		List<BasicDBObject> obj1 = new ArrayList<BasicDBObject>();
+		obj1.add(new BasicDBObject("status", "Approved"));
+		obj1.add(allQuery);
+		query.put("$and",obj1 );
 
-		DBCursor cursor = collection.find(allQuery);
+		DBCursor cursor = collection.find(query);
 		if (cursor != null) {
 			while (cursor.hasNext()) {
 				DBObject res = cursor.next();

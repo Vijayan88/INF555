@@ -67,6 +67,25 @@
     <url-pattern>/adminlist</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+    <servlet-name>admindesc</servlet-name>
+    <servlet-class>usc.edu.eventla.project.handlers.AdminDescHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>admindesc</servlet-name>
+    <url-pattern>/admindesc</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>statusupdate</servlet-name>
+    <servlet-class>usc.edu.eventla.project.handlers.StatusUpdateHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>statusupdate</servlet-name>
+    <url-pattern>/statusupdate</url-pattern>
+  </servlet-mapping>
+  
+  
   <servlet>
     <servlet-name>contact</servlet-name>
     <servlet-class>usc.edu.eventla.project.handlers.ContactHandler</servlet-class>

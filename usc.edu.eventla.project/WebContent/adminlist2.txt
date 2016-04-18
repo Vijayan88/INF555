@@ -11,7 +11,7 @@
               <h4>$venue   $address1   $start_time </h4>
               <p>$event_description</p>
               
-              <a class="btn btn-primary" href="/eventdesc?id=$event_title">Read More<span class="glyphicon glyphicon-chevron-right"></span></a></div>
+              <a class="btn btn-primary" href="/admindesc?id=$event_pkey">Read More<span class="glyphicon glyphicon-chevron-right"></span></a></div>
             
            
               </form>

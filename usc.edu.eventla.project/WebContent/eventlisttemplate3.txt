@@ -2,7 +2,7 @@
         <div class="row text-center">
             <div class="col-lg-12">
                 <ul class="pagination">
-                    <li>
+                   <!-- <li>
                         <a href="#">&laquo;</a>
                     </li>
                     <li class="active">
@@ -19,7 +19,7 @@
                     </li>
                     <li>
                         <a href="#">5</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#">&raquo;</a>
                     </li>

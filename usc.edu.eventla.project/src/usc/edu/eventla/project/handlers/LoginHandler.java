@@ -123,14 +123,6 @@ public class LoginHandler extends HttpServlet {
 				date = (String) res.get("date");
 				time = (String) res.get("time");
 				message = (String) res.get("message");
-				// in =
-				// getServletContext().getResourceAsStream("admin_dash3.txt");
-				// reader = new BufferedReader(new InputStreamReader(in,
-				// "UTF-8"));
-				// sb = new StringBuilder();
-				// while ((line = reader.readLine()) != null) {
-				// sb.append(line + "\n");
-				// }
 				System.out.println(name + email + phone);
 
 			}

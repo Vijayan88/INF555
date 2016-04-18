@@ -6,29 +6,11 @@
                 <h2 class="page-header" style="">Recommended Events for you</h3>
             </div>
 
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="img/birme/lakers2015_2.jpg" alt="">
-                </a>
-            </div>
+            
 
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="img/birme/event_tix_0_2259788.jpg" alt="">
-                </a>
-            </div>
+           $POPULAREVENTS
 
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="img/birme/event_ela_68199.jpg" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="img/birme/rose-parade-city-of-los-angeles-float.jpg" alt="">
-                </a>
-            </div>
+           
 <br><br><br>
 <div align="center" > <a href="index.html" > View More Events --></a>
         </div>

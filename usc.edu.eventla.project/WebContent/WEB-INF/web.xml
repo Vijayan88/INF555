@@ -130,6 +130,15 @@
     <url-pattern>/eventcreate</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+    <servlet-name>home</servlet-name>
+    <servlet-class>usc.edu.eventla.project.handlers.LoginHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>home</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  
   
   
   <context-param> 

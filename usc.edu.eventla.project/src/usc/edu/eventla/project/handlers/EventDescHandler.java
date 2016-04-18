@@ -122,7 +122,14 @@ public class EventDescHandler extends HttpServlet {
 			ticket_name2 = (String) ticket_2.get("ticket_name2");
 			ticket_price2 = (String) ticket_2.get("ticket_price2");
 			String imageName = (String) res.get("image_name");
-
+			String maps = (String) address.get("maps");
+			String coordinates ="";
+			if (maps != null && maps.length() > 0) {
+				String coords[] = maps.split("@");
+				if(coords.length > 1){
+					coordinates = coords[1];
+				}
+			}
 			in = getServletContext().getResourceAsStream("eventdesctemplate2.txt");
 			reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 			sb = new StringBuilder();
@@ -138,7 +145,7 @@ public class EventDescHandler extends HttpServlet {
 					.replace("$event_website", event_website).replace("$ticket_name1", ticket_name1)
 					.replace("$ticket_name2", ticket_name2).replace("$ticket_price2", ticket_price2)
 					.replace("$fb_link", facebook_link).replace("$twiiter_link", twitter_link)
-					.replace("$event_image", "/imagedownload?id=" + imageName)
+					.replace("$event_image", "/imagedownload?id=" + imageName).replace("$COORDS", coordinates)
 
 			);
 
@@ -182,8 +189,7 @@ public class EventDescHandler extends HttpServlet {
 
 		// out.println(sb.toString().replace("$NO_EVENTS",events_cnt);
 
-		out.println(sb.toString().replace("$POPULAREVENTS",
-				finalContent.toString()));
+		out.println(sb.toString().replace("$POPULAREVENTS", finalContent.toString()));
 
 	}
 

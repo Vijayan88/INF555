@@ -130,7 +130,17 @@ public class AdminDescHandler extends HttpServlet {
 			ticket_price2 = (String)ticket_2.get("ticket_price2");
 			String imageName = (String) res.get("image_name");
 			
-		
+			String maps = (String) address.get("maps");
+			String coordinates ="";
+			String lat="",longs="";
+			if (maps != null && maps.length() > 0) {
+				String coords[] = maps.split("@");
+				if(coords.length > 1){
+					coordinates = coords[1];
+					lat = coordinates.split(",")[0].substring(1);
+					longs = coordinates.split(",")[1].replace(",", "");
+				}
+			}
 			
 			
 			in = getServletContext().getResourceAsStream("admindesc2.txt");
@@ -152,7 +162,7 @@ public class AdminDescHandler extends HttpServlet {
 					                         .replace("$fb_link", facebook_link)
 					                         .replace("$twiiter_link", twitter_link)
 					                         .replace("$event_image", "/imagedownload?id="+imageName)
-					                         .replace("$event_pkey", event_pkey)
+					                         .replace("$event_pkey", event_pkey).replace("$COORDS",coordinates).replace("$lat", lat).replace("$long",longs)
 					                         );
 		
 		}

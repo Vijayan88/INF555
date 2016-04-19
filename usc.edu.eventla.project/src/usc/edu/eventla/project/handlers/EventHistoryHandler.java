@@ -111,8 +111,10 @@ public class EventHistoryHandler extends HttpServlet {
 			}
 			out.println(sb.toString().replace("$event_title", event_title).replace("$venue", venue_place)
 					.replace("$address1", address1).replace("$start_time", starting_time)
-					.replace("$event_description", event_description)
+					.replace("$event_description", event_description).replace("$start_date", starting_date)
 					.replace("$event_image", "/imagedownload?id=" + imageName));
+			
+			out.println("<br><hr>");
 
 		}
 

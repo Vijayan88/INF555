@@ -2,7 +2,16 @@
 <html lang="en">
 
 <head>
+<style>
+.links {
 
+  margin-left: 400px;
+}
+
+.action{
+    color: black;
+}
+</style>
     
  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,73 +19,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin-Full Event Information</title>
-<script
-src="http://maps.googleapis.com/maps/api/js">
-$(document).ready(function () {
+    <title>Admin Review-List Events</title>
 
-    var navListItems = $('div.setup-panel div a'),
-            allWells = $('.setup-content'),
-            allNextBtn = $('.nextBtn'),
-            allPrevBtn = $('.prevBtn');
-
-    allWells.hide();
-
-    navListItems.click(function (e) {
-        e.preventDefault();
-        var $target = $($(this).attr('href')),
-                $item = $(this);
-
-        if (!$item.hasClass('disabled')) {
-            navListItems.removeClass('btn-primary').addClass('btn-default');
-            $item.addClass('btn-primary');
-            allWells.hide();
-            $target.show();
-            $target.find('input:eq(0)').focus();
-        }
-    });
-
-    allNextBtn.click(function(){
-        var curStep = $(this).closest(".setup-content"),
-            curStepBtn = curStep.attr("id"),
-            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-            curInputs = curStep.find("input[type='text'],input[type='url']"),
-            isValid = true;
-
-        $(".form-group").removeClass("has-error");
-        for(var i=0; i<curInputs.length; i++){
-            if (!curInputs[i].validity.valid){
-                isValid = false;
-                $(curInputs[i]).closest(".form-group").addClass("has-error");
-            }
-        }
-
-        if (isValid)
-            nextStepWizard.removeAttr('disabled').trigger('click');
-    });
-
-    allPrevBtn.click(function(){
-        var curStep = $(this).closest(".setup-content"),
-            curStepBtn = curStep.attr("id"),
-            prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a");
-
-        $(".form-group").removeClass("has-error");
-        prevStepWizard.removeAttr('disabled').trigger('click');
-    });
-
-    $('div.setup-panel div a.btn-primary').trigger('click');
-});
-
-</script>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/portfolio-item.css" rel="stylesheet">
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
     <link href="css/agency.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
-     <link href="css/blog-post.css" rel="stylesheet">
-      <link href="css/wizard.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     
@@ -96,37 +47,13 @@ $(document).ready(function () {
 
 </head>
 
-<style>
-#dialogoverlay{
-  display: none;
-  opacity: .8;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  background: #FFF;
-  width: 100%;
-  z-index: 10;
-}
-#dialogbox{
-  display: none;
-  position: fixed;
-  background: #000;
-  border-radius:7px; 
-  width:550px;
-  z-index: 10;
-}
-#dialogbox > div{ background:#FFF; margin:8px; }
-#dialogbox > div > #dialogboxhead{ background: #666; font-size:19px; padding:10px; color:#CCC; }
-#dialogbox > div > #dialogboxbody{ background:#333; padding:15px; color:#FFF; }
-#dialogbox > div > #dialogboxfoot{ background: #666; padding:10px; text-align:right; }
-</style>
-
 <body>
-<!-- Navigation -->
+
+    <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-           <div class="navbar-header page-scroll">
+            <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -135,47 +62,50 @@ $(document).ready(function () {
                 </button>
                 <a class="navbar-brand page-scroll" href="/home#page-top" style="color: #fed136;
     font-family: Kaushan Script,Helvetica Neue,Helvetica,Arial,cursive;">Events L.A.</a>
-            </div> 
+            </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-<!--             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
+<!--                     <li>
                         <a href="index.html#services" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
    onMouseOut="this.style.color='white'">Explore</a>
-                    </li>
-                    <li>
+                    </li> -->
+<!--                     <li>
                         <a  href="index.html#portfolio" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
    onMouseOut="this.style.color='white'">Popular Events</a>
-                    </li>
+                    </li> -->
                     
-                    <li>
+<!--                     <li>
                         <a href="index.html#partners" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
    onMouseOut="this.style.color='white'">Partners</a>
                     </li>
-                    <li> <a href="index.html#about" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+                     <li> -->
+<!--                         <a href="index.html#about" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 400;
-    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'" onMouseOut="this.style.color='white'">About</a> </li>
-                    <li>
+    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
+   onMouseOut="this.style.color='white'">About</a>
+                    </li> -->
+<!--                     <li>
                         <a  href="index.html#contact" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
    onMouseOut="this.style.color='white'">Contact</a>
-                    </li>
-                    <li>
+                    </li> -->
+  <!--                   <li>
                           <ul class="nav navbar-nav navbar-right">
        
      
@@ -238,35 +168,32 @@ $(document).ready(function () {
         </li>
       </ul>
                     </li>
-                </ul>
-            </div> -->
-            
-            
+                </ul> -->
                             
                    <li>
-                       
-        <style>
- li a{ font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                        <a href="#user" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 400;
-    letter-spacing: 1px;
-    color: white; }
- </style>
-
- <li class="dropdown">
- 
-          <a href="#" class="dropdown-toggle" onmouseout="this.style.color='white'" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="this.style.color='#fed136'" ><font color="white">Welcome ADMIN</font><span class="caret"></span></a>
-          <ul class="dropdown-menu" style="min-width:116px;min-height:100px">
-            <form method="post" action="home" name="logout">
-            <li style="padding:0px 0px" onclick="document.forms['logout'].submit();"><a href="#" style="color:black;">Log Out</a></li>
-           </form>
-          </ul>
-        </li>
-       
+    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
+   onMouseOut="this.style.color='white'">Welcome Admin</a>
+                    </li>
+                     <li>
+                        <a href="/home" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
+   onMouseOut="this.style.color='white'">Log out</a>
+                    </li>
+                    
+                    
       </ul>
                     </li>
                 </ul>
-            </div>
+                
+            
+            
+            <!-- /.navbar-collapse -->
+        </div>
         <!-- /.container -->
     </nav>
 

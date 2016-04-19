@@ -48,6 +48,15 @@
     <url-pattern>/eventdesc</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+    <servlet-name>spanish</servlet-name>
+    <servlet-class>usc.edu.eventla.project.handlers.SpanishHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>spanish</servlet-name>
+    <url-pattern>/spanish</url-pattern>
+  </servlet-mapping>
+  
   
   <servlet>
     <servlet-name>eventhist</servlet-name>

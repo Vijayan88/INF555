@@ -153,7 +153,9 @@ public class EventListHandler extends HttpServlet {
 		DBCursor cursor = collection.find(query);
 
 		if (cursor == null || cursor.count() == 0) {
-			cursor = collection.find();
+			    BasicDBObject query1 = new BasicDBObject();
+				query1.put("status", "Approved");
+			cursor = collection.find(query1);
 		}
 		while (cursor.hasNext()) {
 

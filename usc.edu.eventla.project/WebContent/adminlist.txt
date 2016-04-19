@@ -170,28 +170,28 @@
                     </li>
                 </ul> -->
                 
-                 
-        <style>
- li a{ font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                
+                   <li>
+                        <a href="#user" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 400;
-    letter-spacing: 1px;
-    color: white; }
- </style>
-
- <li class="dropdown">
- 
-          <a href="#" class="dropdown-toggle" onmouseout="this.style.color='white'" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onmouseover="this.style.color='#fed136'" ><font color="white">Welcome ADMIN</font><span class="caret"></span></a>
-          <ul class="dropdown-menu" style="min-width:116px;min-height:100px">
-            <form method="post" action="home" name="logout">
-            <li style="padding:0px 0px" onclick="document.forms['logout'].submit();"><a href="#" style="color:black;">Log Out</a></li>
-           </form>
-          </ul>
-        </li>
-       
+    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
+   onMouseOut="this.style.color='white'">Welcome Admin</a>
+                    </li>
+                     <li>
+                        <a href="/home" style="font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;color:white" onMouseOver="this.style.color='#fed136'"
+   onMouseOut="this.style.color='white'">Log out</a>
+                    </li>
+                    
+                    
       </ul>
                     </li>
                 </ul>
+                
+                
             </div>
             <!-- /.navbar-collapse -->
         </div>

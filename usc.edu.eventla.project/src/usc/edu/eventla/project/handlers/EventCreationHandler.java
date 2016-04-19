@@ -130,6 +130,10 @@ public class EventCreationHandler extends HttpServlet {
 
 		MongoDatabase database = mongoClient.getDatabase("eventsla");
 		MongoCollection<Document> collection = database.getCollection("CreateEvent");
+		
+		
+		
+		
 
 		Document doc = new Document("event_title", title)
 				.append("username", user)

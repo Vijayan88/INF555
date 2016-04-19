@@ -108,6 +108,9 @@ public class EventHandler extends HttpServlet {
 					sb1.append(line + "\n");
 				}
 				String event_title = (String) res.get("event_title");
+				if(event_title.contains("LOS ANGELES CLIPPERS VS. P")){
+					event_title = "LOS ANGELES CLIP...";
+				}
 				BasicDBObject address = (BasicDBObject) res.get("address");
 				String venue_place = "";
 				if (address != null) {

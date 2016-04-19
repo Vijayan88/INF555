@@ -160,7 +160,7 @@
                             <svg class="glyph stroked bag"><use xlink:href="#stroked-bag"></use></svg>
                         </div>
                         <div class="col-sm-9 col-lg-7 widget-right">
-                        <a class="large" href="admineventlist.html" onclick="review_events"> $NO_EVENTS</a>
+                        <a class="large" href="/adminlist"> $NO_EVENTS</a>
 
                             <div class="text-muted"><a href="/adminlist">New events</a></div>
                         </div>

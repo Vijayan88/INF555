@@ -22,7 +22,7 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
 
-public class LoginHandler extends HttpServlet {
+public class SpanishHandler extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -48,7 +48,7 @@ public class LoginHandler extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		InputStream in;
-		in = getServletContext().getResourceAsStream("/index.html");
+		in = getServletContext().getResourceAsStream("/es.index.html");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 		StringBuilder sb = new StringBuilder();
 		String line = null;

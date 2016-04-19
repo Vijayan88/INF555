@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Events L.A></title>
+    <title>HomePage</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -32,6 +32,7 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl=en"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -43,21 +44,21 @@
   .carousel-inner > .item > a > img {
       width: 100%;
       margin: auto; 
-  		}
+      }
   </style>
   <script src="js/jquery-1.9.1.js"></script>
-	<script src="js/jquery-ui-1.10.1.min.js"></script>
-	<script>
-	$(function() {	
-		$( ".datepicker" ).datepicker({
-			inline: true,
-			showOtherMonths: true
-		});
-	});
-	</script>
+  <script src="js/jquery-ui-1.10.1.min.js"></script>
+  <script>
+  $(function() {  
+    $( ".datepicker" ).datepicker({
+      inline: true,
+      showOtherMonths: true
+    });
+  });
+  </script>
 
 </head>
-
+<div class="translate_control" lang="en">
 <body id="page-top" class="index">
 
     <!-- Navigation -->
@@ -71,7 +72,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Events L.A.</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Eventos L.A</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -81,43 +82,84 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Explore</a>
+                        <a class="page-scroll" href="#services">Explorar</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Popular Events</a>
+                        <a class="page-scroll" href="#portfolio">Eventos Populares</a>
                     </li>
                     
                     
                      <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">Acerca de</a>
                     </li>
                   <li>
-                        <a class="page-scroll" href="#partners">Partners</a>
+                        <a class="page-scroll" href="#partners">Fogonadura</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">Contacto</a>
                     </li>
                     <li>
-                          <ul class="nav navbar-nav navbar-right">
+                           <ul class="nav navbar-nav navbar-right">
        
      
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">English <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">español <span class="caret"></span></a>
           <ul class="dropdown-menu" style="min-width:116px;min-height:100px">
-            <li style="padding:0px 0px"><a href="/spanish" id ='es' style="color:black;">español</a></li>
+            <li style="padding:0px 0px"><a href="/home" id ='es' style="color:black;">English</a></li>
             <li style="padding:0px 0px"><a href="#" style="color:black;">français</a></li>
            <li style="padding:0px 0px"><a href="#" style="color:black;">Deutsch</a></li>
           </ul>
         </li>
         
-       $LOGIN_DETAILS
-           
+       
+               <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>
+Iniciar sesión</b> <span class="caret"></span></a>
+      <ul id="login-dp" class="dropdown-menu">
+        <li>
+           <div class="row">
+              <div class="col-md-12">
+                Login via
+                <div class="social-buttons">
+                  <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                  <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                </div>
+                                or
+                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                    <div class="form-group">
+                       <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                       <input type="email" class="form-control" name ="emailid" id="exampleInputEmail2" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                       <label class="sr-only" for="exampleInputPassword2">Password</label>
+                       <input type="password" class="form-control" id="exampleInputPassword2" name="passwd" placeholder="Password" required>
+                    <div class="help-block" style="font-size:10px;color:rgba(208,54,57,1.00);"><a href="#" style="font-size:10px;color:black;">Forget the password ?</a></div>
+                    </div>
+                    <div class="form-group">
+                       <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                    </div>
+                    <div class="checkbox">
+                       <label>
+                       <input type="checkbox"> Mantenme conectado
+                       </label>
+                    </div>
+                 </form>
+              </div>
+              <div class="bottom text-center">
+                Nuevo miembro? <a href="#" style="color:rgba(0,0,0,1.00)"><b>Únete a nosotros</b></a>
+              </div>
+           </div>
+        </li>
+      </ul>
+        </li>
+        
        
         <li> 
-        <a href="/eventcreate" >Create Event</a>
+        <a href="#" data-toggle="modal" data-target="#login-modal">
+Crear evento</a>
         </li>
        
-      </ul>
+      
                     </li>
                 </ul>
             </div>
@@ -126,22 +168,23 @@
         <!-- /.container-fluid -->
     </nav>
      <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    	  <div class="modal-dialog">
-				<div class="loginmodal-container">
-					<h1>Login to Your Account</h1><br>
-				  <form method="post" action="login">
-					<input type="text" name="emailid" placeholder="Username">
-					<input type="password" name="passwd" placeholder="Password">
-					<input type="text" name="popup" hidden="true" value="true">
-					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-				  </form>
-					
-				  <div class="login-help">
-					<a href="#">Register</a> - <a href="#">Forgot Password</a>
-				  </div>
-				</div>
-			</div>
-		  </div>
+        <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <h1>
+Iniciar sesión cuenta</h1><br>
+          <form method="post" action="login">
+          <input type="text" name="emailid" placeholder="Username">
+          <input type="password" name="passwd" placeholder="Password">
+          <input type="text" name="popup" hidden="true" value="true">
+          <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+          </form>
+          
+          <div class="login-help">
+          <a href="#">Registro</a> - <a href="#">Contraseña</a>
+          </div>
+        </div>
+      </div>
+      </div>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -156,28 +199,29 @@
       <div class="item active">
         <img src="http://dtfjihky7xwic.cloudfront.net/sites/default/files/styles/rotator_image/public/media/Activities/griffith-observatory-night-1020.jpg?itok=f9trEGkZ" alt="Griffith Observatory" width="460" height="345">
               <div class="carousel-caption">
-        <h3>Griffith Observatory</h3>
+        <h3>Observatorio Griffith</h3>
       </div>
       </div>
 
       <div class="item">
         <img src="http://dtfjihky7xwic.cloudfront.net/sites/default/files/styles/rotator_image/public/media/Activities/Colorful-Walls-Rotator.jpg?itok=zIpuUi4t" alt="Colorful Walls in LA" width="460" height="345">
                       <div class="carousel-caption">
-        <h3>Colorful Walls in LA</h3>
+        <h3>Las paredes de colores en LA</h3>
       </div>
       </div>
     
       <div class="item">
         <img src="http://dtfjihky7xwic.cloudfront.net/sites/default/files/styles/rotator_image/public/media/Activities/72-Hours-urban-lights.jpg?itok=vULLwocR" alt="LA Urban Lights" width="460" height="345">
                               <div class="carousel-caption">
-        <h3>LA Urban Lights</h3>
+        <h3>LA Lights Urban</h3>
       </div>
       </div>
 
       <div class="item">
         <img src="http://dtfjihky7xwic.cloudfront.net/sites/default/files/styles/rotator_image/public/media/Activities/awardsseasonnew.jpg?itok=FFL_cjSo" alt="LA Adventures" width="460" height="345">
                                       <div class="carousel-caption">
-                                       <h3>Awards In LA</h3>
+                                       <h3>
+Premios en Los Ángeles</h3>
       </div>
       </div>
     </div>
@@ -185,11 +229,11 @@
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
+      <span class="sr-only">Anterior</span>
     </a>
     <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
+      <span class="sr-only">Siguiente</span>
     </a>
   </div>
 </div>
@@ -204,33 +248,36 @@
        
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Explore your nearby Events</h2>
-                    <h3 class="section-subheading text-muted">Endless Entertaintment</h3>
+                    <h2 class="section-heading">Explora tus Eventos cercanos</h2>
+                    <h3 class="section-subheading text-muted">
+Entertaintment sin fin</h3>
                 </div>
             </div>
-            
-               <form  method="post" action="eventlist" name="searchform">
-            <div style="font-size:20px;color:Black;font-family:Avenir LT W01 85 Heavy,Arial,Helvetica Neue,Helvetica,sans-serif;"> Find Events </div><br>
+            <form  method="post" action="eventlist" name="searchform">
+            <div style="font-size:20px;color:Black;font-family:Avenir LT W01 85 Heavy,Arial,Helvetica Neue,Helvetica,sans-serif;"> Buscar eventos </div><br>
         <!--Success buttons with dropdown menu-->
-         <form  method="post" action="eventlist" name="searchform">
+       
         <div class="btn-group" >
-            <button type="button"  style="height:40px;width:200px;" data-toggle="dropdown" class="btn btn-warning dropdown-toggle" id="btn_services">Category <span class="caret"></span></button>
+            <button type="button"  style="height:40px;width:200px;" data-toggle="dropdown" class="btn btn-warning dropdown-toggle" id="btn_services">Categoría <span class="caret"></span></button>
            <ul class="dropdown-menu" >
-            <li><input name="event_type" value="" type="checkbox"/>&nbsp;&nbsp; Select All</a></li>
+            <li><input name="event_type" value="" type="checkbox"/>&nbsp;&nbsp; 
+Seleccionar todo</a></li>
              <li class="divider"></li>
                 <li><input type="checkbox" name="event_type" value="Concerts & Live Music"/>&nbsp;&nbsp;Concerts & Live Music</li>
-                <li><input type="checkbox" name="event_type" value="Museums & Theatre</"/>&nbsp;&nbsp;Museums & Theatre</li>
-                 <li><input type="checkbox" name="event_type" value="Sports & Entertainment"/>&nbsp;&nbsp;Sports & Entertaintment</li>
+                <li><input type="checkbox" name="event_type" value="Museums & Theatre"/>&nbsp;&nbsp;Museums & Theatre</li>
+                 <li><input type="checkbox" name="event_type" value="Sports & Entertaintment"/>&nbsp;&nbsp;Sports & Entertaintment</li>
                
                 
             </ul>
         </div>
         <!--Warning buttons with dropdown menu-->
         <div class="btn-group">
-            <button type="button" style="height:40px;width:200px" data-toggle="dropdown" class="btn btn-warning dropdown-toggle"id="btn_services">Region <span class="caret"></span></button>
+            <button type="button" style="height:40px;width:200px" data-toggle="dropdown" class="btn btn-warning dropdown-toggle"id="btn_services">
+Región <span class="caret"></span></button>
            <ul class="dropdown-menu">
             <li><input type="checkbox" name="city_name" value=""/>&nbsp;&nbsp; Select All</li>
              <li class="divider"></li>
+
                 <li><input type="checkbox" name="city_name" value ="Beach Cities/LAX"/>&nbsp;&nbsp;Beach Cities / LAX</li>
                 <li><input type="checkbox" name="city_name" value="Los Angeles"/>&nbsp;&nbsp;Los Angeles</li>
                 <li><input type="checkbox" name="city_name" value="Downtown/LA Metro"/>&nbsp;&nbsp;Downtown/LA Metro</li>
@@ -242,17 +289,20 @@
                 <li><input type="checkbox" name="city_name" value="The Valley"/>&nbsp;&nbsp;The Valley</li>
                 <li><input type="checkbox" name="city_name" value="Westside"/>&nbsp;&nbsp;Westside</li>
 
-				
-
-               
-                
             </ul>
+
         </div>
+
         <!--Danger buttons with dropdown menu-->
+
         <div class="btn-group" >
-            <button type="button" style="height:40px;width:200px" data-toggle="dropdown" class="btn btn-warning dropdown-toggle" id="btn_services">Venue <span class="caret"></span></button>
+
+            <button type="button" style="height:40px;width:200px" data-toggle="dropdown" class="btn btn-warning dropdown-toggle" id="btn_services">Lugar de encuentro <span class="caret"></span></button>
+
             <ul class="dropdown-menu">
-           <li><input type="checkbox" name="venue" value=""/>&nbsp;&nbsp; Select All</li>
+
+           <li><input type="checkbox" name="venue" value=""/>&nbsp;&nbsp; 
+Seleccionar todo</li>
              <li class="divider"></li>
                 <li><input type="checkbox" name="venue" value="CSUN-Cal State NorthRidge"/>&nbsp;&nbsp;CSUN-Cal State NorthRidge</li>
                 <li><input type="checkbox" name="venue" value="Greek Theatre"/>&nbsp;&nbsp;Greek Theatre</li>
@@ -264,7 +314,6 @@
                 <li><input type="checkbox" name="venue" value='The Wiltern'/>&nbsp;&nbsp;The Wiltern</li>
                 <li><input type="checkbox" name="venue" value='LA Coliseum'/>&nbsp;&nbsp;LA Coliseum</li>
                 <li><input type="checkbox" name="venue" value ='The Canyon'/>&nbsp;&nbsp;The Canyon</li> 
-             
             </ul>
         </div>
         
@@ -282,7 +331,6 @@
         </div>
        
             
-            
         
     </section>
 
@@ -291,8 +339,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Popular Events</h2>
-                    <h3 class="section-subheading text-muted">Top Events of this week.</h3>
+                    <h2 class="section-heading">Eventos populares</h2>
+                    <h3 class="section-subheading text-muted">Los mejores eventos de esta semana.</h3>
                 </div>
             </div>
             <div class="row">
@@ -305,6 +353,7 @@
             </div>
         </div>
     </section>
+
   
 
     <!--<!-- Team Section 
@@ -325,9 +374,9 @@
                         <ul class="list-inline social-buttons">
                             <li><a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
                             </li>
-                            <li><a href="https://facebook.com"><i class="fa fa-facebook" style="font-size:12px"></i></a>
+                            <li><a href="https://www.facebook.com"><i class="fa fa-facebook" style="font-size:12px"></i></a>
                             </li>
-                            <li><a href="https://linkedin.com"><i class="fa fa-linkedin"></i></a>
+                            <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -376,8 +425,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">No one knows the city like Events LA</h3>
+                    <h2 class="section-heading">Acerca de</h2>
+                    <h3 class="section-subheading text-muted">
+Nadie conoce la ciudad como Eventos LA</h3>
                 </div>
             </div>
             <div class="row">
@@ -390,10 +440,10 @@
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     
-                                  <h4 class="subheading">What We Do</h4>
+                                  <h4 class="subheading">Qué hacemos</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Events LA is the trusted global platform that inspires and enables people to experience the best of the city. No one knows the city like Events LA because we’ve been discovering the brilliant and searching out the secret and extraordinary. If you want to know about food, attractions, art, culture, shopping and nightlife, then Events LA is your social companion!</p>
+                                    <p class="text-muted">Eventos LA es la plataforma global de confianza que inspira y permite a la gente disfrutar de lo mejor de la ciudad . Nadie conoce la ciudad como Eventos LA porque hemos ido descubriendo el brillante y buscando el secreto y extraordinario . Si usted quiere saber acerca de la comida , atracciones , arte, cultura, compras y vida nocturna , a continuación, Eventos LA es su compañero social!</p>
                                 </div>
                             </div>
                         </li>
@@ -407,8 +457,9 @@
                                     <h4 class="subheading">Online</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Events LA online platforms give the audience the best in recommendations and reviews as well as a comprehensive arts, entertainments and events listings.
-We inspire people and help them find what they’re looking for, enable them to do it via booking platforms, and allow them to share their experiences with other members of the Events LA community!</p>
+                                    <p class="text-muted">
+Eventos plataformas en línea LA dan al público lo mejor de recomendaciones y opiniones , así como artes de una integrales , entretenimientos y listados de eventos .
+Inspiramos a la gente y ayudarles a encontrar lo que están buscando , les permitirá hacerlo a través de las plataformas de reservas , y permitirles compartir sus experiencias con otros miembros de la comunidad LA Eventos !</p>
                                 </div>
                             </div>
                         </li>
@@ -419,10 +470,10 @@ We inspire people and help them find what they’re looking for, enable them to 
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                    
-                                  <h4 class="subheading">Mobile App</h4>
+                                  <h4 class="subheading">Aplicación movil</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Delivering inspiration on the go, our apps for iOS, Android and Windows devices help users find the best things to do. Geo-location enabled, the apps also allow easy-booking of tickets and restaurant tables, as well as searches by area, Editor’s picks and Most Popular!</p>
+                                    <p class="text-muted">La entrega de la inspiración en el camino, nuestras aplicaciones para dispositivos iOS , Android y Windows ayudan a los usuarios a encontrar las mejores cosas que hacer . permitido a la ubicación geográfica , las aplicaciones también permiten fácil de reserva de billetes y mesas de restaurante , así como búsquedas por área , Selecciones del editor y el más popular!</p>
                                 </div>
                             </div>
                         </li>
@@ -433,18 +484,18 @@ We inspire people and help them find what they’re looking for, enable them to 
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     
-                                    <h4 class="subheading">The Founding of Events LA</h4>
+                                    <h4 class="subheading">La Fundación de Eventos LA</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Fascinated with the culture of Los Angeles and a need for reliable information about what was going on, Ayushi Agarwal, Lailu Philip  and Vijayan B founded events LA in February 2016 during thier course project for USC. They are passionate about Event LA and have a vision that goes far beyond simply reproducing features from the magazine, delivering a vast array of unique local content and cultural insight, and enabling consumer bookings and a wide opportunity to resonate with its audience!</p>
+                                    <p class="text-muted">Fascinado con la cultura de Los Ángeles y la necesidad de información fiable sobre lo que estaba ocurriendo , Ayushi Agarwal , Lailu Felipe y Vijayan B fundada eventos de LA en febrero durante el año 2016 emabrgo proyecto del curso de la USC . Ellos son apasionados de Evento Los Angeles y tener una visión que va más allá de la simple reproducción de las características de la revista, la entrega de una amplia gama de contenido local único y visión cultural , y permitir que las reservas de los consumidores y una gran oportunidad para resonar con su público!</p>
                                 </div>
                             </div>
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
+                                <h4>Sea parte
+                                    <br>de nuestra
+                                    <br>historia!</h4>
                             </div>
                         </li>
                     </ul>
@@ -487,8 +538,9 @@ We inspire people and help them find what they’re looking for, enable them to 
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">We will contact you</h3>
+                    <h2 class="section-heading">
+Contáctenos</h2>
+                    <h3 class="section-subheading text-muted">Nos pondremos en contacto con usted</h3>
                 </div>
             </div>
             <div class="row">
@@ -497,28 +549,29 @@ We inspire people and help them find what they’re looking for, enable them to 
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" name="name" required data-validation-required-message="Please enter your name.">
+                                    <input type="text" class="form-control" placeholder="Tu nombre *" name="name" required data-validation-required-message="Please enter your name.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" name="email" required data-validation-required-message="Please enter your email address.">
+                                    <input type="email" class="form-control" placeholder="Tu correo electrónico *" name="email" required data-validation-required-message="Please enter your email address.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" name="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <input type="tel" class="form-control" placeholder="Su teléfono *" name="phone" required data-validation-required-message="Please enter your phone number.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" name="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <textarea class="form-control" placeholder="Tu mensaje *" name="message" required data-validation-required-message="Please enter a message."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
+                                <button type="submit" class="btn btn-xl">
+Enviar mensaje</button>
                             </div>
                         </div>
                     </form>
@@ -545,9 +598,9 @@ We inspire people and help them find what they’re looking for, enable them to 
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
+                        <li><a href="#">Política de privacidad</a>
                         </li>
-                        <li><a href="#">Terms of Use</a>
+                        <li><a href="#">Términos de Uso</a>
                         </li>
                     </ul>
                 </div>
@@ -725,7 +778,7 @@ We inspire people and help them find what they’re looking for, enable them to 
             </div>
         </div>
     </div>
-
+</div>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -743,6 +796,16 @@ We inspire people and help them find what they’re looking for, enable them to 
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+
+<script>
+    function googleSectionalElementInit() {
+      new google.translate.SectionalElement({
+        sectionalNodeClassName: 'translate',
+        controlNodeClassName: 'translate_control',
+        background: '#f4fa58'
+      }, 'google_sectional_element');
+    }
+    </script>
 
 </body>
 

@@ -124,10 +124,13 @@ public class EventDescHandler extends HttpServlet {
 			String imageName = (String) res.get("image_name");
 			String maps = (String) address.get("maps");
 			String coordinates ="";
+			String lats="",longs="";
 			if (maps != null && maps.length() > 0) {
 				String coords[] = maps.split("@");
 				if(coords.length > 1){
 					coordinates = coords[1];
+					lats = coordinates.split(",")[0].substring(1);
+					longs = coordinates.split(",")[1].replace(",", "");
 				}
 			}
 			in = getServletContext().getResourceAsStream("eventdesctemplate2.txt");
@@ -145,27 +148,11 @@ public class EventDescHandler extends HttpServlet {
 					.replace("$event_website", event_website).replace("$ticket_name1", ticket_name1)
 					.replace("$ticket_name2", ticket_name2).replace("$ticket_price2", ticket_price2)
 					.replace("$fb_link", facebook_link).replace("$twiiter_link", twitter_link)
-					.replace("$event_image", "/imagedownload?id=" + imageName).replace("$COORDS", coordinates)
+					.replace("$event_image", "/imagedownload?id=" + imageName).replace("$COORDS",coordinates).replace("$lat", lats).replace("$long",longs)
 
 			);
 
-			out.println(sb.toString().replace("$event_title", title_event).replace("$event_description", event_description).
-					                         replace("$venue",venue).replace("$address1", address1).replace("$address2",address2)
-					                         .replace("$cityname",cityname).replace(" $pin_code",pin_code)
-					                         .replace("$start_date" , start_date).replace("$start_time",start_time)
-					                         .replace("$city_name", cityname).replace("$ticket_price1", ticket_price1)
-					                        . replace("$ticket_price2",ticket_price2)
-					                        .replace("$start_date", start_date)
-					                        .replace("$event_website", event_website)
-					                         .replace("$ticket_name1", ticket_name1)
-					                         .replace("$ticket_name2", ticket_name2)
-					                         .replace("$ticket_price2", ticket_price2)
-					                         .replace("$fb_link", facebook_link)
-					                         .replace("$twiiter_link", twitter_link)
-					                         .replace("$event_image", "/imagedownload?id="+imageName)
-					                         
-					                         );
-		
+			
 		}
 			
 
@@ -175,7 +162,7 @@ public class EventDescHandler extends HttpServlet {
 		while ((line = reader.readLine()) != null) {
 			sb.append(line + "\n");
 		}
-		out.println(sb.toString());
+		
 
 		StringBuilder finalContent = new StringBuilder();
 		int max = 6;

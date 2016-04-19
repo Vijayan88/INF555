@@ -60,7 +60,7 @@ public class StatusUpdateHandler extends HttpServlet {
 		
 		BasicDBObject newDocument = new BasicDBObject();
 		newDocument.append("$set", new BasicDBObject().append("status", "save"));
-		BasicDBObject searchQuery = new BasicDBObject().append("p_key", "basketballmatch_2016-04-25");
+		BasicDBObject searchQuery = new BasicDBObject().append("p_key", "losangelesclippersvs.portlandtrailblazers_2016-04-20");
 		collection.update(searchQuery, newDocument);
 	    
 	}
